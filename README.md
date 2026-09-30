@@ -1,5 +1,8 @@
 NBA Win Projections: 2026-27
 
+LIVE DASHBOARD: https://public.tableau.com/app/profile/jt.mcgahran/viz/026-27NBAProjectionsupdated9_30_26/26-27WinProjections
+
+
 Preseason win projections for all 30 NBA teams, built from two models and a weighted average of both:
 
 - **Version A** works at the team level. It starts from last season's point differential and adjusts for roster turnover and age.
