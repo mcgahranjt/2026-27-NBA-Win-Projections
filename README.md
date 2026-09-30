@@ -1,134 +1,165 @@
-# NBA Win Projections: 2026-27
+NBA Win Projections: 2026-27
 
-A regression model that projects regular-season wins for all 30 NBA teams, built from team and player data going back to 2010-11. This is Version A, a deliberately simple team-level model. It gives a baseline to measure a more detailed player-level version against.
+Preseason win projections for all 30 NBA teams, built from two models and a weighted average of both:
 
-![2026-27 projected wins](output/projections_2026-27.png)
+- **Version A** works at the team level. It starts from last season's point differential and adjusts for roster turnover and age.
+- **Version B** works at the player level. It projects every player's rating and minutes, then adds them up into a team rating.
+- **The combined model** weights B at 75% and A at 25%. It had the lowest error in backtesting: **6.95 wins per team, 21% better than assuming every team repeats last season.**
 
-## Why this approach
 
-A team's point differential says more about how good it is than its record does, and it holds up better from one season to the next. So the model starts from last season's net rating (points scored minus points allowed per 100 possessions). It then adjusts for two things that change over an offseason: how much of the roster is still around, and how old it is.
+## Results
 
-Every input is known before opening night. The model never sees anything from the season it's predicting, apart from who is on each roster.
+Each model was backtested on the five most recent seasons. For every season, the model was trained only on the seasons before it, the same way it would have been used in real time. The combined model's 75/25 weighting was chosen using 2015-16 through 2020-21, so the test seasons played no part in picking it.
 
-## Features
+**Mean absolute error, in wins per team:**
+
+| Season | Combined (75% B) | 50/50 average | Version B | Version A | Repeat last season | Every team wins 41 |
+|---|---|---|---|---|---|---|
+| 2021-22 | 7.1 | 7.1 | 7.8 | 7.0 | 8.2 | 9.7 |
+| 2022-23 | 4.4 | 4.9 | 4.7 | 6.4 | 8.1 | 7.5 |
+| 2023-24 | 7.8 | 7.7 | 8.0 | 7.9 | 8.5 | 11.2 |
+| 2024-25 | 7.2 | 7.2 | 7.2 | 7.5 | 9.1 | 10.6 |
+| 2025-26 | 8.2 | 8.4 | 8.2 | 9.1 | 10.4 | 11.6 |
+| **Average** | **6.95** | **7.08** | **7.17** | **7.60** | **8.84** | **10.12** |
+
+The combined model beat or tied Version B in all five seasons and beat Version A in four. Published projection systems and preseason betting lines usually land somewhere around 6 to 7 wins of error, so this is in the same general range, though I haven't measured the market directly yet (see Next steps).
+
+The gain from combining is modest. A and B's errors had a correlation of 0.83, which means they mostly miss on the same teams. Averaging still helps where they disagree, and B gets most of the weight because it knows more about each roster.
+
+2025-26 was the hardest season for every method, which fits a year with a lot of injuries and teams openly playing for draft position.
+
+## Version A: team-level model
+
+The idea is that point differential says more about a team than its record does, and it holds up better from one season to the next. So the model starts from last season's net rating (points scored minus points allowed per 100 possessions) and adjusts for how much of the roster changed.
 
 | Feature | Description |
 |---|---|
 | `prev_net_rating` | Last season's net rating |
 | `returning_min_share` | Share of last season's minutes played by players still on the roster |
-| `net_x_returning` | Net rating multiplied by returning share. Last year's rating should count for more when the roster stayed together |
+| `net_x_returning` | Net rating × returning share. Last year's rating should count for more when the roster stayed together |
 | `roster_age` | Average age of the upcoming roster, weighted by last season's minutes |
-
-The target is next season's wins, scaled to 82 games so the shortened seasons (2011-12, 2019-20, 2020-21) line up with the rest. Projections are shifted so the league total equals 1,230 wins, since every game has exactly one winner.
-
-## Results
-
-I backtested the model on the five most recent seasons. For each season, the model was trained only on the seasons before it, the same way it would have been used in real time. It was compared against two baselines: every team wins 41, and every team repeats last season's win total.
-
-**Mean absolute error, in wins per team:**
-
-| Season | Model | Repeat last season | Every team wins 41 |
-|---|---|---|---|
-| 2021-22 | 7.0 | 8.2 | 9.7 |
-| 2022-23 | 6.4 | 8.1 | 7.5 |
-| 2023-24 | 7.9 | 8.5 | 11.2 |
-| 2024-25 | 7.5 | 9.1 | 10.6 |
-| 2025-26 | 9.1 | 10.4 | 11.6 |
-| **Average** | **7.6** | **8.8** | **10.1** |
-
-The model beat both baselines in all five seasons. On average it cut error by about 14% against "repeat last season" and about 25% against "every team wins 41." Published projection systems and preseason betting lines usually land somewhere around 6 to 7 wins of error, so there's still room to close.
-
-2025-26 was the hardest season to call for every method, which fits a year with a lot of injuries and teams openly playing for draft position.
-
-### Fitted model
 
 ```
 wins = -4.1 + 0.90 × prev_net_rating + 22.89 × returning_min_share
             + 0.41 × net_x_returning + 1.13 × roster_age
 ```
 
-A few things stand out:
+For a team bringing back about 70% of its minutes, each point of net rating is worth roughly 1.2 wins the next season. Within a single season a point is worth about 2.7 wins, so a little under half of a team's edge carries over and the rest fades toward average.
 
-- For a team that brings back about 70% of its minutes, each point of net rating is worth roughly 1.2 wins the following season. Within a single season a point is worth about 2.7 wins, so a little under half of a team's edge carries over and the rest fades toward average.
-- The interaction term is positive. Last year's rating is a better guide for teams that kept their roster together.
-- Returning minutes adds about 2.3 wins for every 10 percentage points. Some of that is continuity, but some is probably selection: good teams keep their players, bad teams get rebuilt.
-- Older rosters project slightly better. That's almost certainly because contenders give minutes to proven veterans, not because aging helps. See below.
+The age coefficient is positive, which looks backwards. It's almost certainly because contenders give minutes to proven veterans, so at the team level age acts as a proxy for quality. I also tested the share of minutes going to players 31 and older as a more direct aging measure. It did slightly worse (7.68 vs. 7.60) and still came out positive, so I kept average age and left real aging effects to Version B.
 
-### What I tested and dropped
+**Blind spots:** A knows how much of a roster left but not who replaced them, and it has no idea when an injured star is coming back.
 
-Since average age came out with a positive sign, I tried replacing it with the share of minutes going to players 31 and older, which should pick up aging risk more directly. It performed slightly worse (7.68 average error vs. 7.60) and still came out positive, at about +0.6 wins per 10 percentage points. At the team level, age mostly works as a stand-in for roster quality. Real aging effects will be handled at the player level in Version B. The script still runs both versions and reports them side by side.
+## Version B: player-level model
+
+Version B builds each team's rating from its individual players, using Box Plus/Minus (BPM) from Basketball-Reference as the player rating. BPM estimates a player's impact in points per 100 possessions.
+
+1. **Player rating.** Each player's last three seasons are weighted 60/30/10 across the seasons he actually played, and also by minutes. Small samples are pulled toward -2.0, roughly a fringe rotation player. How strongly to pull was tuned on 2015-2020, and 500 minutes of evidence worked best, although results were nearly identical across settings.
+2. **Aging.** An aging curve is estimated from the data: the average year-to-year change in BPM at each age, using only seasons before the one being projected.
+3. **Minutes.** Minutes per game from the player's most recent season with 20+ games, times 68 games, capped at about 36 a game. Minutes are then filled by depth chart until the team reaches 19,680 (48 × 5 × 82), so the top of the rotation gets full minutes and the end of the bench gets whatever is left.
+4. **Team rating** is the minutes-weighted player ratings × 5, which approximates projected net rating.
+5. **Wins:**
+
+```
+wins = 45.5 + 2.45 × team_rating
+```
+
+A slope close to the real-world 2.7 wins per point suggests the team ratings are well calibrated. I also tested adding last season's team net rating to B. It barely helped (coefficient 0.39, and less than 0.1 wins of improvement), since the player ratings already capture most of what the team numbers know.
+
+### Problems I found and fixed along the way
+
+- **Accented names weren't matching.** Basketball-Reference pages are UTF-8, but they were being read with the wrong encoding, so "Jokić" came through garbled and never matched NBA.com's roster. 24 players, including Jokić, Dončić, Porziņģis and Şengün, were being treated as rookies, which put Denver at 36 wins. The script now repairs the encoding and normalizes names before matching.
+- **Minutes were spread too thin.** Preseason rosters carry 20 or more players, and scaling everyone's minutes by the same factor gave Jalen Brunson about 24 minutes a game and gave camp invites several hundred minutes each. Switching to depth-chart allocation fixed it. Backtest error actually rose slightly (7.01 to 7.17), because the old approach was accidentally helping by pulling every team toward average. I kept the fix because the model now does what it claims to, and the team ratings came out better calibrated.
+- **Injured players were being discounted twice.** A player who missed last season had his older seasons treated as thin evidence and pulled hard toward average. Weights are now spread across the seasons a player actually played.
 
 ## 2026-27 projections
 
-Made on September 30, 2026, before the start of the regular season.
+Made on September 30, 2026, before the regular season.
 
-| Team | Projected wins | 2025-26 wins |
-|---|---|---|
-| San Antonio Spurs | 56.5 | 62 |
-| New York Knicks | 55.5 | 53 |
-| Boston Celtics | 53.6 | 56 |
-| Oklahoma City Thunder | 53.3 | 64 |
-| Detroit Pistons | 51.6 | 60 |
-| Houston Rockets | 51.0 | 52 |
-| Denver Nuggets | 47.6 | 54 |
-| Cleveland Cavaliers | 46.7 | 52 |
-| Orlando Magic | 46.3 | 45 |
-| Golden State Warriors | 46.0 | 37 |
-| Charlotte Hornets | 44.9 | 44 |
-| Atlanta Hawks | 44.5 | 46 |
-| Miami Heat | 44.0 | 43 |
-| Phoenix Suns | 43.7 | 45 |
-| Toronto Raptors | 43.5 | 46 |
-| Minnesota Timberwolves | 42.7 | 49 |
-| LA Clippers | 40.8 | 42 |
-| Portland Trail Blazers | 40.0 | 42 |
-| Philadelphia 76ers | 37.2 | 45 |
-| New Orleans Pelicans | 36.8 | 26 |
-| Los Angeles Lakers | 35.1 | 53 |
-| Indiana Pacers | 35.0 | 19 |
-| Milwaukee Bucks | 32.8 | 32 |
-| Chicago Bulls | 31.4 | 31 |
-| Memphis Grizzlies | 30.8 | 25 |
-| Dallas Mavericks | 30.6 | 26 |
-| Utah Jazz | 28.3 | 22 |
-| Sacramento Kings | 27.7 | 22 |
-| Brooklyn Nets | 26.1 | 20 |
-| Washington Wizards | 25.7 | 17 |
+| Team | Combined | Version A | Version B | 2025-26 wins |
+|---|---|---|---|---|
+| Oklahoma City Thunder | 58.7 | 53.3 | 60.5 | 64 |
+| San Antonio Spurs | 53.6 | 56.5 | 52.6 | 62 |
+| Houston Rockets | 52.6 | 51.0 | 53.1 | 52 |
+| Boston Celtics | 52.5 | 53.6 | 52.2 | 56 |
+| Denver Nuggets | 51.7 | 47.6 | 53.0 | 54 |
+| Cleveland Cavaliers | 48.9 | 46.7 | 49.6 | 52 |
+| New York Knicks | 47.6 | 55.5 | 45.0 | 53 |
+| Philadelphia 76ers | 47.1 | 37.2 | 50.3 | 45 |
+| Toronto Raptors | 46.9 | 43.5 | 48.1 | 46 |
+| Detroit Pistons | 45.9 | 51.6 | 43.9 | 60 |
+| Orlando Magic | 44.9 | 46.3 | 44.4 | 45 |
+| Los Angeles Lakers | 44.7 | 35.1 | 47.9 | 53 |
+| Golden State Warriors | 44.4 | 46.0 | 43.9 | 37 |
+| Portland Trail Blazers | 43.4 | 40.0 | 44.5 | 42 |
+| Charlotte Hornets | 43.0 | 44.9 | 42.4 | 44 |
+| Minnesota Timberwolves | 42.2 | 42.7 | 42.1 | 49 |
+| Miami Heat | 40.4 | 44.0 | 39.2 | 43 |
+| Phoenix Suns | 40.1 | 43.7 | 38.9 | 45 |
+| Atlanta Hawks | 39.7 | 44.5 | 38.1 | 46 |
+| Dallas Mavericks | 38.8 | 30.6 | 41.5 | 26 |
+| Indiana Pacers | 36.0 | 35.0 | 36.3 | 19 |
+| New Orleans Pelicans | 34.9 | 36.8 | 34.3 | 26 |
+| Chicago Bulls | 32.8 | 31.4 | 33.2 | 31 |
+| LA Clippers | 31.9 | 40.8 | 29.0 | 42 |
+| Milwaukee Bucks | 31.1 | 32.8 | 30.5 | 32 |
+| Memphis Grizzlies | 30.3 | 30.8 | 30.1 | 25 |
+| Utah Jazz | 29.9 | 28.3 | 30.4 | 22 |
+| Brooklyn Nets | 26.4 | 26.1 | 26.4 | 20 |
+| Washington Wizards | 26.1 | 25.7 | 26.3 | 17 |
+| Sacramento Kings | 23.6 | 27.7 | 22.3 | 22 |
 
-Some notes on the list:
+### Where the two models disagree
 
-- **Regression to the mean does most of the work at both ends.** Oklahoma City drops 11 wins and Washington gains 9, mostly because extreme seasons rarely repeat.
-- **Golden State** won 37 games with a net rating near zero, which is closer to a .500 team. The model trusts the point differential over the record.
-- **The Lakers** brought back only 42% of last season's minutes, the lowest in the league, and the model takes them down 18 wins. It knows how much of the roster left but not how good the replacements are, so this is the projection I trust least.
-- **Indiana** is probably too low. Most of their 19-win season came without Tyrese Haliburton, and the model has no way of knowing he's expected back.
+These are the teams to watch, since one of the two models is going to be clearly wrong:
+
+- **Philadelphia (A 37, B 50).** B sees a talented roster when healthy. A only sees last season's roughly even point differential.
+- **Lakers (A 35, B 48).** A sees 58% of last season's minutes gone and marks them down hard. B knows Luka Dončić is still there.
+- **Clippers (A 41, B 29).** B rates the current roster as weak and older. A leans on last season's results.
+- **Dallas (A 31, B 42).** B expects a real bounce-back from a 26-win season.
+- **Knicks (A 56, B 45).** A likes their continuity and last season's +6.4 net rating. B rates the individual players more modestly.
+- **Detroit (A 52, B 44).** B thinks last season's 60 wins ran ahead of the roster's talent.
 
 ## Limitations
 
-- **Injuries aren't modeled.** Teams getting a star back from injury will be underrated, and teams relying on injury-prone players will be overrated.
-- **New players are only counted as a share of minutes.** A team that loses a starter and signs an All-Star looks the same as one that loses a starter and signs no one.
-- **Projections are compressed.** They run from about 26 to 57 wins, while actual seasons usually range from about 15 to 65. Pulling toward the middle lowers average error but misses the true outliers.
-- **Traded players** are assigned to the team they finished the season with, following NBA.com's convention.
+- **Projections are compressed.** They run from about 24 to 59 wins, while actual seasons usually range from about 15 to 65. Pulling toward average lowers typical error but misses the true outliers.
+- **BPM is built from box-score stats,** so it tends to undervalue players whose impact doesn't show up there, such as strong defenders and screeners.
+- **Injuries during the season aren't modeled.** Players are assumed to play about 68 games.
+- **The Version B backtest has a small head start.** Historical rosters are built from players who actually appeared for each team, so a player who missed an entire season is left out, which a real preseason projection wouldn't know. The backtest error is probably a few tenths of a win optimistic.
+- **Traded players** are assigned to the team they finished the season with in Version A and the team they started with in Version B.
 
 ## Next steps
 
-- Record preseason sportsbook win totals and compare them with these projections once the season ends.
-- **Version B:** build team ratings up from individual players, using a weighted three-year plus-minus rating for each player, a proper aging curve and projected minutes. This should address the injury and roster-quality blind spots above.
-- **Version C:** simulate the full schedule several thousand times to get a range and playoff odds for each team, not just a single number.
+- Record preseason sportsbook win totals and compare both against actual results when the season ends.
+- Simulate the full schedule a few thousand times to get a range and playoff odds for each team, not just a single number.
+- Test a second player rating alongside BPM to see whether it helps with the defensive blind spot.
 
 ## Running it
 
+All three scripts need to be in the same folder, and they share one `data` folder.
+
 ```
-pip install nba_api pandas scikit-learn matplotlib
+pip install -r requirements.txt
 python3 nba_wins_version_a.py
+python3 nba_wins_version_b.py
+python3 nba_wins_ensemble.py
 ```
 
-The first run pulls data from NBA.com through the `nba_api` package and takes about five minutes, since it pauses between requests. Data is cached in `./data`, so later runs finish in seconds. To pick up roster moves before the season starts, delete `data/rosters_2026.csv` and run it again.
+- **Version A** pulls team and player stats from NBA.com through `nba_api`. The first run takes about five minutes because of pauses between requests.
+- **Version B** pulls one page per season from Basketball-Reference, 4 seconds apart to stay under their rate limit, plus 2026-27 rosters from NBA.com.
+- **The combined model** uses the cached data from both and doesn't download anything.
 
-**Output files (`./output`):**
-- `backtest.csv`: season-by-season error for both age versions and both baselines
-- `projections_2026-27.csv` / `.png`: the projections above
-- `training_data.csv`: the full modeling table, one row per team-season
+Everything is cached in `./data`, so re-runs finish quickly. To pick up roster moves before opening night, delete `data/rosters_2026.csv` and `data/rosters_named_2026.csv` and run all three again.
+
+**Output folders:**
+- `output/`: Version A backtest, projections and chart
+- `output_b/`: Version B backtest, team projections, player-by-player projections and chart
+- `output_ensemble/`: side-by-side backtest of every model, final projections and the chart at the top of this page
 
 ## Data
 
-Team and player statistics come from NBA.com via [`nba_api`](https://github.com/swar/nba_api). Coverage runs from the 2010-11 season through 2025-26, with 2026-27 rosters as of the date above.
+- Team and player statistics: NBA.com via [`nba_api`](https://github.com/swar/nba_api), 2010-11 through 2025-26
+- Player Box Plus/Minus: [Basketball-Reference](https://www.basketball-reference.com), 2007-08 through 2025-26
+- 2026-27 rosters: NBA.com, as of the date above
+
+Raw data files aren't included in this repository. The scripts download and cache them on the first run.
