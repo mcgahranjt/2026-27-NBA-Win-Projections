@@ -5,7 +5,7 @@ NBA Win Projections: 2026-27
 
 A regression model that projects regular-season wins for all 30 NBA teams, built from team and player data going back to 2010-11. This is Version A, a deliberately simple team-level model. It gives a baseline to measure a more detailed player-level version against.
 
-![2026-27 projected wins](output/projections_2026-27.png)
+![2026-27 projected wins](NBA Projections/projections_2026-27.png)
 
 ## Why this approach
 
