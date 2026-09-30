@@ -1,0 +1,626 @@
+﻿TEAM_NAME,player,proj_bpm,proj_min,proj_mpg,rookie
+Atlanta Hawks,Jalen Johnson,2.6,2391.3,35.2,False
+Atlanta Hawks,Nickeil Alexander-Walker,0.1,2269.3,33.4,False
+Atlanta Hawks,Dyson Daniels,1.3,2254.7,33.2,False
+Atlanta Hawks,Onyeka Okongwu,0.3,2110.8,31.0,False
+Atlanta Hawks,CJ McCollum,-1.0,2025.7,29.8,False
+Atlanta Hawks,Luguentz Dort,-1.5,1822.2,26.8,False
+Atlanta Hawks,Jock Landale,-1.0,1506.0,22.1,False
+Atlanta Hawks,Aaron Wiggins,-0.7,1479.3,21.8,False
+Atlanta Hawks,Corey Kispert,-2.5,1266.2,18.6,False
+Atlanta Hawks,Dorian Finney-Smith,-2.7,1139.5,16.8,False
+Atlanta Hawks,Jalen Wilson,-3.8,1081.7,15.9,False
+Atlanta Hawks,Mouhamed Gueye,-1.1,333.4,4.9,False
+Atlanta Hawks,Keshon Gilbert,-1.8,0.0,0.0,False
+Atlanta Hawks,Kobe Johnson,-2.5,0.0,0.0,True
+Atlanta Hawks,Cameron Corhen,-2.5,0.0,0.0,True
+Atlanta Hawks,Isaac McKneely,-2.5,0.0,0.0,True
+Atlanta Hawks,RayJ Dennis,-2.6,0.0,0.0,False
+Atlanta Hawks,Kingston Flemings,-2.5,0.0,0.0,True
+Atlanta Hawks,Henri Veesaar,-2.5,0.0,0.0,True
+Atlanta Hawks,Asa Newell,-0.7,0.0,0.0,False
+Atlanta Hawks,Zuby Ejiofor,-2.5,0.0,0.0,True
+Boston Celtics,Jayson Tatum,3.0,2478.2,36.4,False
+Boston Celtics,Derrick White,2.0,2318.2,34.1,False
+Boston Celtics,Payton Pritchard,1.6,2200.1,32.4,False
+Boston Celtics,Paul George,-0.0,2085.9,30.7,False
+Boston Celtics,Neemias Queta,1.0,1723.3,25.3,False
+Boston Celtics,Sam Hauser,-0.1,1686.1,24.8,False
+Boston Celtics,Mitchell Robinson,1.1,1331.7,19.6,False
+Boston Celtics,Baylor Scheierman,-0.4,1262.0,18.6,False
+Boston Celtics,Devin Carter,-2.1,1252.6,18.4,False
+Boston Celtics,Mike Conley,-1.0,1247.9,18.4,False
+Boston Celtics,Jordan Walsh,-0.2,1212.0,17.8,False
+Boston Celtics,Luka Garza,0.2,882.0,13.0,False
+Boston Celtics,Milos Uzan,-2.5,0.0,0.0,True
+Boston Celtics,Hayden Gray,-1.6,0.0,0.0,False
+Boston Celtics,Tucker DeVries,-2.5,0.0,0.0,True
+Boston Celtics,Chris Cenac Jr.,-2.5,0.0,0.0,True
+Boston Celtics,Ron Harper Jr.,-1.2,0.0,0.0,False
+Boston Celtics,Dillon Mitchell,-2.5,0.0,0.0,True
+Boston Celtics,Hugo González,-0.5,0.0,0.0,False
+Boston Celtics,Gabe McGlothan,-2.5,0.0,0.0,True
+Boston Celtics,Amari Williams,-1.9,0.0,0.0,False
+Brooklyn Nets,Julius Randle,0.4,2246.6,33.0,False
+Brooklyn Nets,Michael Porter Jr.,0.6,2208.7,32.5,False
+Brooklyn Nets,Noah Clowney,-2.3,1833.9,27.0,False
+Brooklyn Nets,Egor Dëmin,-0.5,1710.5,25.2,False
+Brooklyn Nets,Terance Mann,-2.8,1650.3,24.3,False
+Brooklyn Nets,Nolan Traore,-4.2,1509.4,22.2,False
+Brooklyn Nets,Drake Powell,-3.8,1424.8,21.0,False
+Brooklyn Nets,Danny Wolf,-1.5,1416.1,20.8,False
+Brooklyn Nets,Ben Saraf,-4.2,1415.6,20.8,False
+Brooklyn Nets,Keon Ellis,-0.2,1395.9,20.5,False
+Brooklyn Nets,Day'Ron Sharpe,0.3,1272.3,18.7,False
+Brooklyn Nets,Josh Minott,0.8,1157.4,17.0,False
+Brooklyn Nets,Moritz Wagner,-0.8,438.6,6.5,False
+Brooklyn Nets,Mikel Brown Jr.,-2.5,0.0,0.0,True
+Brooklyn Nets,Joshua Jefferson,-2.5,0.0,0.0,True
+Brooklyn Nets,Ben Humrichous,-2.5,0.0,0.0,True
+Brooklyn Nets,Grant Nelson,-1.4,0.0,0.0,False
+Brooklyn Nets,Chaney Johnson,-0.8,0.0,0.0,False
+Brooklyn Nets,Tyler Bilodeau,-2.5,0.0,0.0,True
+Brooklyn Nets,Dain Dainja,-2.5,0.0,0.0,True
+Charlotte Hornets,Kon Knueppel,3.1,2141.6,31.5,False
+Charlotte Hornets,Brandon Miller,0.5,2058.8,30.3,False
+Charlotte Hornets,Grayson Allen,0.1,1956.0,28.8,False
+Charlotte Hornets,Royce O'Neale,-0.5,1929.3,28.4,False
+Charlotte Hornets,Naz Reid,0.5,1772.4,26.1,False
+Charlotte Hornets,Moussa Diabaté,0.3,1768.9,26.0,False
+Charlotte Hornets,Coby White,-1.2,1698.6,25.0,False
+Charlotte Hornets,Dennis Schröder,-2.6,1648.5,24.2,False
+Charlotte Hornets,Sion James,-1.7,1528.3,22.5,False
+Charlotte Hornets,Ryan Kalkbrenner,1.0,1457.6,21.4,False
+Charlotte Hornets,Grant Williams,-1.0,1343.0,19.8,False
+Charlotte Hornets,Tidjane Salaün,-1.6,376.9,5.5,False
+Charlotte Hornets,Jarkel Joiner,-2.5,0.0,0.0,True
+Charlotte Hornets,Michael Ajayi,-2.5,0.0,0.0,True
+Charlotte Hornets,Kylan Boswell,-2.5,0.0,0.0,True
+Charlotte Hornets,Wyatt Fricks,-2.5,0.0,0.0,True
+Charlotte Hornets,Christian Anderson,-2.5,0.0,0.0,True
+Charlotte Hornets,PJ Hall,-1.7,0.0,0.0,False
+Charlotte Hornets,Pat Connaughton,-2.1,0.0,0.0,False
+Charlotte Hornets,Hannes Steinbach,-2.5,0.0,0.0,True
+Charlotte Hornets,Liam McNeeley,-0.6,0.0,0.0,False
+Chicago Bulls,Josh Giddey,2.0,2179.8,32.1,False
+Chicago Bulls,Norman Powell,0.1,2013.0,29.6,False
+Chicago Bulls,Matas Buzelis,-0.7,1985.2,29.2,False
+Chicago Bulls,Nic Claxton,0.1,1892.2,27.8,False
+Chicago Bulls,Tre Jones,0.3,1832.9,27.0,False
+Chicago Bulls,Isaac Okoro,-2.6,1829.5,26.9,False
+Chicago Bulls,Brandon Boston,-2.4,1607.7,23.6,False
+Chicago Bulls,Jalen Smith,-0.6,1404.9,20.7,False
+Chicago Bulls,Patrick Williams,-3.4,1392.1,20.5,False
+Chicago Bulls,Orlando Robinson,-2.3,1190.0,17.5,False
+Chicago Bulls,Buddy Hield,-1.6,1092.0,16.1,False
+Chicago Bulls,Leonard Miller,-1.1,1062.9,15.6,False
+Chicago Bulls,Zach Collins,-1.4,197.8,2.9,False
+Chicago Bulls,Tobe Awaka,-2.5,0.0,0.0,True
+Chicago Bulls,Jaylin Sellers,-2.5,0.0,0.0,True
+Chicago Bulls,Marquel Sutton,-2.5,0.0,0.0,True
+Chicago Bulls,Noa Essengue,-1.1,0.0,0.0,False
+Chicago Bulls,Dailyn Swain,-2.5,0.0,0.0,True
+Chicago Bulls,Caleb Wilson,-2.5,0.0,0.0,True
+Chicago Bulls,Drew Peterson,-2.4,0.0,0.0,False
+Chicago Bulls,Peter Suder,-2.5,0.0,0.0,True
+Cleveland Cavaliers,James Harden,2.4,2368.3,34.8,False
+Cleveland Cavaliers,Donovan Mitchell,3.1,2275.1,33.5,False
+Cleveland Cavaliers,Evan Mobley,2.6,2169.7,31.9,False
+Cleveland Cavaliers,Peyton Watson,-1.3,2012.3,29.6,False
+Cleveland Cavaliers,Jarrett Allen,2.0,1844.5,27.1,False
+Cleveland Cavaliers,Jaylon Tyson,-0.4,1830.8,26.9,False
+Cleveland Cavaliers,Sam Merrill,-0.8,1800.7,26.5,False
+Cleveland Cavaliers,Craig Porter Jr.,0.4,1219.8,17.9,False
+Cleveland Cavaliers,Nae'Qwan Tomlin,-2.1,1066.8,15.7,False
+Cleveland Cavaliers,Thomas Bryant,-0.8,829.6,12.2,False
+Cleveland Cavaliers,Tyrese Proctor,-1.6,741.2,10.9,False
+Cleveland Cavaliers,Zack Austin,-2.5,600.0,8.8,True
+Cleveland Cavaliers,Rashaun Agee,-2.5,600.0,8.8,True
+Cleveland Cavaliers,"Ernest Udeh, Jr.",-2.5,321.2,4.7,True
+Cleveland Cavaliers,Kadary Richmond,-1.2,0.0,0.0,False
+Cleveland Cavaliers,Curtis Jones,-2.1,0.0,0.0,False
+Cleveland Cavaliers,Riley Minix,-1.7,0.0,0.0,False
+Cleveland Cavaliers,Meleek Thomas,-2.5,0.0,0.0,True
+Cleveland Cavaliers,Khalifa Diop,-2.5,0.0,0.0,True
+Cleveland Cavaliers,Tristan Enaruna,-1.7,0.0,0.0,False
+Cleveland Cavaliers,Mario Hezonja,-2.5,0.0,0.0,True
+Dallas Mavericks,Kyrie Irving,2.1,2453.4,36.1,False
+Dallas Mavericks,Cooper Flagg,2.0,2277.0,33.5,False
+Dallas Mavericks,P.J. Washington,-1.7,2108.0,31.0,False
+Dallas Mavericks,Naji Marshall,-1.1,2006.9,29.5,False
+Dallas Mavericks,Max Christie,-1.4,1981.7,29.1,False
+Dallas Mavericks,Santi Aldama,1.0,1894.5,27.9,False
+Dallas Mavericks,Dereck Lively II,0.8,1573.4,23.1,False
+Dallas Mavericks,Zaccharie Risacher,-1.6,1525.4,22.4,False
+Dallas Mavericks,Daniel Gafford,0.6,1477.5,21.7,False
+Dallas Mavericks,Caleb Martin,-2.7,1003.6,14.8,False
+Dallas Mavericks,Dwight Powell,-1.8,975.7,14.3,False
+Dallas Mavericks,Moussa Cisse,-2.1,402.7,5.9,False
+Dallas Mavericks,Tarik Biberovic,-2.5,0.0,0.0,True
+Dallas Mavericks,John Poulakidas,-1.5,0.0,0.0,False
+Dallas Mavericks,Seth Lundy,-2.7,0.0,0.0,False
+Dallas Mavericks,Marcus Sasser,-1.7,0.0,0.0,False
+Dallas Mavericks,Jett Howard,-2.0,0.0,0.0,False
+Dallas Mavericks,Morez Johnson Jr.,-2.5,0.0,0.0,True
+Dallas Mavericks,Tobi Lawal,-2.5,0.0,0.0,True
+Dallas Mavericks,Sergio de Larrea,-2.5,0.0,0.0,True
+Denver Nuggets,Jamal Murray,2.1,2404.5,35.4,False
+Denver Nuggets,Nikola Jokić,10.7,2369.5,34.8,False
+Denver Nuggets,Christian Braun,-0.8,2162.1,31.8,False
+Denver Nuggets,DeMar DeRozan,-0.9,2124.8,31.2,False
+Denver Nuggets,Cameron Johnson,-0.3,2074.0,30.5,False
+Denver Nuggets,Aaron Gordon,0.1,1898.3,27.9,False
+Denver Nuggets,Lonnie Walker IV,-2.1,1621.8,23.8,False
+Denver Nuggets,Spencer Jones,-2.3,1505.6,22.1,False
+Denver Nuggets,Marvin Bagley III,-0.5,1361.1,20.0,False
+Denver Nuggets,Cam Whitmore,-0.7,1146.3,16.9,False
+Denver Nuggets,Julian Strawther,-2.6,1012.0,14.9,False
+Denver Nuggets,Coleman Hawkins,-2.5,0.0,0.0,True
+Denver Nuggets,Dane Goodwin,-2.5,0.0,0.0,True
+Denver Nuggets,Tyus Jones,-1.5,0.0,0.0,False
+Denver Nuggets,Trevon Brazile,-2.5,0.0,0.0,True
+Denver Nuggets,Alpha Diallo,-2.5,0.0,0.0,True
+Denver Nuggets,Bryce Hopkins,-2.5,0.0,0.0,True
+Denver Nuggets,DaRon Holmes II,-1.2,0.0,0.0,False
+Denver Nuggets,Emanuel Miller,-1.8,0.0,0.0,False
+Denver Nuggets,Zeke Nnaji,-2.5,0.0,0.0,False
+Denver Nuggets,KJ Simpson,-3.2,0.0,0.0,False
+Detroit Pistons,Cade Cunningham,3.8,2307.8,33.9,False
+Detroit Pistons,Jalen Duren,3.3,1919.5,28.2,False
+Detroit Pistons,Duncan Robinson,-0.9,1866.0,27.4,False
+Detroit Pistons,John Collins,-0.8,1844.9,27.1,False
+Detroit Pistons,Ausar Thompson,1.6,1766.1,26.0,False
+Detroit Pistons,Taurean Prince,-2.7,1598.0,23.5,False
+Detroit Pistons,Kevin Huerter,-1.5,1526.6,22.4,False
+Detroit Pistons,Isaiah Joe,0.9,1443.3,21.2,False
+Detroit Pistons,Elijah Harkless,-3.5,1425.4,21.0,False
+Detroit Pistons,Daniss Jenkins,-1.1,1374.2,20.2,False
+Detroit Pistons,Ronald Holland II,-1.1,1352.2,19.9,False
+Detroit Pistons,Javonte Green,-0.5,1199.1,17.6,False
+Detroit Pistons,Paul Reed,1.7,57.0,0.8,False
+Detroit Pistons,Ugonna Onyenso,-2.5,0.0,0.0,True
+Detroit Pistons,John Ukomadu,-2.5,0.0,0.0,True
+Detroit Pistons,Brice Williams,-2.5,0.0,0.0,True
+Detroit Pistons,Isaac Jones,-2.2,0.0,0.0,False
+Detroit Pistons,Chaz Lanier,-2.9,0.0,0.0,False
+Detroit Pistons,Ebuka Okorie,-2.5,0.0,0.0,True
+Detroit Pistons,Tolu Smith,-1.8,0.0,0.0,False
+Golden State Warriors,Jimmy Butler III,2.6,2115.2,31.1,False
+Golden State Warriors,Stephen Curry,3.4,2101.7,30.9,False
+Golden State Warriors,Brandin Podziemski,0.4,1934.7,28.5,False
+Golden State Warriors,Draymond Green,-1.3,1869.0,27.5,False
+Golden State Warriors,Moses Moody,-0.4,1745.3,25.7,False
+Golden State Warriors,Kristaps Porziņģis,1.2,1634.1,24.0,False
+Golden State Warriors,De'Anthony Melton,-2.2,1561.2,23.0,False
+Golden State Warriors,Brandon Williams,-0.5,1507.3,22.2,False
+Golden State Warriors,Al Horford,-0.5,1464.3,21.5,False
+Golden State Warriors,Georges Niang,-2.9,1460.7,21.5,False
+Golden State Warriors,Gui Santos,-0.9,1395.0,20.5,False
+Golden State Warriors,Will Richard,-1.4,891.5,13.1,False
+Golden State Warriors,Gary Payton II,-0.0,0.0,0.0,False
+Golden State Warriors,Yaxel Lendeborg,-2.5,0.0,0.0,True
+Golden State Warriors,LJ Cryer,-2.9,0.0,0.0,False
+Golden State Warriors,Dalen Terry,-2.0,0.0,0.0,False
+Golden State Warriors,Alex Toohey,-2.5,0.0,0.0,True
+Golden State Warriors,Miles Kelly,-2.3,0.0,0.0,False
+Golden State Warriors,Charles Bassey,-1.2,0.0,0.0,False
+Golden State Warriors,Malevy Leons,-2.4,0.0,0.0,False
+Golden State Warriors,Graham Ike,-2.5,0.0,0.0,True
+Houston Rockets,Amen Thompson,2.5,2520.0,37.1,False
+Houston Rockets,Kevin Durant,2.6,2475.9,36.4,False
+Houston Rockets,Fred VanVleet,0.6,2392.5,35.2,False
+Houston Rockets,Jabari Smith Jr.,-0.4,2388.8,35.1,False
+Houston Rockets,Alperen Sengun,3.5,2264.8,33.3,False
+Houston Rockets,Marcus Smart,-2.6,1940.2,28.5,False
+Houston Rockets,Reed Sheppard,2.0,1780.4,26.2,False
+Houston Rockets,Tari Eason,-0.3,1755.5,25.8,False
+Houston Rockets,Steven Adams,-1.4,1551.2,22.8,False
+Houston Rockets,Bogdan Bogdanović,-2.4,610.6,9.0,False
+Houston Rockets,Sean Pedulla,-2.2,0.0,0.0,False
+Houston Rockets,Rafael Castro,-2.5,0.0,0.0,True
+Houston Rockets,Quadir Copeland,-2.5,0.0,0.0,True
+Houston Rockets,Bruce Thornton,-2.5,0.0,0.0,True
+Houston Rockets,Julian Phillips,-2.2,0.0,0.0,False
+Houston Rockets,Jae'Sean Tate,-2.7,0.0,0.0,False
+Houston Rockets,Isaiah Crawford,-2.0,0.0,0.0,False
+Houston Rockets,Clint Capela,-1.2,0.0,0.0,False
+Houston Rockets,Oscar Tshiebwe,-1.9,0.0,0.0,False
+Indiana Pacers,Tyrese Haliburton,4.8,2283.1,33.6,False
+Indiana Pacers,Pascal Siakam,0.1,2256.1,33.2,False
+Indiana Pacers,Kelly Oubre Jr.,-2.3,2140.6,31.5,False
+Indiana Pacers,Andrew Nembhard,-1.6,2130.7,31.3,False
+Indiana Pacers,Ivica Zubac,0.4,2048.5,30.1,False
+Indiana Pacers,Aaron Nesmith,-2.3,2017.3,29.7,False
+Indiana Pacers,Jarace Walker,-1.5,1747.4,25.7,False
+Indiana Pacers,Ben Sheppard,-2.4,1454.2,21.4,False
+Indiana Pacers,Jay Huff,-0.1,1425.5,21.0,False
+Indiana Pacers,Johnny Furphy,-1.9,1249.3,18.4,False
+Indiana Pacers,Quenton Jackson,-1.9,927.3,13.6,False
+Indiana Pacers,Keba Keita,-2.5,0.0,0.0,True
+Indiana Pacers,Rienk Mast,-2.5,0.0,0.0,True
+Indiana Pacers,Obi Toppin,0.4,0.0,0.0,False
+Indiana Pacers,Braden Smith,-2.5,0.0,0.0,True
+Indiana Pacers,T.J. McConnell,0.3,0.0,0.0,False
+Indiana Pacers,James Johnson,-3.0,0.0,0.0,False
+Indiana Pacers,Jalen Slawson,-1.6,0.0,0.0,False
+Indiana Pacers,Larry Nance Jr.,-1.9,0.0,0.0,False
+Indiana Pacers,Kobe Brown,-2.5,0.0,0.0,False
+LA Clippers,Brandon Ingram,-0.2,2299.6,33.8,False
+LA Clippers,Bradley Beal,-2.3,2183.7,32.1,False
+LA Clippers,Darius Garland,0.3,2030.9,29.9,False
+LA Clippers,Rui Hachimura,-1.9,1927.0,28.3,False
+LA Clippers,Kris Dunn,-1.2,1849.3,27.2,False
+LA Clippers,Derrick Jones Jr.,-1.2,1836.0,27.0,False
+LA Clippers,Max Strus,-1.0,1731.3,25.5,False
+LA Clippers,Jordan Miller,-0.9,1501.7,22.1,False
+LA Clippers,Brook Lopez,-1.0,1482.4,21.8,False
+LA Clippers,Kobe Sanders,-2.3,1351.0,19.9,False
+LA Clippers,Isaiah Jackson,-1.2,1122.6,16.5,False
+LA Clippers,Jalen Pickett,-2.1,364.5,5.4,False
+LA Clippers,Fletcher Loyer,-2.5,0.0,0.0,True
+LA Clippers,Keaton Wagler,-2.5,0.0,0.0,True
+LA Clippers,Blake Wesley,-2.4,0.0,0.0,False
+LA Clippers,Yuki Kawamura,-2.3,0.0,0.0,False
+LA Clippers,Gradey Dick,-2.6,0.0,0.0,False
+LA Clippers,Nick Martinelli,-2.5,0.0,0.0,True
+LA Clippers,Yanic Konan Niederhäuser,-1.6,0.0,0.0,False
+LA Clippers,Baba Miller,-2.5,0.0,0.0,True
+LA Clippers,Cam Christie,-1.9,0.0,0.0,False
+Los Angeles Lakers,Luka Dončić,6.6,2432.1,35.8,False
+Los Angeles Lakers,Austin Reaves,1.2,2349.3,34.5,False
+Los Angeles Lakers,Walker Kessler,0.4,2040.0,30.0,False
+Los Angeles Lakers,Quentin Grimes,-1.2,2000.1,29.4,False
+Los Angeles Lakers,Jake LaRavia,-1.0,1709.1,25.1,False
+Los Angeles Lakers,Collin Sexton,-0.3,1614.0,23.7,False
+Los Angeles Lakers,Ziaire Williams,-2.0,1555.5,22.9,False
+Los Angeles Lakers,Sandro Mamukelashvili,1.2,1488.4,21.9,False
+Los Angeles Lakers,Jarred Vanderbilt,-1.7,1180.1,17.4,False
+Los Angeles Lakers,Matisse Thybulle,0.6,1088.0,16.0,False
+Los Angeles Lakers,Jaden Hardy,-3.4,1071.3,15.8,False
+Los Angeles Lakers,Kevon Looney,-1.4,997.3,14.7,False
+Los Angeles Lakers,Dalton Knecht,-2.2,154.8,2.3,False
+Los Angeles Lakers,Arthur Kaluma,-2.5,0.0,0.0,True
+Los Angeles Lakers,William Kyle,-2.5,0.0,0.0,True
+Los Angeles Lakers,Adou Thiero,-1.7,0.0,0.0,False
+Los Angeles Lakers,Bronny James,-2.3,0.0,0.0,False
+Los Angeles Lakers,Cole Swider,-3.1,0.0,0.0,False
+Los Angeles Lakers,Chris Mañon,-1.7,0.0,0.0,False
+Los Angeles Lakers,AK Okereke,-2.5,0.0,0.0,True
+Los Angeles Lakers,Cameron Carr,-2.5,0.0,0.0,True
+Memphis Grizzlies,Jerami Grant,-1.3,2022.1,29.7,False
+Memphis Grizzlies,Jaylen Wells,-2.1,1794.6,26.4,False
+Memphis Grizzlies,Cedric Coward,-0.1,1752.6,25.8,False
+Memphis Grizzlies,Cam Spencer,0.9,1618.8,23.8,False
+Memphis Grizzlies,Kris Murray,-2.0,1590.2,23.4,False
+Memphis Grizzlies,Isaiah Stewart,-0.4,1544.1,22.7,False
+Memphis Grizzlies,Jahmai Mashack,-4.5,1476.3,21.7,False
+Memphis Grizzlies,Zach Edey,-0.5,1458.9,21.5,False
+Memphis Grizzlies,GG Jackson,-1.1,1456.4,21.4,False
+Memphis Grizzlies,Scotty Pippen Jr.,-0.3,1448.7,21.3,False
+Memphis Grizzlies,Walter Clayton Jr.,-3.2,1389.6,20.4,False
+Memphis Grizzlies,Javon Small,0.2,1376.6,20.2,False
+Memphis Grizzlies,Ty Jerome,1.9,751.1,11.0,False
+Memphis Grizzlies,Carson Cooper,-2.5,0.0,0.0,True
+Memphis Grizzlies,Micah Peavy,-3.9,0.0,0.0,False
+Memphis Grizzlies,Olivier-Maxence Prosper,-0.8,0.0,0.0,False
+Memphis Grizzlies,Jordan Hawkins,-3.9,0.0,0.0,False
+Memphis Grizzlies,Taylor Hendricks,-1.7,0.0,0.0,False
+Memphis Grizzlies,Cameron Boozer,-2.5,0.0,0.0,True
+Memphis Grizzlies,Karim Lopez,-2.5,0.0,0.0,True
+Memphis Grizzlies,Quinten Post,-1.2,0.0,0.0,False
+Miami Heat,Bam Adebayo,1.2,2203.0,32.4,False
+Miami Heat,Andrew Wiggins,-0.2,2063.0,30.3,False
+Miami Heat,Giannis Antetokounmpo,6.1,1962.6,28.9,False
+Miami Heat,Davion Mitchell,-1.8,1942.9,28.6,False
+Miami Heat,Tim Hardaway Jr.,-2.0,1808.0,26.6,False
+Miami Heat,Pelle Larsson,-1.5,1796.2,26.4,False
+Miami Heat,Bobby Portis Jr.,-0.9,1643.2,24.2,False
+Miami Heat,Klay Thompson,-1.8,1475.3,21.7,False
+Miami Heat,Nikola Jović,-1.3,1169.0,17.2,False
+Miami Heat,Simone Fontecchio,-1.5,1139.5,16.8,False
+Miami Heat,Dru Smith,0.3,1108.4,16.3,False
+Miami Heat,Nick Richards,-3.7,993.1,14.6,False
+Miami Heat,Myron Gardner,-0.6,376.0,5.5,False
+Miami Heat,Ryan Conwell,-2.5,0.0,0.0,True
+Miami Heat,J'Vonne Hadley,-2.5,0.0,0.0,True
+Miami Heat,Keshad Johnson,-1.6,0.0,0.0,False
+Miami Heat,Bez Mbeng,-2.9,0.0,0.0,False
+Miami Heat,Ian Schieffelin,-2.5,0.0,0.0,True
+Miami Heat,Lester Quinones,-2.8,0.0,0.0,False
+Miami Heat,Tre Donaldson,-2.5,0.0,0.0,True
+Miami Heat,Vladislav Goldin,-1.8,0.0,0.0,False
+Milwaukee Bucks,Kevin Porter Jr.,0.3,2256.5,33.2,False
+Milwaukee Bucks,Ryan Rollins,-0.0,2183.4,32.1,False
+Milwaukee Bucks,Tyler Herro,1.3,2128.6,31.3,False
+Milwaukee Bucks,AJ Green,-2.9,1979.0,29.1,False
+Milwaukee Bucks,Jaime Jaquez Jr.,-0.6,1923.0,28.3,False
+Milwaukee Bucks,Myles Turner,-1.0,1831.2,26.9,False
+Milwaukee Bucks,Kyle Kuzma,-3.1,1779.8,26.2,False
+Milwaukee Bucks,Kel'el Ware,1.5,1504.8,22.1,False
+Milwaukee Bucks,Gary Trent Jr.,-3.5,1440.6,21.2,False
+Milwaukee Bucks,Jericho Sims,-2.9,1337.7,19.7,False
+Milwaukee Bucks,Ousmane Dieng,-2.3,1311.1,19.3,False
+Milwaukee Bucks,Caris LeVert,-0.9,4.3,0.1,False
+Milwaukee Bucks,Brayden Burries,-2.5,0.0,0.0,True
+Milwaukee Bucks,Nate Ament,-2.5,0.0,0.0,True
+Milwaukee Bucks,Kam Jones,-4.0,0.0,0.0,False
+Milwaukee Bucks,Bogoljub Marković,-2.5,0.0,0.0,True
+Milwaukee Bucks,Kasparas Jakučionis,0.2,0.0,0.0,False
+Milwaukee Bucks,John Butler Jr.,-2.5,0.0,0.0,True
+Milwaukee Bucks,Cormac Ryan,-1.8,0.0,0.0,False
+Milwaukee Bucks,Pete Nance,-2.3,0.0,0.0,False
+Milwaukee Bucks,Jake Stephens,-2.5,0.0,0.0,True
+Minnesota Timberwolves,Anthony Edwards,3.3,2382.2,35.0,False
+Minnesota Timberwolves,Jaden McDaniels,-0.7,2157.4,31.7,False
+Minnesota Timberwolves,Rudy Gobert,0.3,2129.5,31.3,False
+Minnesota Timberwolves,Donte DiVincenzo,0.3,2068.2,30.4,False
+Minnesota Timberwolves,LaMelo Ball,3.0,1904.9,28.0,False
+Minnesota Timberwolves,Ayo Dosunmu,-0.4,1853.7,27.3,False
+Minnesota Timberwolves,Cody Williams,-4.1,1655.3,24.3,False
+Minnesota Timberwolves,Jonathan Kuminga,-1.2,1567.8,23.1,False
+Minnesota Timberwolves,KJ Martin,-3.0,1442.2,21.2,False
+Minnesota Timberwolves,Trey Lyles,-1.5,1329.4,19.6,False
+Minnesota Timberwolves,Bones Hyland,0.2,1127.3,16.6,False
+Minnesota Timberwolves,Antonio Reeves,-2.1,62.0,0.9,False
+Minnesota Timberwolves,Norchad Omier,-1.5,0.0,0.0,False
+Minnesota Timberwolves,Terrence Shannon Jr,-2.6,0.0,0.0,False
+Minnesota Timberwolves,Jaylen Clark,-1.8,0.0,0.0,False
+Minnesota Timberwolves,Zyon Pullin,-1.9,0.0,0.0,False
+Minnesota Timberwolves,Drew Timme,-2.6,0.0,0.0,False
+Minnesota Timberwolves,Joan Beringer,0.1,0.0,0.0,False
+Minnesota Timberwolves,Enrique Freeman,-2.3,0.0,0.0,False
+Minnesota Timberwolves,Isaiah Evans,-2.5,0.0,0.0,True
+Minnesota Timberwolves,Rocco Zikarsky,-0.5,0.0,0.0,False
+New Orleans Pelicans,Trey Murphy III,1.3,2411.9,35.5,False
+New Orleans Pelicans,Dejounte Murray,-0.9,2219.9,32.6,False
+New Orleans Pelicans,Saddiq Bey,-0.3,2121.2,31.2,False
+New Orleans Pelicans,Bennedict Mathurin,-2.2,2040.0,30.0,False
+New Orleans Pelicans,Zion Williamson,2.4,2019.2,29.7,False
+New Orleans Pelicans,Herbert Jones,-2.6,1928.3,28.4,False
+New Orleans Pelicans,Jeremiah Fears,-1.4,1751.4,25.8,False
+New Orleans Pelicans,Derik Queen,-0.2,1698.3,25.0,False
+New Orleans Pelicans,Jordan Poole,-2.0,1626.8,23.9,False
+New Orleans Pelicans,Bryce McGowens,-2.4,1424.8,21.0,False
+New Orleans Pelicans,Yves Missi,-1.4,438.3,6.4,False
+New Orleans Pelicans,Julian Reese,-2.9,0.0,0.0,False
+New Orleans Pelicans,Kobe Bufkin,-2.5,0.0,0.0,False
+New Orleans Pelicans,DeAndre Jordan,-2.1,0.0,0.0,False
+New Orleans Pelicans,Malik Dia,-2.5,0.0,0.0,True
+New Orleans Pelicans,Trendon Watford,-2.1,0.0,0.0,False
+New Orleans Pelicans,Jaron Pierre Jr.,-2.5,0.0,0.0,True
+New Orleans Pelicans,AJ Johnson,-4.5,0.0,0.0,False
+New Orleans Pelicans,Karlo Matković,-0.7,0.0,0.0,False
+New Orleans Pelicans,Caleb Houstan,-1.6,0.0,0.0,False
+New Orleans Pelicans,Christian Koloko,-2.8,0.0,0.0,False
+New York Knicks,Jalen Brunson,2.2,2380.0,35.0,False
+New York Knicks,OG Anunoby,0.6,2257.2,33.2,False
+New York Knicks,Mikal Bridges,0.5,2232.4,32.8,False
+New York Knicks,Karl-Anthony Towns,2.0,2105.3,31.0,False
+New York Knicks,Josh Hart,1.4,2054.4,30.2,False
+New York Knicks,Miles McBride,-0.1,1791.2,26.3,False
+New York Knicks,Bruce Brown,-2.9,1656.9,24.4,False
+New York Knicks,Landry Shamet,-1.6,1561.3,23.0,False
+New York Knicks,John Konchar,-0.5,1353.9,19.9,False
+New York Knicks,Jose Alvarado,-1.5,1350.1,19.9,False
+New York Knicks,Andre Drummond,-1.9,937.2,13.8,False
+New York Knicks,Jaden Akins,-2.5,0.0,0.0,True
+New York Knicks,Toby Okani,-4.5,0.0,0.0,False
+New York Knicks,Jordan Clarkson,-3.3,0.0,0.0,False
+New York Knicks,Pacôme Dadiet,-1.4,0.0,0.0,False
+New York Knicks,Kevin McCullar Jr.,-2.1,0.0,0.0,False
+New York Knicks,James Wiseman,-2.5,0.0,0.0,False
+New York Knicks,N'Faly Dante,-1.8,0.0,0.0,False
+New York Knicks,Tony Bradley,-2.8,0.0,0.0,False
+New York Knicks,Tyler Kolek,-1.3,0.0,0.0,False
+New York Knicks,Drew Eubanks,-2.4,0.0,0.0,False
+New York Knicks,Ochai Agbaji,-2.5,0.0,0.0,False
+New York Knicks,Mohamed Diawara,-0.8,0.0,0.0,False
+New York Knicks,Tyler Nickel,-2.5,0.0,0.0,True
+Oklahoma City Thunder,Shai Gilgeous-Alexander,8.9,2259.0,33.2,False
+Oklahoma City Thunder,Chet Holmgren,2.8,1968.1,28.9,False
+Oklahoma City Thunder,Jalen Williams,1.9,1928.7,28.4,False
+Oklahoma City Thunder,Cason Wallace,1.0,1806.9,26.6,False
+Oklahoma City Thunder,Ajay Mitchell,0.7,1757.3,25.8,False
+Oklahoma City Thunder,Isaiah Hartenstein,2.0,1645.0,24.2,False
+Oklahoma City Thunder,Jaylin Williams,1.7,1335.9,19.6,False
+Oklahoma City Thunder,Alex Caruso,0.7,1238.6,18.2,False
+Oklahoma City Thunder,Jared McCain,-1.1,1177.3,17.3,False
+Oklahoma City Thunder,Kenrich Williams,-1.0,1038.2,15.3,False
+Oklahoma City Thunder,Robert McCray V,-2.5,600.0,8.8,True
+Oklahoma City Thunder,Josh Dix,-2.5,600.0,8.8,True
+Oklahoma City Thunder,Christoph Tilly,-2.5,600.0,8.8,True
+Oklahoma City Thunder,Andrew Holifield,-2.5,600.0,8.8,True
+Oklahoma City Thunder,Bennett Stirtz,-2.5,600.0,8.8,True
+Oklahoma City Thunder,Thomas Sorber,-2.5,525.0,7.7,True
+Oklahoma City Thunder,Otega Oweh,-2.5,0.0,0.0,True
+Oklahoma City Thunder,Aday Mara,-2.5,0.0,0.0,True
+Oklahoma City Thunder,Zhaire Smith,-2.5,0.0,0.0,True
+Oklahoma City Thunder,Brooks Barnhizer,-2.1,0.0,0.0,False
+Oklahoma City Thunder,Nikola Topić,-2.5,0.0,0.0,False
+Orlando Magic,Paolo Banchero,1.5,2363.0,34.8,False
+Orlando Magic,Desmond Bane,1.1,2285.5,33.6,False
+Orlando Magic,Franz Wagner,1.5,2038.0,30.0,False
+Orlando Magic,Anthony Black,-0.8,2029.4,29.8,False
+Orlando Magic,Wendell Carter Jr.,-1.0,1994.7,29.3,False
+Orlando Magic,Nikola Vučević,0.5,1931.6,28.4,False
+Orlando Magic,Jalen Suggs,1.0,1877.8,27.6,False
+Orlando Magic,Tristan da Silva,-1.2,1677.0,24.7,False
+Orlando Magic,Colin Castleton,-2.7,1129.8,16.6,False
+Orlando Magic,Jevon Carter,-2.2,1112.4,16.4,False
+Orlando Magic,Goga Bitadze,1.1,1032.8,15.2,False
+Orlando Magic,Noah Penda,-0.9,208.1,3.1,False
+Orlando Magic,Jonathan Isaac,-0.9,0.0,0.0,False
+Orlando Magic,JD Davison,-1.6,0.0,0.0,False
+Orlando Magic,Jamal Cain,-2.1,0.0,0.0,False
+Orlando Magic,Jase Richardson,-1.2,0.0,0.0,False
+Orlando Magic,Malaki Branham,-2.3,0.0,0.0,False
+Orlando Magic,Izaiyah Nelson,-2.5,0.0,0.0,True
+Orlando Magic,Alex Morales,-2.8,0.0,0.0,False
+Orlando Magic,Kevin Knox II,-2.4,0.0,0.0,False
+Philadelphia 76ers,Tyrese Maxey,3.3,2520.0,37.1,False
+Philadelphia 76ers,VJ Edgecombe,0.3,2378.2,35.0,False
+Philadelphia 76ers,Jaylen Brown,1.0,2339.8,34.4,False
+Philadelphia 76ers,LeBron James,2.5,2254.2,33.2,False
+Philadelphia 76ers,Joel Embiid,2.5,2149.2,31.6,False
+Philadelphia 76ers,Anfernee Simons,-0.6,1696.3,24.9,False
+Philadelphia 76ers,Dominick Barlow,-0.9,1617.6,23.8,False
+Philadelphia 76ers,Dean Wade,-0.8,1519.1,22.3,False
+Philadelphia 76ers,Kentavious Caldwell-Pope,-2.4,1450.7,21.3,False
+Philadelphia 76ers,Caleb Love,-2.6,1405.8,20.7,False
+Philadelphia 76ers,Adem Bona,-2.1,349.2,5.1,False
+Philadelphia 76ers,Jameer Nelson Jr.,-2.5,0.0,0.0,True
+Philadelphia 76ers,Saint Thomas,-2.5,0.0,0.0,True
+Philadelphia 76ers,Duke Miles,-2.5,0.0,0.0,True
+Philadelphia 76ers,Labaron Philon,-2.5,0.0,0.0,True
+Philadelphia 76ers,Dillon Jones,-2.4,0.0,0.0,False
+Philadelphia 76ers,Justin Edwards,-1.6,0.0,0.0,False
+Philadelphia 76ers,Rayan Rupert,-3.2,0.0,0.0,False
+Philadelphia 76ers,Jabari Walker,-1.9,0.0,0.0,False
+Philadelphia 76ers,Ariel Hukporti,-2.1,0.0,0.0,False
+Philadelphia 76ers,Tacko Fall,-2.5,0.0,0.0,True
+Phoenix Suns,Devin Booker,0.6,2280.1,33.5,False
+Phoenix Suns,Miles Bridges,0.3,2108.0,31.0,False
+Phoenix Suns,Dillon Brooks,-2.5,2066.7,30.4,False
+Phoenix Suns,Collin Gillespie,1.3,1939.7,28.5,False
+Phoenix Suns,Jalen Green,-0.3,1759.5,25.9,False
+Phoenix Suns,Haywood Highsmith,-1.9,1670.6,24.6,False
+Phoenix Suns,Mark Williams,1.3,1604.8,23.6,False
+Phoenix Suns,Jordan Goodwin,0.1,1527.1,22.5,False
+Phoenix Suns,Oso Ighodaro,-0.5,1499.3,22.0,False
+Phoenix Suns,Luke Kennard,-0.6,1465.5,21.6,False
+Phoenix Suns,Ryan Dunn,-1.7,1316.3,19.4,False
+Phoenix Suns,Pat Spencer,-2.5,442.4,6.5,False
+Phoenix Suns,Phillip Wheeler,-2.8,0.0,0.0,False
+Phoenix Suns,Kennedy Chandler,-3.2,0.0,0.0,False
+Phoenix Suns,Khaman Maluach,-1.6,0.0,0.0,False
+Phoenix Suns,Koby Brea,-1.4,0.0,0.0,False
+Phoenix Suns,Jamaree Bouyea,-1.6,0.0,0.0,False
+Phoenix Suns,Koa Peat,-2.5,0.0,0.0,True
+Phoenix Suns,Rasheer Fleming,-2.2,0.0,0.0,False
+Phoenix Suns,CJ Huntley,-2.0,0.0,0.0,False
+Phoenix Suns,Duop Reath,-1.8,0.0,0.0,False
+Portland Trail Blazers,Damian Lillard,2.0,2453.9,36.1,False
+Portland Trail Blazers,Deni Avdija,2.2,2265.6,33.3,False
+Portland Trail Blazers,Toumani Camara,-1.0,2264.7,33.3,False
+Portland Trail Blazers,Jrue Holiday,0.3,2001.5,29.4,False
+Portland Trail Blazers,Shaedon Sharpe,-1.1,2000.6,29.4,False
+Portland Trail Blazers,Ja Morant,-0.3,1934.6,28.4,False
+Portland Trail Blazers,Donovan Clingan,2.1,1849.2,27.2,False
+Portland Trail Blazers,Scoot Henderson,-1.7,1695.5,24.9,False
+Portland Trail Blazers,Vít Krejčí,-1.3,1456.2,21.4,False
+Portland Trail Blazers,Micah Potter,-1.3,1313.7,19.3,False
+Portland Trail Blazers,Sidy Cissoko,-2.5,444.4,6.5,False
+Portland Trail Blazers,Jayson Kent,-1.4,0.0,0.0,False
+Portland Trail Blazers,Lee Hyun-jung,-2.5,0.0,0.0,True
+Portland Trail Blazers,Chris Youngblood,-1.7,0.0,0.0,False
+Portland Trail Blazers,Jaylen Martin,-2.6,0.0,0.0,False
+Portland Trail Blazers,John Tonje,-2.1,0.0,0.0,False
+Portland Trail Blazers,Branden Carlson,-0.8,0.0,0.0,False
+Portland Trail Blazers,Yang Hansen,-3.7,0.0,0.0,False
+Portland Trail Blazers,Jeremy Sochan,-1.3,0.0,0.0,False
+Portland Trail Blazers,Robert Williams III,1.5,0.0,0.0,False
+Sacramento Kings,Domantas Sabonis,2.3,2359.6,34.7,False
+Sacramento Kings,Keegan Murray,-1.9,2344.5,34.5,False
+Sacramento Kings,Zach LaVine,-1.1,2134.2,31.4,False
+Sacramento Kings,Maxime Raynaud,-1.8,1804.8,26.5,False
+Sacramento Kings,Daeqwon Plowden,-3.4,1793.5,26.4,False
+Sacramento Kings,De'Andre Hunter,-2.3,1777.1,26.1,False
+Sacramento Kings,Nique Clifford,-4.0,1706.3,25.1,False
+Sacramento Kings,Precious Achiuwa,-1.8,1625.5,23.9,False
+Sacramento Kings,Malik Monk,-1.3,1496.0,22.0,False
+Sacramento Kings,Ben Simmons,-1.0,1493.3,22.0,False
+Sacramento Kings,Elfrid Payton,-4.6,1145.2,16.8,False
+Sacramento Kings,Sean East II,-2.5,0.0,0.0,True
+Sacramento Kings,Viktor Lakhin,-2.5,0.0,0.0,True
+Sacramento Kings,Jonathan Mogbo,-1.6,0.0,0.0,False
+Sacramento Kings,Darius Acuff Jr.,-2.5,0.0,0.0,True
+Sacramento Kings,Leaky Black,-3.4,0.0,0.0,False
+Sacramento Kings,Tristen Newton,-1.9,0.0,0.0,False
+Sacramento Kings,Adam Flagler,-3.9,0.0,0.0,False
+Sacramento Kings,Dylan Cardwell,-1.8,0.0,0.0,False
+Sacramento Kings,Alex Karaban,-2.5,0.0,0.0,True
+Sacramento Kings,Emanuel Sharp,-2.5,0.0,0.0,True
+San Antonio Spurs,De'Aaron Fox,0.9,2107.1,31.0,False
+San Antonio Spurs,Devin Vassell,-0.4,2074.5,30.5,False
+San Antonio Spurs,Stephon Castle,0.5,2038.0,30.0,False
+San Antonio Spurs,Victor Wembanyama,7.1,1982.6,29.2,False
+San Antonio Spurs,Tobias Harris,-0.2,1884.6,27.7,False
+San Antonio Spurs,Julian Champagnie,0.1,1879.1,27.6,False
+San Antonio Spurs,Harrison Barnes,-1.1,1753.9,25.8,False
+San Antonio Spurs,Keldon Johnson,-0.6,1584.7,23.3,False
+San Antonio Spurs,Dylan Harper,1.8,1535.4,22.6,False
+San Antonio Spurs,Luke Kornet,1.6,1430.0,21.0,False
+San Antonio Spurs,Taelon Peter,-3.0,880.4,12.9,False
+San Antonio Spurs,Carter Bryant,-1.5,529.7,7.8,False
+San Antonio Spurs,Jon Elmore,-2.5,0.0,0.0,True
+San Antonio Spurs,Malik Williams,-3.6,0.0,0.0,False
+San Antonio Spurs,R.J. Davis,-2.5,0.0,0.0,True
+San Antonio Spurs,Jordan McLaughlin,-1.3,0.0,0.0,False
+San Antonio Spurs,Tarris Reed Jr.,-2.5,0.0,0.0,True
+San Antonio Spurs,Maliq Brown,-2.5,0.0,0.0,True
+San Antonio Spurs,Ja'Kobi Gillespie,-2.5,0.0,0.0,True
+San Antonio Spurs,Jayden Quaintance,-2.5,0.0,0.0,True
+San Antonio Spurs,David Jones Garcia,-0.9,0.0,0.0,False
+Toronto Raptors,Scottie Barnes,2.9,2278.9,33.5,False
+Toronto Raptors,Kawhi Leonard,4.4,2181.2,32.1,False
+Toronto Raptors,Immanuel Quickley,1.2,2167.3,31.9,False
+Toronto Raptors,RJ Barrett,-0.2,2059.1,30.3,False
+Toronto Raptors,Jakob Poeltl,0.3,1698.5,25.0,False
+Toronto Raptors,Jamal Shead,-2.3,1535.8,22.6,False
+Toronto Raptors,Collin Murray-Boyles,1.2,1486.5,21.9,False
+Toronto Raptors,Ja'Kobe Walter,-0.5,1392.1,20.5,False
+Toronto Raptors,Kyle Anderson,-0.6,1348.9,19.8,False
+Toronto Raptors,Trey Jemison III,-3.6,701.5,10.3,False
+Toronto Raptors,Trayce Jackson-Davis,-0.4,636.4,9.4,False
+Toronto Raptors,Tyreke Key,-2.5,600.0,8.8,True
+Toronto Raptors,Nate Bittle,-2.5,600.0,8.8,True
+Toronto Raptors,Nimari Burnett,-2.5,600.0,8.8,True
+Toronto Raptors,Jaden Bradley,-2.5,393.9,5.8,True
+Toronto Raptors,Malachi Smith,-1.6,0.0,0.0,False
+Toronto Raptors,Allen Graves,-2.5,0.0,0.0,True
+Toronto Raptors,Chucky Hepburn,-2.0,0.0,0.0,False
+Toronto Raptors,Andre Jackson Jr.,-3.5,0.0,0.0,False
+Toronto Raptors,Alijah Martin,-2.4,0.0,0.0,False
+Toronto Raptors,Jamison Battle,-2.1,0.0,0.0,False
+Utah Jazz,Lauri Markkanen,0.7,2336.3,34.4,False
+Utah Jazz,Keyonte George,-0.6,2249.0,33.1,False
+Utah Jazz,Jaren Jackson Jr.,-0.0,2059.8,30.3,False
+Utah Jazz,Ace Bailey,-2.7,1877.6,27.6,False
+Utah Jazz,Jusuf Nurkić,-0.8,1796.2,26.4,False
+Utah Jazz,Isaiah Collier,-2.3,1748.4,25.7,False
+Utah Jazz,Brice Sensabaugh,-1.7,1597.5,23.5,False
+Utah Jazz,Kyle Filipowski,-0.8,1590.5,23.4,False
+Utah Jazz,Svi Mykhailiuk,-2.3,1572.2,23.1,False
+Utah Jazz,Jaxson Hayes,-0.2,1243.6,18.3,False
+Utah Jazz,Josh Okogie,-1.3,1180.4,17.4,False
+Utah Jazz,Josh Green,-2.4,428.5,6.3,False
+Utah Jazz,Terrell Brown Jr.,-2.5,0.0,0.0,True
+Utah Jazz,Jaelen House,-2.5,0.0,0.0,True
+Utah Jazz,Jonas Aidoo,-2.5,0.0,0.0,True
+Utah Jazz,Blake Hinson,-1.6,0.0,0.0,False
+Utah Jazz,Tamar Bates,-2.5,0.0,0.0,True
+Utah Jazz,Darryn Peterson,-2.5,0.0,0.0,True
+Utah Jazz,Trey Alexander,-1.9,0.0,0.0,False
+Utah Jazz,Mo Bamba,-2.1,0.0,0.0,False
+Utah Jazz,Harrison Ingram,-1.5,0.0,0.0,False
+Washington Wizards,Trae Young,0.1,2450.7,36.0,False
+Washington Wizards,Anthony Davis,1.9,2128.4,31.3,False
+Washington Wizards,Kyshawn George,-1.7,1970.6,29.0,False
+Washington Wizards,Bub Carrington,-3.1,1883.3,27.7,False
+Washington Wizards,Deandre Ayton,-1.2,1849.2,27.2,False
+Washington Wizards,Alex Sarr,-0.1,1848.8,27.2,False
+Washington Wizards,Bilal Coulibaly,-1.9,1782.6,26.2,False
+Washington Wizards,Tre Johnson,-3.0,1635.4,24.0,False
+Washington Wizards,Khris Middleton,-3.0,1553.2,22.8,False
+Washington Wizards,Will Riley,-2.7,1500.6,22.1,False
+Washington Wizards,Jamir Watkins,-2.7,1077.3,15.8,False
+Washington Wizards,Steve Settle III,-2.5,0.0,0.0,True
+Washington Wizards,Tristan Vukcevic,-0.5,0.0,0.0,False
+Washington Wizards,Tre Mann,-3.0,0.0,0.0,False
+Washington Wizards,Trevor Keels,-1.8,0.0,0.0,False
+Washington Wizards,AJ Dybantsa,-2.5,0.0,0.0,True
+Washington Wizards,Chris Livingston,-1.8,0.0,0.0,False
+Washington Wizards,Justin Champagnie,-0.8,0.0,0.0,False
+Washington Wizards,Anthony Gill,-3.1,0.0,0.0,False
+Washington Wizards,Reece Beekman,-3.3,0.0,0.0,False
+Washington Wizards,Felix Okpara,-2.5,0.0,0.0,True
