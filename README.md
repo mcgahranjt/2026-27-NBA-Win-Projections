@@ -1,14 +1,16 @@
-NBA Win Projections: 2026-27
+# NBA Win Projections: 2026-27
 
-LIVE DASHBOARD: https://public.tableau.com/app/profile/jt.mcgahran/viz/026-27NBAProjectionsupdated9_30_26/26-27WinProjections
+**[Live dashboard on Tableau Public](https://public.tableau.com/app/profile/jt.mcgahran/viz/026-27NBAProjectionsupdated9_30_26/26-27WinProjections)**, updated weekly during the season. **[Daily projections site](https://mcgahranjt.github.io/nba-projections-site/)**, updated twice a day.
 
-
-Preseason win projections for all 30 NBA teams, built from two models and a weighted average of both:
+Preseason win projections for all 30 NBA teams, built from two models and a weighted average of both, then run through 10,000 simulated seasons to get win ranges and playoff odds:
 
 - **Version A** works at the team level. It starts from last season's point differential and adjusts for roster turnover and age.
 - **Version B** works at the player level. It projects every player's rating and minutes, then adds them up into a team rating.
 - **The combined model** weights B at 75% and A at 25%. It had the lowest error in backtesting: **6.95 wins per team, 21% better than assuming every team repeats last season.**
+- **Power rankings and a spread calculator** turn the same ratings into a predicted spread for any matchup, updated weekly.
+- **The season simulation** plays out the real 2026-27 schedule, the play-in and the playoffs 10,000 times. During the season it updates from actual results each week.
 
+![2026-27 projected wins](output_ensemble/projections_ensemble_2026-27.png)
 
 ## Results
 
@@ -123,34 +125,230 @@ These are the teams to watch, since one of the two models is going to be clearly
 - **Knicks (A 56, B 45).** A likes their continuity and last season's +6.4 net rating. B rates the individual players more modestly.
 - **Detroit (A 52, B 44).** B thinks last season's 60 wins ran ahead of the roster's talent.
 
+## Season simulation (Version C)
+
+The projections above are single numbers. The simulation turns them into ranges and odds.
+
+1. Each team's projection becomes a rating in points per game: (projected wins − 41) ÷ 2.7.
+2. Every game on the 2026-27 schedule is played out, with the home team winning with probability Φ((home rating − away rating + 2.3) ÷ 12). Here 2.3 is home-court advantage in points and 12 is the typical spread of NBA game margins.
+3. In each simulated season, every team's rating is also shifted by a random amount sized from the backtest error. The ranges reflect how wrong preseason projections actually tend to be, not just game-to-game luck.
+4. Standings set seeds 1–10 in each conference, followed by the play-in and four best-of-seven rounds.
+
+The schedule comes from stats.nba.com. The NBA releases 1,200 games before the season and adds the last 30 after the NBA Cup group stage, so until December the script fills those slots with placeholder games between teams that are short of 82.
+
+**During the season,** each run pulls completed results, blends each team's preseason rating with its actual point differential (the preseason rating counts as much as 25 games), simulates only the remaining games, and saves a dated snapshot. Those snapshots feed the trend chart on the dashboard.
+
+### Preseason odds
+
+| Team | Avg. wins | 80% range | Playoffs | Finals | Title |
+|---|---|---|---|---|---|
+| Oklahoma City Thunder | 57.2 | 48–66 | 98% | 34% | 23.6% |
+| Boston Celtics | 52.0 | 42–62 | 92% | 24% | 11.5% |
+| San Antonio Spurs | 53.0 | 43–62 | 94% | 18% | 11.2% |
+| Houston Rockets | 51.9 | 42–62 | 92% | 16% | 9.3% |
+| Denver Nuggets | 50.8 | 40–61 | 90% | 14% | 7.7% |
+| Cleveland Cavaliers | 48.6 | 38–59 | 85% | 14% | 5.9% |
+| New York Knicks | 46.9 | 36–57 | 79% | 11% | 4.5% |
+
+The full table for all 30 teams is in `output_sim/sim_summary.csv`. The four teams at the top account for more than half of the title odds between them. The East is wide open behind Boston, with five teams averaging between 45 and 49 wins.
+
+## Dashboard
+
+The [Tableau Public dashboard](https://public.tableau.com/app/profile/jt.mcgahran/viz/026-27NBAProjectionsupdated9_30_26/26-27WinProjections) has four views:
+
+- **Playoff odds** by conference, color-coded
+- **Projected win ranges** (10th to 90th percentile) with each team's average
+- **Projection over time,** which fills in with each weekly update
+- **Beating the projection?** A comparison of each team's actual win pace with its preseason projection
+
+Selecting a team in the odds table filters the other views.
+
+## Power rankings and spread predictor
+
+The same ratings that drive the season simulation also predict point spreads. Each team gets **power points**: how many points per game better or worse it is than an average team on a neutral court.
+
+> **Predicted home margin = home power points − away power points + 2.3 (home court) − 1.8 for a team on a back-to-back**
+
+Boston (+4.3) hosting Sacramento (−6.4) works out to Boston by 13.0, with Boston winning about 86% of the time.
+
+### Preseason ratings: what I tested
+
+Before settling on a starting point, I built a separate preseason model from 20 statistics, with ridge-regression weights learned from 2011-2025. It covered offensive and defensive Box Plus/Minus, win shares, shooting, turnovers, rebounding, star power, bench depth, age, roster continuity, last season's Four Factors and opponent three-point "luck." I compared it with several alternatives on the same five test seasons. The winner was chosen using 2015-2020 only, so the test seasons played no part in the choice.
+
+| Preseason option | Average error (wins per team) |
+|---|---|
+| **Combined model (Version A + B)** | **6.95** |
+| Combined + 7-stat model, 50/50 | 6.96 |
+| 7 statistics, redundancy removed | 7.03 |
+| Combined + 20-stat model, 50/50 | 7.05 |
+| BPM only | 7.17 |
+| 20 statistics | 7.21 |
+
+The combined model stayed the most accurate, so it's the preseason starting point. A few findings from the statistics models:
+
+- **Redundant statistics made the model worse.** Many of the 20 measures overlap. Last season's net rating and shooting edge correlate at 0.89, and win shares overlap with offensive BPM at 0.84. Cutting down to 7 non-overlapping measures improved error from 7.21 to 7.03.
+- **Offense and defense mattered about equally,** at roughly 29% of the weight each.
+- **Roster continuity helped and age hurt,** once player quality was measured directly.
+- **Opponent three-point shooting regresses.** Teams whose opponents shot unusually poorly from three tended to fall back the next season.
+- **The statistics models were too extreme at the edges.** Oklahoma City projected to 68 wins against 58.7 in the combined model, and that overconfidence cost accuracy.
+
+### In-season updates
+
+During the season, `nba_power_ratings.py` refits every team's offense, defense and pace from game results:
+
+- **Offense and defense:** a ridge regression on both teams' points per 100 possessions in every game, adjusted for opponent, home court and back-to-backs. Net rating is offense minus defense, and the power rating is net rating at league-average pace.
+- **Pace:** a second ridge regression on each game's possessions (estimated as FGA + 0.44 × FTA − OREB + TOV, averaged across both teams).
+- **Preseason anchor:** each team's net rating starts at its preseason power rating, split into offense and defense using half of last season's balance. Pace starts at 60% of last season's difference from average. The anchor counts as about 20 games for efficiency and 10 for pace, since pace settles faster.
+- **Recency and outliers:** recent games count more (60-day half-life), and single-game efficiencies are capped at 25 points per 100 from average to limit garbage time.
+
+Each run saves the rankings, a team ratings table, the movement since the last run and a dated history for charting. The season simulation reads the same day's ratings instead of keeping its own, so the rankings, workbook and simulation all agree.
+
+### Spread calculator
+
+`NBA_Spread_Calculator.xlsx` has home and away dropdowns and returns:
+- the predicted margin
+- a sportsbook-style line, rounded to the nearest half point
+- each side's win probability
+
+Settings let you adjust home-court advantage (0 for neutral-court games) and back-to-backs. The Power Rankings sheet is overwritten automatically each day, and the dropdowns and formulas stay intact. The same tabs are copied to a Google Sheet after every run (see [Daily updates and the Google Sheet](#daily-updates-and-the-google-sheet)).
+
+Two more sheets are kept up to date by the script:
+- **Team Ratings:** offensive, defensive and net rating per 100 possessions, pace and ranks for every team (replaced each run).
+- **Matchup Projection:** pick two teams to get projected possessions, each team's score, the total, a pace-adjusted line and win probabilities. Optional inputs compare the projection with a sportsbook spread and total. This sheet is created once and never overwritten.
+
+### Still to come
+
+- **Injury adjustments for spreads,** using each missing player's projected contribution from Version B. The player projections already do this; the spread calculator and game projections will share the same function.
+- **Tune the preseason anchor** with the grading script's anchor test after about four weeks of games, and **home court and the back-to-back penalty** once there are roughly 400 games.
+
+![Power rankings](output_power/power_rankings.png)
+
+## Player stat projections
+
+`nba_player_props.py` projects every likely player's stats for a day's games: minutes, points, rebounds, assists, threes, steals, blocks, turnovers, the PRA/P+R/P+A/R+A combos and double-double odds. It's meant for spotting player prop angles by hand: the projections and ranges are read against whatever lines are offered, and the script doesn't pull sportsbook lines itself.
+
+- **Per-minute rates:** each player's last two seasons (last season counts double), pulled toward league average for small samples. This season's games take over as they come in, weighted toward recent ones.
+- **Minutes:** Version B's projected minutes (or last season's) blended with this season's recent minutes. Each team's active players are fit to 240 minutes, so an injured player's minutes go to teammates. When a healthy roster's usual minutes add up to more than 240, half of the cut is shared evenly and half comes off the end of the bench, following Version B's depth chart. On the first four weeks of 2025-26, an even cut left starters about 3 minutes short in games with a large surplus, and the blend lowered their average miss from 5.1 to 4.2 minutes. `backtest_minutes.py` reruns this test and can be pointed at the current season.
+- **Injuries:** players listed as Out (or suspended) in ESPN's public injury feed aren't projected. Players listed as Day-To-Day are projected as playing, with their status shown in the Status column. `data/injury_overrides.csv` marks anyone Out or Active by hand.
+- **Game context comes from the team ratings rather than being estimated again:** pace scales every stat, and points, threes and assists are scaled so each team adds up to its projected score. That accounts for the opponent's defense and lets teammates absorb an injured player's scoring. Out players also lower their team's projected score, using Version B's player ratings, and starters lose some minutes in projected blowouts.
+- **Ranges:** each game is simulated 4,000 times to get medians, 10th–90th percentile ranges and double-double odds. Projections assume the player plays.
+
+Each run writes the day's projections and ranges to `output_props/`, appends them to a history file for grading later, and replaces the Player Projections and Player Ranges sheets in the workbook.
+
+**Not modeled yet:** opponent effects by position (for example, rebounding against a big frontcourt), how much a teammate's absence changes a player's shot volume beyond the team total, and the stat-level spread settings, which are reasonable defaults that should be checked against results once a few weeks of games are in.
+
+## Grading the model
+
+`nba_grade.py` checks the projections against what actually happened:
+
+- **Games:** margin error compared with a "home team by 2.3" baseline, straight-up winner accuracy, Brier score for the win probabilities, and total error and bias. It uses the latest projection made on or before game day; `nba_power_ratings.py` saves projections for the next two weeks of games on every run.
+- **Player projections:** average error for every stat compared with each player's season average so far, plus bias and a range check. About half of results should land under the median and about 10% each below the 10th and above the 90th percentile. Much more often means the ranges are too narrow; much less, too wide.
+- **Preseason anchor test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each anchor size, to see how much the preseason ratings should count. It reports the best setting but doesn't change anything.
+
+Results go to `output_grades/` and the workbook's Model Grades sheet.
+
+## Daily updates and the Google Sheet
+
+During the season the whole routine runs on a schedule, and the results go straight to the Google Sheet I use for the spread calculator, so nothing has to be copied by hand.
+
+- **`run_daily.py`** runs the scripts in order: power ratings, season simulation, player projections, grading, the Google Sheet sync, then the website. If the power ratings fail, the run stops, since everything after them depends on that day's ratings; any other failure is logged and the run continues. A day without games is treated as normal. With `--props`, it runs only the player projections, the sync and the website. Everything the scripts print goes to `logs/<date>.log`, followed by a one-line result for each step.
+- **Schedule:** two macOS launchd jobs, saved in `scheduling/`, start the full run at 11:00 AM Eastern, after the previous night's box scores are posted, and a props run at 5:30 PM, after most injury reports are filed and before the first games tip off. If the Mac is asleep at the scheduled time, the job runs when it wakes; if it is shut down, that run is skipped.
+- **`sync_to_sheets.py`** copies the script-owned tabs from the Excel workbook into the Google Sheet as values only, the same as pasting values:
+
+| Google Sheet tab | What is written |
+|---|---|
+| Power Rankings | A1:J31 only; the Spread Calculator looks up rows 2–31 |
+| Team Ratings | A1:L31, including the league offensive rating and pace in L1:L2, which the Matchup Predictor reads |
+| Player Projections | Replaced each run |
+| Player Ranges | Replaced each run: mean and 10th, 25th, 50th, 75th and 90th percentiles for every stat |
+| Game Projections | The next two weeks of games, with projected home margin, total and home win probability |
+| Model Grades | The grading summary, once there are games to grade |
+
+Power Rankings and Team Ratings are written only if their header rows in the Google Sheet still match the workbook, so a moved or renamed column stops the sync instead of breaking the calculator. The other tabs (Spread Calculator, Matchup Predictor, Win Totals and the history tabs) are never touched.
+
+### Website
+
+**[mcgahranjt.github.io/nba-projections-site](https://mcgahranjt.github.io/nba-projections-site/)** shows the same numbers in an easier format and works on a phone:
+
+- **Tonight:** each game with projected scores, the model line and total, and win probability. Tapping a game opens both teams' projected players.
+- **Players:** search by name or team. Each player's stats are shown as ranges, with the 10th–90th and 25th–75th percentiles and the median, which makes it quick to see where a prop line falls.
+- **Rankings:** power rankings with offense, defense and pace.
+- **Season Odds:** the simulation's average wins, 80% win range, most likely seed and playoff odds by conference, a title race chart, and for each team the chance of every win total and its projected wins over time.
+
+Charts use team colors, switching to a team's secondary color when the primary would be hard to see or too close to the opponent's.
+
+`build_site.py` fills `site_template.html` with data from the output files and writes `site/index.html`. It reads only the local output files and never the Google Sheet. With `--publish`, it copies the page into a local clone of the [nba-projections-site](https://github.com/mcgahranjt/nba-projections-site) repository and pushes it over SSH, and GitHub Pages serves it from the `main` branch. The daily routine publishes after both runs.
+
+### Google Sheet setup
+
+The sync uses a Google Cloud service account, set up once: enable the Google Sheets API in a Cloud project, create a service account, save its JSON key in the project folder as `google_service_account.json` (excluded from the repository by `.gitignore`), and share the Google Sheet with the service account's email address as an editor. The file has to be a native Google Sheet; an uploaded .xlsx file can't be edited through the API.
+
 ## Limitations
 
 - **Projections are compressed.** They run from about 24 to 59 wins, while actual seasons usually range from about 15 to 65. Pulling toward average lowers typical error but misses the true outliers.
 - **BPM is built from box-score stats,** so it tends to undervalue players whose impact doesn't show up there, such as strong defenders and screeners.
-- **Injuries during the season aren't modeled.** Players are assumed to play about 68 games.
+- **The win projections don't model injuries during the season.** Players are assumed to play about 68 games. The player projections handle each day's injury report, and the spreads will once the shared injury adjustment is in place.
 - **The Version B backtest has a small head start.** Historical rosters are built from players who actually appeared for each team, so a player who missed an entire season is left out, which a real preseason projection wouldn't know. The backtest error is probably a few tenths of a win optimistic.
 - **Traded players** are assigned to the team they finished the season with in Version A and the team they started with in Version B.
 
 ## Next steps
 
-- Record preseason sportsbook win totals and compare both against actual results when the season ends.
-- Simulate the full schedule a few thousand times to get a range and playoff odds for each team, not just a single number.
+- Record preseason sportsbook win totals and compare them with the model when the season ends.
 - Test a second player rating alongside BPM to see whether it helps with the defensive blind spot.
 
 ## Running it
 
-All three scripts need to be in the same folder, and they share one `data` folder.
+All the scripts need to be in the same folder, and they share one `data` folder.
 
 ```
 pip install -r requirements.txt
 python3 nba_wins_version_a.py
 python3 nba_wins_version_b.py
 python3 nba_wins_ensemble.py
+python3 nba_season_sim.py
+python3 nba_preseason_power.py
+python3 nba_power_ratings.py
+```
+
+The Google Sheet sync also needs `gspread`. On this Mac it has to be installed from prebuilt packages, because one of its dependencies would otherwise be built from source, which requires Apple's developer tools:
+```
+pip3 install --only-binary=:all: gspread
+```
+
+**During the season** the routine runs on its own (see [Daily updates and the Google Sheet](#daily-updates-and-the-google-sheet)). To turn the schedule on:
+```
+cp scheduling/*.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.nbaprojections.daily.plist ~/Library/LaunchAgents/com.nbaprojections.props.plist
+```
+The same `launchctl` command with `unload` turns it off. After changing a time in `scheduling/`, unload, copy the files again and load. Loading jobs that are already loaded gives "Load failed: 5", which is harmless.
+
+**To run it by hand** (close the Excel workbook first):
+```
+python3 run_daily.py            # full run
+python3 run_daily.py --props    # player projections and the sync only
+```
+
+The scripts can also be run one at a time:
+```
+python3 nba_power_ratings.py
+python3 nba_season_sim.py
+python3 nba_player_props.py     # today, or a date: python3 nba_player_props.py 2026-10-22
+python3 nba_grade.py            # add --tune once there are about four weeks of games
+python3 sync_to_sheets.py       # --dry-run shows what would be written without connecting
+python3 build_site.py           # add --publish to push the website to GitHub Pages
+```
+
+Publishing the website needs git (Apple's Command Line Tools, `xcode-select --install`), an SSH key added to GitHub, and the site repository cloned to `~/Documents/NBAProj/nba-projections-site`. Until that clone exists, `--publish` only builds the page.
+
+**Occasionally, to recheck how minutes are split** (the first run for a season downloads its box scores):
+```
+python3 backtest_minutes.py 2026-27
 ```
 
 - **Version A** pulls team and player stats from NBA.com through `nba_api`. The first run takes about five minutes because of pauses between requests.
 - **Version B** pulls one page per season from Basketball-Reference, 4 seconds apart to stay under their rate limit, plus 2026-27 rosters from NBA.com.
 - **The combined model** uses the cached data from both and doesn't download anything.
+- **The simulation** reads the combined projections and pulls the schedule and completed results from stats.nba.com. During the season it runs daily as part of the routine.
 
 Everything is cached in `./data`, so re-runs finish quickly. To pick up roster moves before opening night, delete `data/rosters_2026.csv` and `data/rosters_named_2026.csv` and run all three again.
 
@@ -158,6 +356,14 @@ Everything is cached in `./data`, so re-runs finish quickly. To pick up roster m
 - `output/`: Version A backtest, projections and chart
 - `output_b/`: Version B backtest, team projections, player-by-player projections and chart
 - `output_ensemble/`: side-by-side backtest of every model, final projections and the chart at the top of this page
+- `output_preseason_power/`: every preseason option compared (`backtest_options.csv`), the redundancy report, learned weights and the chosen preseason power points
+- `output_power/`: current power rankings, team ratings, chart, day-by-day history and game projections (`game_projection_history.csv` keeps every projection for grading)
+- `output_props/`: each day's player projections and ranges, plus `projection_history.csv` and `range_history.csv` for grading
+- `output_grades/`: game and player grades, daily error by stat and the anchor test results
+- `logs/`: one log per day from `run_daily.py`
+- `site/`: the website page built by `build_site.py`
+- `scheduling/`: the two launchd schedule files
+- `output_sim/`: simulated win ranges and playoff odds (`sim_summary.csv`), the chance of each win total (`win_distribution.csv`), the week-by-week history (`tracker_history.csv`) and a range chart
 
 ## Data
 

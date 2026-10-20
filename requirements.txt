@@ -1,7 +1,11 @@
 nba_api
 pandas>=2.2
 numpy
+scipy
 scikit-learn
 matplotlib
 requests
 lxml
+openpyxl
+# Google Sheet sync only; on an Intel Mac install with: pip3 install --only-binary=:all: gspread
+gspread

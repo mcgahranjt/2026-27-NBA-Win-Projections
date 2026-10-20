@@ -1,0 +1,20 @@
+# private or personal
+google_service_account.json
+NBA_Spread_Calculator.xlsx
+claude.md
+CLAUDE.md
+archive_pre_lock/
+
+# downloaded data (the scripts rebuild it)
+data/
+
+# daily output that changes every run
+output_props/
+output_grades/
+logs/
+site/
+
+# system files
+__pycache__/
+~$*.xlsx
+.DS_Store

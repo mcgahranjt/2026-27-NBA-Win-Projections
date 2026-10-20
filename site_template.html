@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NBA Projections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Built by build_site.py from the model's output files. Layout: tabs across the top; game cards that open into both rosters. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#18202b; --muted:#5e6b7a; --line:#dde3ea;
+  --court:#1d4ed8; --court-soft:#dbe5ff; --heat:#5b7fe0; --chip:#fff4d6; --chip-ink:#7a5300;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#171e27; --ink:#e6ebf1; --muted:#93a1b2; --line:#283240;
+  --court:#7ea2ff; --court-soft:#1f2c4d; --heat:#3f5fb8; --chip:#3a2f12; --chip-ink:#f2cf74; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#171e27; --ink:#e6ebf1; --muted:#93a1b2; --line:#283240;
+  --court:#7ea2ff; --court-soft:#1f2c4d; --heat:#3f5fb8; --chip:#3a2f12; --chip-ink:#f2cf74; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 10px;
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.01em;margin:0;line-height:1}
+h2{font-family:var(--display);font-size:24px;margin:0;line-height:1.1}
+.sub{color:var(--muted);font-size:13px}
+nav{display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;max-width:100%;overflow-x:auto;scrollbar-width:none}
+nav button{font:600 13px var(--body);border:0;background:none;color:var(--muted);padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;flex:none}
+@media (max-width:480px){nav{width:100%}nav button{flex:1;padding:7px 4px}.wide{display:none}}
+nav button[aria-selected="true"]{background:var(--court);color:var(--surface)}
+button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible{outline:2px solid var(--court);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.note{font-size:13px;color:var(--muted)}
+.foot{font-size:12px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:12px}
+/* games */
+.game{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.game summary{list-style:none;cursor:pointer;padding:16px;display:grid;grid-template-columns:1fr auto;gap:12px 18px;align-items:center}
+.game summary::-webkit-details-marker{display:none}
+.match{display:flex;flex-direction:column;gap:4px;min-width:0}
+.teamrow{display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.ab{font-family:var(--display);font-weight:700;font-size:26px;width:46px}
+.tname{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.score{font-family:var(--display);font-size:22px;font-weight:600;margin-left:auto}
+.lines{display:flex;gap:18px;text-align:right}
+.lines div{display:flex;flex-direction:column}
+.lines b{font-family:var(--display);font-size:24px;font-weight:700;line-height:1.1}
+.wp{grid-column:1/-1;display:flex;flex-direction:column;gap:4px}
+.wpbar{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px}
+.wplab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.open{grid-column:1/-1;font-size:12px;color:var(--court);font-weight:600}
+details[open] .open .more{display:none} details:not([open]) .open .less{display:none}
+.rosters{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.roster{padding:12px 16px;min-width:0;border-top:3px solid var(--tc)}
+.roster+.roster{border-left:1px solid var(--line)}
+.roster h3{font-family:var(--display);font-size:18px;margin:0 0 6px;display:flex;justify-content:space-between}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;text-align:right;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th.l,td.l{text-align:left}
+th:first-child,td:first-child{padding-left:0}
+td.pn{max-width:160px;overflow:hidden;text-overflow:ellipsis;text-align:left}
+tr.click{cursor:pointer} tr.click:hover td{background:var(--court-soft)}
+.dtd{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;background:var(--chip);color:var(--chip-ink);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:1px}
+@media (max-width:640px){.rosters{grid-template-columns:1fr}.roster+.roster{border-left:0}
+  .game summary{grid-template-columns:1fr}.lines{justify-content:flex-start;text-align:left}}
+/* players */
+.search{display:flex;gap:10px;flex-wrap:wrap}
+input,select{font:500 15px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+input{flex:1;min-width:0}
+.plist{display:flex;flex-wrap:wrap;gap:6px}
+.pl{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pl[aria-pressed="true"]{border-color:var(--court);background:var(--court-soft)}
+.phead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+.phead h2{font-size:30px}
+.rng{display:grid;grid-template-columns:44px 1fr 100px;gap:8px 12px;align-items:center}
+.rng .s{font-family:var(--display);font-size:17px;font-weight:600}
+.track{position:relative;height:24px}
+.track .p1090{position:absolute;top:7px;height:8px;border-radius:4px;opacity:.35}
+.track .p2575{position:absolute;top:4px;height:14px;border-radius:3px}
+.track .med{position:absolute;top:0;height:22px;width:2px;background:var(--ink)}
+.track .tk{position:absolute;top:19px;font-size:10px;color:var(--muted);transform:translateX(-50%)}
+.rng .v{text-align:right;font-size:13px;color:var(--muted)} .rng .v b{color:var(--ink);font-size:15px}
+.legend{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.sw{display:inline-block;width:18px;height:8px;border-radius:3px;vertical-align:middle;margin-right:5px}
+/* rankings + odds */
+.bar{position:relative;height:10px;width:140px;margin-left:auto}
+.bar .zero{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--muted)}
+.bar .fill{position:absolute;top:0;height:10px;border-radius:2px}
+.chg{font-size:12px} .up{color:var(--court)} .down{color:var(--muted)}
+.race{display:flex;flex-direction:column;gap:8px}
+.race .r{display:grid;grid-template-columns:46px 1fr 52px;gap:10px;align-items:center}
+.race .r .ab{font-size:20px;width:auto}
+.race .r .fillbar{height:12px;border-radius:3px}
+.confs{display:grid;grid-template-columns:1fr;gap:12px}
+.wr{position:relative;height:12px;width:150px}
+.wr .band{position:absolute;top:3px;height:6px;border-radius:3px;opacity:.45}
+.wr .mean{position:absolute;top:0;height:12px;width:3px;border-radius:1px}
+.pct{display:inline-block;min-width:38px;text-align:center;border-radius:4px;padding:2px 4px;font-size:12px}
+tr.team{cursor:pointer} tr.team:hover td,tr.team[aria-expanded="true"] td{background:var(--court-soft)}
+.detail td{background:var(--bg);white-space:normal;text-align:left;padding:14px}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.dgrid{grid-template-columns:1fr}}
+svg text{fill:var(--muted);font:11px var(--body)}
+svg .ax{stroke:var(--line)}
+.kv{display:flex;flex-wrap:wrap;gap:18px}
+.kv div{display:flex;flex-direction:column}
+.kv b{font-family:var(--display);font-size:24px;line-height:1.1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>NBA Projections</h1>
+      <div class="sub" id="sub"></div>
+    </div>
+    <nav role="tablist" aria-label="Sections">
+      <button role="tab" id="t-games" aria-selected="true" data-tab="games">Tonight</button>
+      <button role="tab" id="t-players" aria-selected="false" data-tab="players">Players</button>
+      <button role="tab" id="t-rank" aria-selected="false" data-tab="rank">Rankings</button>
+      <button role="tab" id="t-odds" aria-selected="false" data-tab="odds"><span class="wide">Season </span>Odds</button>
+    </nav>
+  </header>
+
+  <section id="games" role="tabpanel" aria-labelledby="t-games"></section>
+
+  <section id="players" role="tabpanel" aria-labelledby="t-players" hidden>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search a player" aria-label="Search a player" autocomplete="off">
+      <select id="tf" aria-label="Filter by team"><option value="">All teams</option></select>
+    </div>
+    <div class="plist" id="plist"></div>
+    <div class="card" id="pcard"></div>
+  </section>
+
+  <section id="rank" role="tabpanel" aria-labelledby="t-rank" hidden>
+    <div class="card"><div class="tbl"><table id="rkt"></table></div>
+      <div class="foot">Rating = points per game better than an average team on a neutral court. Win pace assumes an average schedule. Change = spots moved since the previous day's rankings.</div></div>
+  </section>
+
+  <section id="odds" role="tabpanel" aria-labelledby="t-odds" hidden>
+    <div class="card"><h2>Title race</h2><div class="race" id="race"></div></div>
+    <div class="confs" id="confs"></div>
+    <div class="foot" id="oddsfoot"></div>
+  </section>
+</div>
+
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const f1 = x => (Math.round(x*10)/10).toFixed(1);
+const half = x => Math.round(x*2)/2;
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+
+/* ---------- team colors: primary, secondary ---------- */
+const TEAM = {ATL:["#E03A3E","#C1D32F"],BOS:["#007A33","#BA9653"],BKN:["#000000","#FFFFFF"],CHA:["#1D1160","#00788C"],
+  CHI:["#CE1141","#000000"],CLE:["#860038","#FDBB30"],DAL:["#00538C","#B8C4CA"],DEN:["#0E2240","#FEC524"],
+  DET:["#C8102E","#1D42BA"],GSW:["#1D428A","#FFC72C"],HOU:["#CE1141","#C4CED4"],IND:["#002D62","#FDBB30"],
+  LAC:["#C8102E","#1D428A"],LAL:["#552583","#FDB927"],MEM:["#5D76A9","#12173F"],MIA:["#98002E","#F9A01B"],
+  MIL:["#00471B","#EEE1C6"],MIN:["#0C2340","#78BE20"],NOP:["#0C2340","#C8102E"],NYK:["#006BB6","#F58426"],
+  OKC:["#007AC1","#EF3B24"],ORL:["#0077C0","#C4CED4"],PHI:["#006BB6","#ED174C"],PHX:["#1D1160","#E56020"],
+  POR:["#E03A3E","#000000"],SAC:["#5A2D81","#63727A"],SAS:["#C4CED4","#000000"],TOR:["#CE1141","#A1A1A4"],
+  UTA:["#002B5C","#F9A01B"],WAS:["#002B5C","#E31837"]};
+const rgb = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16));
+const lum = h => { const c = rgb(h).map(v => { v/=255; return v<=.03928 ? v/12.92 : ((v+.055)/1.055)**2.4; });
+  return .2126*c[0] + .7152*c[1] + .0722*c[2]; };
+const contrast = (a,b) => { const [x,y] = [lum(a),lum(b)].sort((p,q)=>q-p); return (x+.05)/(y+.05); };
+const dist = (a,b) => { const p=rgb(a), q=rgb(b); return Math.hypot(p[0]-q[0],p[1]-q[1],p[2]-q[2]); };
+let SURF = "#ffffff";
+/* a team's color that stands out on the current background; alt=true asks for the secondary first */
+function tc(ab, alt){
+  const [p,s] = TEAM[ab] || ["#5e6b7a","#5e6b7a"];
+  const order = alt ? [s,p] : [p,s];
+  const ok = order.find(c => contrast(c,SURF) >= 2);
+  return ok || (contrast(p,SURF) >= contrast(s,SURF) ? p : s);
+}
+/* colors for two teams side by side; the away team switches when they're too close */
+function pair(away, home){
+  const h = tc(home); let a = tc(away);
+  if (dist(a,h) < 90) { const alt = tc(away,true); if (dist(alt,h) > dist(a,h)) a = alt; }
+  return [a,h];
+}
+
+/* ---------- header and tabs ---------- */
+function header(){
+  const d = new Date(D.gameDate+"T12:00:00").toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"});
+  $("#sub").textContent = `${D.gameDate===D.today?"Tonight":"Next games"}: ${d} · updated ${D.built}`;
+}
+function selectTab(name){
+  document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-selected", x.dataset.tab===name));
+  ["games","players","rank","odds"].forEach(id => $("#"+id).hidden = id !== name);
+  try { localStorage.setItem("tab", name); } catch(e) {}
+}
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => selectTab(b.dataset.tab)));
+
+/* ---------- tonight ---------- */
+function line(g){ const m = half(g.margin); if (m===0) return "Pick'em";
+  return m>0 ? `${g.home} -${m.toFixed(1)}` : `${g.away} -${(-m).toFixed(1)}`; }
+const COLS = ["MIN","PTS","REB","AST","3PM","PRA"];
+function rosterTable(ab){
+  const ps = D.players.filter(p => p.Team===ab).sort((a,b)=>b.MIN-a.MIN);
+  if (!ps.length) return `<p class="note">Player projections are posted on game days.</p>`;
+  return `<div class="tbl"><table><thead><tr><th class="l">Player</th>${COLS.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${
+    ps.map(p=>`<tr class="click" tabindex="0" data-p="${esc(p.key)}"><td class="pn">${esc(p.Player)}${p.Status?`<span class="dtd" title="${esc(p.Status)}">DTD</span>`:""}</td>${
+      COLS.map(c=>`<td class="num">${f1(p[c])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+function renderGames(){
+  const open = new Set([...document.querySelectorAll("details.game[open]")].map(d=>d.dataset.g));
+  if (!D.games.length) { $("#games").innerHTML = `<div class="card note">No games scheduled in the next two weeks.</div>`; return; }
+  $("#games").innerHTML = D.games.map((g,i) => {
+    const [ca,ch] = pair(g.away,g.home);
+    const hs = (g.total+g.margin)/2, as = (g.total-g.margin)/2, hw = Math.round(g.hwp*100);
+    const isOpen = open.size ? open.has(g.id) : i===0;
+    return `<details class="game" data-g="${g.id}" ${isOpen?"open":""}><summary>
+      <div class="match">
+        <div class="teamrow"><span class="dot" style="background:${ca}"></span><span class="ab">${g.away}</span><span class="tname">${esc(g.awayName)}</span><span class="score num">${f1(as)}</span></div>
+        <div class="teamrow"><span class="dot" style="background:${ch}"></span><span class="ab">${g.home}</span><span class="tname">@ ${esc(g.homeName)}</span><span class="score num">${f1(hs)}</span></div>
+      </div>
+      <div class="lines"><div><span class="lbl">Model line</span><b>${line(g)}</b></div><div><span class="lbl">Total</span><b class="num">${half(g.total).toFixed(1)}</b></div></div>
+      <div class="wp"><div class="wpbar" role="img" aria-label="Win probability ${g.away} ${100-hw}%, ${g.home} ${hw}%"><span style="width:${100-hw}%;background:${ca}"></span><span style="width:${hw}%;background:${ch}"></span></div>
+        <div class="wplab num"><span>${g.away} ${100-hw}%</span><span>Win probability</span><span>${g.home} ${hw}%</span></div></div>
+      <div class="open"><span class="more">Show projected players ▾</span><span class="less">Hide players ▴</span></div>
+    </summary>
+    <div class="rosters">
+      <div class="roster" style="--tc:${ca}"><h3><span>${g.away}</span><span class="lbl">Away</span></h3>${rosterTable(g.away)}</div>
+      <div class="roster" style="--tc:${ch}"><h3><span>${g.home}</span><span class="lbl">Home</span></h3>${rosterTable(g.home)}</div>
+    </div></details>`; }).join("");
+  document.querySelectorAll("tr.click").forEach(tr => {
+    const go = () => { current = tr.dataset.p; renderPlayers(); selectTab("players"); window.scrollTo(0,0); };
+    tr.addEventListener("click", go);
+    tr.addEventListener("keydown", e => { if (e.key==="Enter") go(); });
+  });
+}
+
+/* ---------- players ---------- */
+const STATS = ["PTS","REB","AST","3PM","STL","BLK","TOV","PRA","P+R","P+A","R+A"];
+let current = D.players.length ? [...D.players].sort((a,b)=>b.PTS-a.PTS)[0].key : null;
+function renderList(){
+  const q = $("#q").value.trim().toLowerCase(), t = $("#tf").value;
+  const ps = D.players.filter(p => (!t||p.Team===t) && (!q||p.Player.toLowerCase().includes(q))).sort((a,b)=>b.MIN-a.MIN);
+  $("#plist").innerHTML = ps.slice(0,40).map(p=>`<button class="pl" aria-pressed="${p.key===current}" data-p="${esc(p.key)}"><span class="dot" style="background:${tc(p.Team)}"></span>${esc(p.Player)} <span class="sub">${p.Team}</span></button>`).join("")
+    || `<span class="note">${D.players.length ? "No projected player matches that search." : "Player projections are posted on game days."}</span>`;
+  document.querySelectorAll(".pl").forEach(b=>b.addEventListener("click",()=>{ current = b.dataset.p; renderPlayers(); }));
+}
+function renderPlayers(){
+  renderList();
+  const p = D.players.find(x=>x.key===current);
+  if (!p) { $("#pcard").hidden = true; return; }
+  $("#pcard").hidden = false;
+  const r = D.ranges[p.key], c = tc(p.Team), ha = p["Home/Away"]==="Home" ? "vs" : "@";
+  const rows = STATS.filter(s => r && r[s]).map(s => {
+    const [mean,p10,p25,med,p75,p90] = r[s];
+    const top = Math.max(1, Math.ceil(p90*1.15)), x = v => (v/top*100).toFixed(2)+"%";
+    return `<div class="s">${s}</div>
+      <div class="track" role="img" aria-label="${s}: 10th percentile ${p10}, median ${med}, 90th percentile ${p90}">
+        <span class="p1090" style="background:${c};left:${x(p10)};width:calc(${x(p90)} - ${x(p10)})"></span>
+        <span class="p2575" style="background:${c};left:${x(p25)};width:calc(${x(p75)} - ${x(p25)})"></span>
+        <span class="med" style="left:${x(med)}"></span>
+        <span class="tk num" style="left:${x(p10)}">${+(+p10).toFixed(1)}</span><span class="tk num" style="left:${x(p90)}">${+(+p90).toFixed(1)}</span>
+      </div>
+      <div class="v num"><b>${f1(mean)}</b> avg · ${+(+med).toFixed(1)} med</div>`; }).join("");
+  $("#pcard").innerHTML = `<div class="phead"><h2>${esc(p.Player)}</h2><span class="sub">${p.Team} ${ha} ${p.Opp} · ${f1(p.MIN)} projected minutes · double-double ${p["DD%"]}%${p.Status?` <span class="dtd">${esc(p.Status)}</span>`:""}</span></div>
+    <div class="legend"><span><span class="sw" style="background:${c};opacity:.35"></span>10th–90th percentile</span><span><span class="sw" style="background:${c}"></span>25th–75th</span><span><span class="sw" style="background:var(--ink);width:2px;height:12px"></span>Median</span></div>
+    <div class="rng">${rows}</div>
+    <div class="foot">A line below the darker band means the model expects the over most nights; above it, the under. Ranges assume he plays.</div>`;
+}
+$("#q").addEventListener("input", renderList); $("#tf").addEventListener("change", renderList);
+[...new Set(D.players.map(p=>p.Team))].sort().forEach(t => $("#tf").insertAdjacentHTML("beforeend", `<option>${t}</option>`));
+
+/* ---------- rankings ---------- */
+function renderRank(){
+  const maxR = Math.max(...D.rank.map(r=>Math.abs(r.rating)), 1);
+  $("#rkt").innerHTML = `<thead><tr><th>#</th><th></th><th class="l">Team</th><th>W-L</th><th>Rating</th><th></th><th>Win pace</th><th>Off</th><th>Def</th><th>Pace</th></tr></thead><tbody>${
+    D.rank.map(r=>{ const w = Math.abs(r.rating)/maxR*50, c = tc(r.ab);
+      const chg = r.chg==null ? "" : r.chg>0 ? `<span class="chg up">▲${r.chg}</span>` : r.chg<0 ? `<span class="chg down">▼${-r.chg}</span>` : `<span class="chg down">–</span>`;
+      return `<tr><td class="num">${r.rank}</td><td>${chg}</td><td class="l"><b>${r.ab}</b> <span class="sub">${esc(r.team)}</span></td>
+      <td class="num">${r.W}-${r.L}</td><td class="num">${r.rating>0?"+":""}${f1(r.rating)}</td>
+      <td><div class="bar"><span class="zero"></span><span class="fill" style="background:${c};${r.rating>=0?`left:50%`:`left:${50-w}%`};width:${w}%"></span></div></td>
+      <td class="num">${f1(r.w82)}</td><td class="num">${f1(r.off)} <span class="sub">#${r.offr}</span></td><td class="num">${f1(r.def)} <span class="sub">#${r.defr}</span></td><td class="num">${f1(r.pace)}</td></tr>`}).join("")}</tbody>`;
+}
+
+/* ---------- season odds ---------- */
+const ODDS = [["top6","Top 6"],["playin","Play-in"],["playoffs","Playoffs"],["r2","2nd rd"],["cf","Conf. finals"],["finals","Finals"],["title","Title"]];
+let openTeam = null;
+const pctChip = v => `<span class="pct num" style="background:color-mix(in srgb, var(--heat) ${Math.round(Math.min(v,100)*.85)}%, transparent)">${v>=99.5?">99":v<0.5&&v>0?"<1":Math.round(v)}%</span>`;
+function distChart(t){
+  const d = D.dist[t.ab] || []; if (!d.length) return "";
+  const W=600,H=170,L=10,R=10,T=14,B=26, lo=Math.min(...d.map(x=>x[0])), hi=Math.max(...d.map(x=>x[0])), top=Math.max(...d.map(x=>x[1]));
+  const n=hi-lo+1, bw=(W-L-R)/n, y=v=>T+(H-T-B)*(1-v/top), c=tc(t.ab);
+  const bars = d.map(([w,p])=>`<rect x="${(L+(w-lo)*bw+1).toFixed(1)}" y="${y(p).toFixed(1)}" width="${Math.max(bw-2,1).toFixed(1)}" height="${(H-B-y(p)).toFixed(1)}" fill="${c}"><title>${w} wins: ${p}%</title></rect>`).join("");
+  const ticks=[]; for(let w=Math.ceil(lo/10)*10; w<=hi; w+=10) ticks.push(`<text x="${(L+(w-lo+.5)*bw).toFixed(1)}" y="${H-8}" text-anchor="middle">${w}</text>`);
+  const mx = L+(t.mean-lo+.5)*bw;
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Chance of each win total for ${t.team}">
+    <line class="ax" x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}"/>${bars}
+    <line x1="${mx.toFixed(1)}" x2="${mx.toFixed(1)}" y1="${T-6}" y2="${H-B}" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="${mx.toFixed(1)}" y="${T-4}" text-anchor="middle" style="fill:var(--ink)">avg ${f1(t.mean)}</text>${ticks.join("")}</svg>`;
+}
+function trendChart(t){
+  const h = D.trend[t.ab] || []; if (!h.length) return "";
+  const W=600,H=170,L=34,R=12,T=12,B=26, vals=h.map(x=>x[1]).concat([t.pre]);
+  const lo=Math.floor(Math.min(...vals)-4), hi=Math.ceil(Math.max(...vals)+4), c=tc(t.ab);
+  const x=i=>h.length===1 ? (L+W-R)/2 : L+(W-L-R)*i/(h.length-1), y=v=>T+(H-T-B)*(hi-v)/(hi-lo);
+  const pts=h.map((p,i)=>`${x(i).toFixed(1)},${y(p[1]).toFixed(1)}`).join(" ");
+  const last=h[h.length-1];
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Projected wins over time for ${t.team}">
+    <line class="ax" x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}"/>
+    <line x1="${L}" x2="${W-R}" y1="${y(t.pre).toFixed(1)}" y2="${y(t.pre).toFixed(1)}" stroke="var(--muted)" stroke-dasharray="4 4"/>
+    <text x="${W-R}" y="${(y(t.pre)-5).toFixed(1)}" text-anchor="end">preseason ${f1(t.pre)}</text>
+    <text x="${L-6}" y="${(y(hi)+4).toFixed(1)}" text-anchor="end">${hi}</text><text x="${L-6}" y="${(y(lo)+4).toFixed(1)}" text-anchor="end">${lo}</text>
+    ${h.length>1?`<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="2.5"/>`:""}
+    <circle cx="${x(h.length-1).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="4.5" fill="${c}"/>
+    <text x="${L}" y="${H-8}">${h[0][0]}</text>${h.length>1?`<text x="${W-R}" y="${H-8}" text-anchor="end">${last[0]}</text>`:""}</svg>
+    ${h.length===1?`<div class="foot">One snapshot so far; the line fills in with each daily run.</div>`:""}`;
+}
+function renderOdds(){
+  const top = [...D.odds].sort((a,b)=>b.title-a.title).slice(0,8), mx = Math.max(...top.map(t=>t.title), 1);
+  $("#race").innerHTML = top.map(t=>`<div class="r"><span class="ab">${t.ab}</span><span class="fillbar" style="width:${(t.title/mx*100).toFixed(1)}%;background:${tc(t.ab)}"></span><span class="num" style="text-align:right">${f1(t.title)}%</span></div>`).join("");
+  const lo = Math.min(...D.odds.map(t=>t.p10))-2, hi = Math.max(...D.odds.map(t=>t.p90))+2, x = v => ((v-lo)/(hi-lo)*100).toFixed(1)+"%";
+  $("#confs").innerHTML = ["East","West"].map(conf => {
+    const ts = D.odds.filter(t=>t.conf===conf).sort((a,b)=>b.mean-a.mean);
+    return `<div class="card"><h2>${conf}</h2><div class="tbl"><table><thead><tr><th class="l">Team</th><th>W-L</th><th>Avg wins</th><th class="l">80% range</th><th>Seed</th>${ODDS.map(o=>`<th>${o[1]}</th>`).join("")}</tr></thead><tbody>${
+      ts.map(t=>{ const c=tc(t.ab), exp=openTeam===t.ab;
+        return `<tr class="team" tabindex="0" data-t="${t.ab}" aria-expanded="${exp}"><td class="l"><b>${t.ab}</b> <span class="sub">${esc(t.short)}</span></td><td class="num">${t.W}-${t.L}</td><td class="num"><b>${f1(t.mean)}</b></td>
+          <td class="l"><div class="wr" title="${t.p10}–${t.p90} wins"><span class="band" style="background:${c};left:${x(t.p10)};width:calc(${x(t.p90)} - ${x(t.p10)})"></span><span class="mean" style="background:${c};left:${x(t.mean)}"></span></div><span class="sub num">${t.p10}–${t.p90}</span></td>
+          <td class="num">${t.seed}</td>${ODDS.map(o=>`<td>${pctChip(t[o[0]])}</td>`).join("")}</tr>
+          ${exp?`<tr class="detail"><td colspan="${5+ODDS.length}">
+            <div class="kv"><div><span class="lbl">Preseason</span><b class="num">${f1(t.pre)}</b></div><div><span class="lbl">Now</span><b class="num">${f1(t.mean)}</b></div>
+              <div><span class="lbl">Change</span><b class="num">${t.mean-t.pre>=0?"+":""}${f1(t.mean-t.pre)}</b></div><div><span class="lbl">Rating</span><b class="num">${t.rating>0?"+":""}${f1(t.rating)}</b></div></div>
+            <div class="dgrid"><div><div class="lbl">Chance of each win total</div>${distChart(t)}</div><div><div class="lbl">Projected wins by date</div>${trendChart(t)}</div></div>
+          </td></tr>`:""}`; }).join("")}</tbody></table></div></div>`; }).join("");
+  document.querySelectorAll("tr.team").forEach(tr => {
+    const go = () => { openTeam = openTeam===tr.dataset.t ? null : tr.dataset.t; renderOdds(); };
+    tr.addEventListener("click", go); tr.addEventListener("keydown", e => { if (e.key==="Enter") go(); });
+  });
+  $("#oddsfoot").textContent = `From ${D.simRuns.toLocaleString()} simulated seasons, run ${D.simAsOf}. Tap a team for its win distribution and trend. The 80% range is the 10th to 90th percentile of wins.`;
+}
+
+/* ---------- render, and re-render when the theme changes ---------- */
+function renderAll(){
+  SURF = getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#ffffff";
+  header(); renderGames(); renderPlayers(); renderRank(); renderOdds();
+}
+renderAll();
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+new MutationObserver(renderAll).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+try { const t = localStorage.getItem("tab"); if (t && $("#"+t)) selectTab(t); } catch(e) {}
+</script>
+</body>
+</html>

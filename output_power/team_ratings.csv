@@ -1,0 +1,31 @@
+﻿rank,TEAM_NAME,conf,off_rtg,def_rtg,net_rtg,pace,off_rank,def_rank,pace_rank,rating
+1,Oklahoma City Thunder,West,116.7,110.1,6.6,100.3,6,1,16,6.6
+2,San Antonio Spurs,West,117.1,112.3,4.8,100.5,3,2,12,4.8
+3,Houston Rockets,West,116.9,112.6,4.3,98.3,5,3,29,4.3
+4,Boston Celtics,East,117.5,113.2,4.3,97.4,2,6,30,4.3
+5,Denver Nuggets,West,118.5,114.8,3.7,99.8,1,18,20,3.7
+6,Cleveland Cavaliers,East,116.9,114.0,2.9,100.5,4,12,13,2.9
+7,Toronto Raptors,East,115.4,113.0,2.4,99.6,11,4,21,2.4
+8,New York Knicks,East,116.3,114.0,2.3,98.7,7,11,25,2.3
+9,Philadelphia 76ers,East,115.7,113.5,2.2,100.3,10,7,15,2.2
+10,Detroit Pistons,East,114.8,113.0,1.8,100.0,14,5,19,1.8
+11,Orlando Magic,East,115.0,113.6,1.4,100.4,13,9,14,1.4
+12,Los Angeles Lakers,West,116.2,114.9,1.3,99.6,8,19,21,1.3
+13,Golden State Warriors,West,115.1,113.8,1.3,100.1,12,10,18,1.3
+14,Portland Trail Blazers,West,114.5,113.6,0.9,101.1,17,8,9,0.9
+15,Charlotte Hornets,East,115.7,115.0,0.7,98.6,9,20,27,0.7
+16,Minnesota Timberwolves,West,114.7,114.1,0.6,101.0,15,13,10,0.6
+17,Miami Heat,East,114.6,114.8,-0.2,102.6,16,17,1,-0.2
+18,Phoenix Suns,West,114.0,114.4,-0.4,99.0,20,15,24,-0.4
+19,Atlanta Hawks,East,114.1,114.6,-0.5,101.6,18,16,5,-0.5
+20,Dallas Mavericks,West,113.4,114.2,-0.8,101.7,24,14,4,-0.8
+21,Indiana Pacers,East,113.4,115.3,-1.9,101.2,23,21,7,-1.9
+22,New Orleans Pelicans,West,114.0,116.3,-2.3,100.9,19,22,11,-2.3
+23,Chicago Bulls,East,113.2,116.4,-3.2,102.0,25,23,3,-3.2
+24,LA Clippers,West,113.6,117.0,-3.4,98.5,22,26,28,-3.4
+25,Milwaukee Bucks,East,113.1,116.9,-3.8,99.1,26,25,23,-3.8
+26,Memphis Grizzlies,West,113.1,117.1,-4.0,101.1,27,27,8,-4.0
+27,Utah Jazz,West,113.7,117.8,-4.1,102.2,21,28,2,-4.1
+28,Brooklyn Nets,East,111.3,116.7,-5.4,98.6,30,24,26,-5.4
+29,Washington Wizards,East,112.4,117.9,-5.5,101.6,28,29,6,-5.5
+30,Sacramento Kings,West,112.2,118.1,-5.9,100.2,29,30,17,-5.9

@@ -1,0 +1,21 @@
+feature,description,weight,share_of_importance_pct
+roster_dbpm,Roster defensive BPM,1.41,18.1
+roster_obpm,Roster offensive BPM,1.29,16.58
+roster_ws48,Roster win shares per 48,0.62,7.93
+continuity,Returning minutes share,0.59,7.56
+star_power,Top-2 player BPM,0.57,7.39
+roster_age,Roster age,-0.56,7.26
+prev_net_x_cont,Last season net rating x continuity,0.48,6.18
+opp3_luck,Opponent 3P% luck last season,-0.43,5.55
+efg_diff_x_cont,Last season shooting edge x continuity,0.3,3.79
+roster_blk,Roster block %,-0.28,3.54
+tov_diff_x_cont,Last season turnover edge x continuity,-0.26,3.3
+oreb_diff_x_cont,Last season rebounding edge x continuity,-0.2,2.58
+roster_tov,Roster turnover %,0.19,2.44
+ftr_diff_x_cont,Last season free-throw edge x continuity,-0.18,2.33
+bench_depth,6th-10th man BPM,0.11,1.47
+roster_orb,Roster offensive rebound %,0.1,1.34
+roster_stl,Roster steal %,0.08,0.99
+roster_ts,Roster true shooting %,-0.07,0.86
+roster_drb,Roster defensive rebound %,-0.03,0.44
+roster_ast,Roster assist %,0.03,0.38

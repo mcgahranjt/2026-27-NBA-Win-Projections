@@ -241,6 +241,27 @@ def update_ratings(teams, played):
     return t
 
 
+def use_power_ratings(teams):
+    """
+    Use today's ratings from nba_power_ratings.py when they exist, so the rankings, the calculator
+    and the simulation all run on one set of numbers. Otherwise keep the simple blend above.
+    """
+    path = os.path.join("output_power", "team_ratings.csv")
+    lv = os.path.join("output_power", "league_levels.csv")
+    today = dt.date.today().isoformat()
+    if not (os.path.exists(path) and os.path.exists(lv)) or pd.read_csv(lv).as_of.iloc[0] != today:
+        print("Ratings: simulator's own blend (run nba_power_ratings.py first to use the power ratings).")
+        return teams
+    pr = pd.read_csv(path, encoding="utf-8-sig").set_index("TEAM_NAME").rating
+    if set(teams.TEAM_NAME) - set(pr.index):
+        print("Power ratings file is missing teams; using the simulator's own blend.")
+        return teams
+    t = teams.copy()
+    t["rating"] = t.TEAM_NAME.map(pr)
+    print("Ratings: today's power ratings (output_power/team_ratings.csv).")
+    return t
+
+
 # ------------------------------------------------------------ simulation
 def p_home_win(r_home, r_away):
     return norm.cdf((r_home - r_away + HOME_COURT) / GAME_SD)
@@ -342,7 +363,7 @@ def main():
     played = sched[sched.home_pts.notna()]
     remaining = sched[sched.home_pts.isna()]
 
-    teams = update_ratings(teams, played)
+    teams = use_power_ratings(update_ratings(teams, played))
     ratings, wins = simulate(teams, remaining, scale, rng)
     odds, seeds = postseason(teams, ratings, wins, rng)
 

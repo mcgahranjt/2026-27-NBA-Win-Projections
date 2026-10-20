@@ -1,0 +1,8 @@
+feature,description,weight,share_of_importance_pct
+roster_obpm,Roster offensive BPM,1.73,29.03
+roster_dbpm,Roster defensive BPM,1.7,28.63
+prev_net_x_cont,Last season net rating x continuity,0.63,10.65
+continuity,Returning minutes share,0.61,10.18
+roster_age,Roster age,-0.54,9.0
+star_power,Top-2 player BPM,0.41,6.93
+opp3_luck,Opponent 3P% luck last season,-0.33,5.56
