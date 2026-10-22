@@ -17,7 +17,8 @@ Player props (from nba_player_props.py's history files vs. box scores):
 Games (from nba_power_ratings.py's game_projection_history.csv vs. final scores), using the latest
 projection made on or before game day:
   - Margin MAE vs. a baseline of "home team by 2.3", straight-up winner accuracy, Brier score for
-    win probabilities (lower is better; 0.25 is a coin flip), and total MAE and bias.
+    win probabilities (lower is better; 0.25 is a coin flip), total MAE and bias, and the share of
+    games that went over the model's projected total (about 50% if the totals don't lean either way).
 
 Preseason anchor test (--tune): replays this season day by day. Each day's games are predicted
 using only earlier games, once for each anchor size, to see how much the preseason ratings should
@@ -153,6 +154,8 @@ def grade_games(sched):
         "brier": ((m.home_win_prob - m.home_won) ** 2).mean(),
         "total_MAE": m.total_err.abs().mean(),
         "total_bias": m.total_err.mean(),
+        # share of games whose actual total went over the model's projected total (about 50% if unbiased)
+        "pct_over_total": 100 * (m.total > m.proj_total).mean(),
     }]).round(3)
     print(f"Games graded: {len(m)}.")
     return g, m
