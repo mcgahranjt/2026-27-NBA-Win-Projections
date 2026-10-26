@@ -76,6 +76,8 @@ TEAM_MINUTES = 240
 MAX_MIN = 42               # hard cap on anyone's projected minutes
 REDIST_CAP = 38            # extra minutes from injuries can't push a player past 38 (or 1 over his norm)
 MIN_TO_SHOW = 6            # players projected under 6 minutes are left out of the output
+NO_SHOW_TEAM_GAMES = 2     # players with no appearances this season are left out once their team has played this many
+                           # games (unless on the injury report, e.g. Day-To-Day, or set Active in the overrides)
 DEPTH_WEIGHT = 0.5         # when a team has more minutes than 240, half the cut comes off the end of the
                            # bench (Version B's depth chart) and half evenly; best on the start of 2025-26
 BLOWOUT_START, BLOWOUT_PER_PT = 10, 0.008   # starters lose 0.8% of minutes per point of margin past 10
@@ -404,6 +406,12 @@ def main():
     players["status"] = players.key.map(inj.status).fillna("")
     players["out"] = players.key.map(inj.out).fillna(False).astype(bool)
     players["bpm"] = players.key.map(vb_bpm) if vb_bpm is not None else np.nan
+    # not in the rotation (or hurt without being listed): no games for anyone this season while his team has played
+    team_games = log.groupby("TEAM_ID").GAME_ID.nunique()
+    no_show = (~players.PLAYER_ID.isin(set(log.PLAYER_ID)) & (players.status == "")
+               & (players.TEAM_ID.map(team_games).fillna(0) >= NO_SHOW_TEAM_GAMES))
+    no_show_list = players[no_show & ~players.out]
+    players = players[~no_show]
 
     rows = []
     for g in games.itertuples():
@@ -476,6 +484,10 @@ def main():
         print("\nNot projected (Out/Doubtful):")
         for r in out_list.itertuples():
             print(f"  {r.PLAYER_NAME} ({ABBR.get(r.TEAM_ID, r.TEAM_ID)}) - {r.status}")
+    if len(no_show_list):
+        print(f"\nNot projected (no games yet while his team has played {NO_SHOW_TEAM_GAMES}+):")
+        for r in no_show_list.itertuples():
+            print(f"  {r.PLAYER_NAME} ({ABBR.get(r.TEAM_ID, r.TEAM_ID)})")
     label = f"Projections for {day_str}"
     print(f"\n{label} (minutes and stats assume the player plays)\n")
     print(table.to_string(index=False))
