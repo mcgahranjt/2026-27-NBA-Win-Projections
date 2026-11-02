@@ -189,7 +189,7 @@ def anchor_test(teams, sched):
                     bp = before[has_poss[before.index]]
                     lg_o, lg_p = lg_o0, lg_p0
                     if len(bp):
-                        w = len(bp) / (len(bp) + 60)
+                        w = len(bp) / (len(bp) + PR.LEAGUE_PRIOR_GAMES)
                         lg_o = w * 100 * (bp.home_pts.sum() + bp.away_pts.sum()) / (2 * bp.poss.sum()) + (1 - w) * lg_o0
                         lg_p = w * bp.poss.mean() + (1 - w) * lg_p0
                     g = before.assign(poss=before.poss.fillna(lg_p))

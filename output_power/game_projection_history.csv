@@ -91,3 +91,1456 @@
 2026-10-19,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,5.78,226.26,0.685
 2026-10-19,0022600156,2026-11-01,Golden State Warriors,LA Clippers,6.91,226.08,0.718
 2026-10-19,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.21,227.55,0.54
+2026-10-20,0022600001,2026-10-20,Detroit Pistons,Boston Celtics,-0.13,222.61,0.496
+2026-10-20,0022600002,2026-10-20,New York Knicks,Philadelphia 76ers,2.4,227.13,0.579
+2026-10-20,0022600003,2026-10-20,San Antonio Spurs,Oklahoma City Thunder,0.49,227.98,0.516
+2026-10-20,0022600004,2026-10-21,Miami Heat,Minnesota Timberwolves,1.47,236.5,0.549
+2026-10-20,0022600005,2026-10-21,Los Angeles Lakers,Golden State Warriors,2.3,229.24,0.576
+2026-10-20,0022600085,2026-10-21,Orlando Magic,Atlanta Hawks,4.23,231.93,0.638
+2026-10-20,0022600086,2026-10-21,Washington Wizards,Milwaukee Bucks,0.6,231.89,0.52
+2026-10-20,0022600087,2026-10-21,Brooklyn Nets,Charlotte Hornets,-3.61,222.44,0.382
+2026-10-20,0022600088,2026-10-21,Toronto Raptors,Chicago Bulls,7.97,231.54,0.747
+2026-10-20,0022600089,2026-10-21,Memphis Grizzlies,Utah Jazz,2.4,239.33,0.579
+2026-10-20,0022600090,2026-10-21,New Orleans Pelicans,Indiana Pacers,1.89,233.69,0.563
+2026-10-20,0022600091,2026-10-21,Houston Rockets,Dallas Mavericks,7.37,227.05,0.731
+2026-10-20,0022600092,2026-10-21,Portland Trail Blazers,Phoenix Suns,3.59,226.44,0.618
+2026-10-20,0022600093,2026-10-21,LA Clippers,Sacramento Kings,4.75,227.51,0.654
+2026-10-20,0022600006,2026-10-22,Philadelphia 76ers,Cleveland Cavaliers,1.6,231.96,0.553
+2026-10-20,0022600007,2026-10-22,Oklahoma City Thunder,Denver Nuggets,5.19,230.36,0.667
+2026-10-20,0022600008,2026-10-23,Boston Celtics,New York Knicks,4.21,221.94,0.637
+2026-10-20,0022600009,2026-10-23,San Antonio Spurs,Houston Rockets,2.79,226.09,0.592
+2026-10-20,0022600094,2026-10-23,Charlotte Hornets,Atlanta Hawks,3.5,229.92,0.615
+2026-10-20,0022600095,2026-10-23,Indiana Pacers,Dallas Mavericks,1.17,232.79,0.539
+2026-10-20,0022600096,2026-10-23,Orlando Magic,Minnesota Timberwolves,3.11,230.67,0.602
+2026-10-20,0022600097,2026-10-23,Washington Wizards,Toronto Raptors,-5.66,231.4,0.319
+2026-10-20,0022600098,2026-10-23,Miami Heat,Detroit Pistons,0.26,233.31,0.509
+2026-10-20,0022600099,2026-10-23,Milwaukee Bucks,Chicago Bulls,1.7,232.04,0.556
+2026-10-20,0022600100,2026-10-23,Utah Jazz,New Orleans Pelicans,0.45,238.94,0.515
+2026-10-20,0022600101,2026-10-23,Golden State Warriors,Memphis Grizzlies,7.64,231.8,0.738
+2026-10-20,0022600102,2026-10-23,Los Angeles Lakers,LA Clippers,6.89,227.04,0.717
+2026-10-20,0022600103,2026-10-23,Sacramento Kings,Portland Trail Blazers,-4.55,231.05,0.352
+2026-10-20,0022600104,2026-10-24,Charlotte Hornets,Miami Heat,3.21,233.05,0.605
+2026-10-20,0022600105,2026-10-24,Cleveland Cavaliers,Brooklyn Nets,10.49,226.96,0.809
+2026-10-20,0022600106,2026-10-24,Philadelphia 76ers,Milwaukee Bucks,10.04,227.74,0.799
+2026-10-20,0022600107,2026-10-24,Atlanta Hawks,Houston Rockets,-2.47,227.94,0.418
+2026-10-20,0022600108,2026-10-24,Chicago Bulls,Washington Wizards,4.67,238.14,0.652
+2026-10-20,0022600109,2026-10-24,Dallas Mavericks,San Antonio Spurs,-3.4,231.91,0.389
+2026-10-20,0022600110,2026-10-24,Denver Nuggets,New Orleans Pelicans,10.12,235.16,0.8
+2026-10-20,0022600111,2026-10-24,Phoenix Suns,Golden State Warriors,2.42,225.08,0.58
+2026-10-20,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-3.18,236.76,0.396
+2026-10-20,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-2.98,226.26,0.402
+2026-10-20,0022600114,2026-10-25,New York Knicks,Orlando Magic,3.19,226.92,0.605
+2026-10-20,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,0.5,228.48,0.517
+2026-10-20,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,12.13,224.5,0.844
+2026-10-20,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,0.9,227.72,0.53
+2026-10-20,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,0.38,233.26,0.513
+2026-10-20,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,8.49,231.56,0.76
+2026-10-20,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,6.42,233.19,0.704
+2026-10-20,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,9.73,228.84,0.791
+2026-10-20,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,2.92,236.84,0.596
+2026-10-20,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,2.2,229.3,0.573
+2026-10-20,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,7.42,223.49,0.732
+2026-10-20,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,7.07,227.94,0.722
+2026-10-20,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,2.2,239.33,0.573
+2026-10-20,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,4.69,231.96,0.652
+2026-10-20,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.78,219.58,0.792
+2026-10-20,0022600129,2026-10-27,New York Knicks,Detroit Pistons,2.79,225.2,0.592
+2026-10-20,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,13.03,231.06,0.861
+2026-10-20,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.7,230.62,0.589
+2026-10-20,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,1.99,237.77,0.566
+2026-10-20,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.84,236.14,0.817
+2026-10-20,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,1.58,225.47,0.552
+2026-10-20,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-1.84,231.22,0.439
+2026-10-20,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,3.3,227.05,0.608
+2026-10-20,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-1.42,231.44,0.453
+2026-10-20,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-5.55,223.48,0.322
+2026-10-20,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,1.6,230.17,0.553
+2026-10-20,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.72,235.16,0.378
+2026-10-20,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.0,237.11,0.338
+2026-10-20,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-5.21,228.89,0.332
+2026-10-20,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.49,227.04,0.484
+2026-10-20,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,-1.16,234.47,0.462
+2026-10-20,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,4.12,232.86,0.634
+2026-10-20,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.28,233.16,0.728
+2026-10-20,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-3.89,231.56,0.373
+2026-10-20,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,9.73,228.84,0.791
+2026-10-20,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-4.77,222.78,0.345
+2026-10-20,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.2,227.13,0.573
+2026-10-20,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,3.3,227.05,0.608
+2026-10-20,0022600020,2026-10-30,Miami Heat,Indiana Pacers,4.06,236.83,0.632
+2026-10-20,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-2.77,227.05,0.409
+2026-10-20,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,6.26,228.03,0.699
+2026-10-20,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,2.3,229.24,0.576
+2026-10-20,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.73,228.75,0.443
+2026-10-20,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-2.84,237.09,0.406
+2026-10-20,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,0.82,227.41,0.527
+2026-10-20,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,0.46,234.63,0.515
+2026-10-20,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,4.22,233.26,0.637
+2026-10-20,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.34,230.0,0.359
+2026-10-20,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,8.34,231.55,0.757
+2026-10-20,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.76,223.14,0.442
+2026-10-20,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-0.53,224.33,0.483
+2026-10-20,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,5.78,226.26,0.685
+2026-10-20,0022600156,2026-11-01,Golden State Warriors,LA Clippers,6.91,226.08,0.718
+2026-10-20,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.21,227.55,0.54
+2026-10-20,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.41,229.62,0.453
+2026-10-20,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,1.22,225.47,0.54
+2026-10-20,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-0.93,233.7,0.469
+2026-10-20,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.56,222.17,0.832
+2026-10-20,0022600162,2026-11-02,Orlando Magic,Washington Wizards,7.51,233.6,0.734
+2026-10-20,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,7.8,233.96,0.742
+2026-10-20,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,7.47,232.01,0.733
+2026-10-20,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,0.57,234.99,0.519
+2026-10-20,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,6.68,228.97,0.711
+2026-10-20,0022600167,2026-11-02,Houston Rockets,Boston Celtics,4.1,220.25,0.634
+2026-10-20,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,11.4,237.11,0.829
+2026-10-20,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,5.11,233.36,0.665
+2026-10-20,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.18,225.08,0.572
+2026-10-20,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.36,224.4,0.39
+2026-10-20,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,2.03,235.62,0.567
+2026-10-21,0022600004,2026-10-21,Miami Heat,Minnesota Timberwolves,1.47,236.38,0.549
+2026-10-21,0022600005,2026-10-21,Los Angeles Lakers,Golden State Warriors,2.3,229.14,0.576
+2026-10-21,0022600085,2026-10-21,Orlando Magic,Atlanta Hawks,4.23,231.82,0.638
+2026-10-21,0022600086,2026-10-21,Washington Wizards,Milwaukee Bucks,0.59,231.78,0.52
+2026-10-21,0022600087,2026-10-21,Brooklyn Nets,Charlotte Hornets,-3.62,222.35,0.381
+2026-10-21,0022600088,2026-10-21,Toronto Raptors,Chicago Bulls,7.98,231.43,0.747
+2026-10-21,0022600089,2026-10-21,Memphis Grizzlies,Utah Jazz,2.4,239.22,0.579
+2026-10-21,0022600090,2026-10-21,New Orleans Pelicans,Indiana Pacers,1.89,233.57,0.563
+2026-10-21,0022600091,2026-10-21,Houston Rockets,Dallas Mavericks,7.39,226.95,0.731
+2026-10-21,0022600092,2026-10-21,Portland Trail Blazers,Phoenix Suns,3.6,226.33,0.618
+2026-10-21,0022600093,2026-10-21,LA Clippers,Sacramento Kings,4.76,227.42,0.654
+2026-10-21,0022600006,2026-10-22,Philadelphia 76ers,Cleveland Cavaliers,1.95,231.69,0.565
+2026-10-21,0022600007,2026-10-22,Oklahoma City Thunder,Denver Nuggets,5.73,230.61,0.684
+2026-10-21,0022600008,2026-10-23,Boston Celtics,New York Knicks,4.23,222.62,0.638
+2026-10-21,0022600009,2026-10-23,San Antonio Spurs,Houston Rockets,2.28,226.35,0.575
+2026-10-21,0022600094,2026-10-23,Charlotte Hornets,Atlanta Hawks,3.5,229.82,0.615
+2026-10-21,0022600095,2026-10-23,Indiana Pacers,Dallas Mavericks,1.17,232.67,0.539
+2026-10-21,0022600096,2026-10-23,Orlando Magic,Minnesota Timberwolves,3.11,230.55,0.602
+2026-10-21,0022600097,2026-10-23,Washington Wizards,Toronto Raptors,-5.68,231.29,0.318
+2026-10-21,0022600098,2026-10-23,Miami Heat,Detroit Pistons,-0.13,234.03,0.496
+2026-10-21,0022600099,2026-10-23,Milwaukee Bucks,Chicago Bulls,1.69,231.93,0.556
+2026-10-21,0022600100,2026-10-23,Utah Jazz,New Orleans Pelicans,0.45,238.83,0.515
+2026-10-21,0022600101,2026-10-23,Golden State Warriors,Memphis Grizzlies,7.65,231.69,0.738
+2026-10-21,0022600102,2026-10-23,Los Angeles Lakers,LA Clippers,6.9,226.96,0.717
+2026-10-21,0022600103,2026-10-23,Sacramento Kings,Portland Trail Blazers,-4.57,230.94,0.352
+2026-10-21,0022600104,2026-10-24,Charlotte Hornets,Miami Heat,3.21,232.95,0.605
+2026-10-21,0022600105,2026-10-24,Cleveland Cavaliers,Brooklyn Nets,10.51,226.87,0.81
+2026-10-21,0022600106,2026-10-24,Philadelphia 76ers,Milwaukee Bucks,10.45,227.49,0.808
+2026-10-21,0022600107,2026-10-24,Atlanta Hawks,Houston Rockets,-2.48,227.84,0.418
+2026-10-21,0022600108,2026-10-24,Chicago Bulls,Washington Wizards,4.68,238.02,0.652
+2026-10-21,0022600109,2026-10-24,Dallas Mavericks,San Antonio Spurs,-2.91,232.1,0.404
+2026-10-21,0022600110,2026-10-24,Denver Nuggets,New Orleans Pelicans,10.13,235.06,0.801
+2026-10-21,0022600111,2026-10-24,Phoenix Suns,Golden State Warriors,2.42,224.98,0.58
+2026-10-21,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-3.19,236.65,0.395
+2026-10-21,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-2.99,226.15,0.402
+2026-10-21,0022600114,2026-10-25,New York Knicks,Orlando Magic,2.84,226.68,0.594
+2026-10-21,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,0.49,228.38,0.516
+2026-10-21,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,12.73,224.76,0.856
+2026-10-21,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,0.89,228.27,0.53
+2026-10-21,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,0.38,233.15,0.513
+2026-10-21,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,8.5,231.46,0.761
+2026-10-21,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,6.43,233.08,0.704
+2026-10-21,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,9.4,229.59,0.783
+2026-10-21,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,2.92,236.71,0.596
+2026-10-21,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,2.2,229.2,0.573
+2026-10-21,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,7.99,223.71,0.747
+2026-10-21,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,7.08,227.84,0.723
+2026-10-21,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,2.2,239.22,0.573
+2026-10-21,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,4.69,231.86,0.652
+2026-10-21,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.48,220.34,0.785
+2026-10-21,0022600129,2026-10-27,New York Knicks,Detroit Pistons,2.08,225.8,0.569
+2026-10-21,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,12.59,231.3,0.853
+2026-10-21,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.7,230.52,0.589
+2026-10-21,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,1.99,237.64,0.566
+2026-10-21,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.86,236.03,0.817
+2026-10-21,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,1.95,226.22,0.564
+2026-10-21,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-2.24,230.92,0.426
+2026-10-21,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,3.3,226.95,0.608
+2026-10-21,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-1.11,231.17,0.463
+2026-10-21,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-5.57,223.39,0.321
+2026-10-21,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,1.59,230.06,0.553
+2026-10-21,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.73,235.06,0.378
+2026-10-21,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-4.54,237.33,0.352
+2026-10-21,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-5.8,229.07,0.314
+2026-10-21,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.5,226.96,0.483
+2026-10-21,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,-1.16,234.36,0.461
+2026-10-21,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,4.13,232.76,0.635
+2026-10-21,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.3,233.04,0.728
+2026-10-21,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-3.9,231.46,0.373
+2026-10-21,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,9.4,229.59,0.783
+2026-10-21,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-5.17,223.52,0.333
+2026-10-21,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.91,226.73,0.596
+2026-10-21,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,3.3,226.95,0.608
+2026-10-21,0022600020,2026-10-30,Miami Heat,Indiana Pacers,4.06,236.71,0.632
+2026-10-21,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-2.79,226.95,0.408
+2026-10-21,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,6.27,227.94,0.699
+2026-10-21,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,2.3,229.14,0.576
+2026-10-21,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.74,228.66,0.442
+2026-10-21,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-2.85,236.97,0.406
+2026-10-21,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,0.46,227.18,0.515
+2026-10-21,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,0.46,234.51,0.515
+2026-10-21,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,4.22,233.15,0.637
+2026-10-21,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.36,229.91,0.358
+2026-10-21,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,7.85,231.76,0.744
+2026-10-21,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-2.29,223.39,0.424
+2026-10-21,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-0.18,225.09,0.494
+2026-10-21,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,5.79,226.15,0.685
+2026-10-21,0022600156,2026-11-01,Golden State Warriors,LA Clippers,6.92,225.99,0.718
+2026-10-21,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.21,227.45,0.54
+2026-10-21,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.97,229.84,0.435
+2026-10-21,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,0.85,226.22,0.528
+2026-10-21,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-0.94,233.58,0.469
+2026-10-21,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.29,221.96,0.827
+2026-10-21,0022600162,2026-11-02,Orlando Magic,Washington Wizards,7.52,233.49,0.735
+2026-10-21,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,8.21,233.65,0.753
+2026-10-21,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,7.48,231.89,0.734
+2026-10-21,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,0.57,234.88,0.519
+2026-10-21,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,6.69,228.87,0.712
+2026-10-21,0022600167,2026-11-02,Houston Rockets,Boston Celtics,4.45,221.03,0.645
+2026-10-21,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,10.94,237.33,0.819
+2026-10-21,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,5.12,233.26,0.665
+2026-10-21,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.18,224.98,0.572
+2026-10-21,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.38,224.31,0.389
+2026-10-21,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,2.03,235.5,0.567
+2026-10-22,0022600006,2026-10-22,Philadelphia 76ers,Cleveland Cavaliers,1.94,232.28,0.564
+2026-10-22,0022600007,2026-10-22,Oklahoma City Thunder,Denver Nuggets,5.75,231.21,0.684
+2026-10-22,0022600008,2026-10-23,Boston Celtics,New York Knicks,4.24,223.17,0.638
+2026-10-22,0022600009,2026-10-23,San Antonio Spurs,Houston Rockets,1.82,227.45,0.56
+2026-10-22,0022600094,2026-10-23,Charlotte Hornets,Atlanta Hawks,3.19,232.56,0.605
+2026-10-22,0022600095,2026-10-23,Indiana Pacers,Dallas Mavericks,1.86,234.55,0.562
+2026-10-22,0022600096,2026-10-23,Orlando Magic,Minnesota Timberwolves,1.52,233.57,0.55
+2026-10-22,0022600097,2026-10-23,Washington Wizards,Toronto Raptors,-6.42,233.86,0.296
+2026-10-22,0022600098,2026-10-23,Miami Heat,Detroit Pistons,-1.29,235.0,0.457
+2026-10-22,0022600099,2026-10-23,Milwaukee Bucks,Chicago Bulls,2.28,234.52,0.575
+2026-10-22,0022600100,2026-10-23,Utah Jazz,New Orleans Pelicans,-0.15,239.64,0.495
+2026-10-22,0022600101,2026-10-23,Golden State Warriors,Memphis Grizzlies,6.04,232.09,0.693
+2026-10-22,0022600102,2026-10-23,Los Angeles Lakers,LA Clippers,6.94,227.89,0.718
+2026-10-22,0022600103,2026-10-23,Sacramento Kings,Portland Trail Blazers,-7.0,230.75,0.28
+2026-10-22,0022600104,2026-10-24,Charlotte Hornets,Miami Heat,4.48,234.13,0.646
+2026-10-22,0022600105,2026-10-24,Cleveland Cavaliers,Brooklyn Nets,10.74,227.66,0.815
+2026-10-22,0022600106,2026-10-24,Philadelphia 76ers,Milwaukee Bucks,11.0,228.9,0.82
+2026-10-22,0022600107,2026-10-24,Atlanta Hawks,Houston Rockets,-2.57,230.97,0.415
+2026-10-22,0022600108,2026-10-24,Chicago Bulls,Washington Wizards,3.07,240.57,0.601
+2026-10-22,0022600109,2026-10-24,Dallas Mavericks,San Antonio Spurs,-3.44,233.17,0.387
+2026-10-22,0022600110,2026-10-24,Denver Nuggets,New Orleans Pelicans,10.4,236.52,0.807
+2026-10-22,0022600111,2026-10-24,Phoenix Suns,Golden State Warriors,1.84,225.31,0.561
+2026-10-22,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-4.91,237.08,0.341
+2026-10-22,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-3.38,227.64,0.389
+2026-10-22,0022600114,2026-10-25,New York Knicks,Orlando Magic,3.32,229.23,0.609
+2026-10-22,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,0.48,230.53,0.516
+2026-10-22,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,11.94,225.2,0.84
+2026-10-22,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,0.89,228.76,0.53
+2026-10-22,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,-1.32,233.08,0.456
+2026-10-22,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,8.22,233.08,0.753
+2026-10-22,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,5.33,234.17,0.672
+2026-10-22,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,10.6,231.32,0.811
+2026-10-22,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,2.27,238.26,0.575
+2026-10-22,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,1.46,231.43,0.549
+2026-10-22,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,9.47,223.6,0.785
+2026-10-22,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,7.17,230.97,0.725
+2026-10-22,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,0.61,238.67,0.52
+2026-10-22,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,5.58,232.91,0.679
+2026-10-22,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.72,221.1,0.791
+2026-10-22,0022600129,2026-10-27,New York Knicks,Detroit Pistons,2.09,226.31,0.569
+2026-10-22,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,13.59,231.73,0.871
+2026-10-22,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.13,230.83,0.57
+2026-10-22,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,3.63,240.64,0.619
+2026-10-22,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.43,237.52,0.808
+2026-10-22,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,1.83,226.94,0.561
+2026-10-22,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-2.07,232.22,0.432
+2026-10-22,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,4.89,230.64,0.658
+2026-10-22,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-2.29,232.84,0.424
+2026-10-22,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-6.6,225.4,0.291
+2026-10-22,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,3.59,231.47,0.618
+2026-10-22,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-4.0,236.52,0.369
+2026-10-22,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.4,237.3,0.326
+2026-10-22,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-6.34,230.12,0.299
+2026-10-22,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.54,227.89,0.482
+2026-10-22,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,-0.74,236.99,0.475
+2026-10-22,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,4.87,234.03,0.658
+2026-10-22,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,8.02,232.4,0.748
+2026-10-22,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-3.62,233.08,0.381
+2026-10-22,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,10.6,231.32,0.811
+2026-10-22,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-5.39,224.2,0.327
+2026-10-22,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.91,227.25,0.596
+2026-10-22,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,4.89,230.64,0.658
+2026-10-22,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.72,238.49,0.59
+2026-10-22,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.78,228.62,0.377
+2026-10-22,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,6.54,228.9,0.707
+2026-10-22,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,0.56,230.51,0.519
+2026-10-22,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-3.19,228.69,0.395
+2026-10-22,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.16,236.31,0.333
+2026-10-22,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,0.57,227.88,0.519
+2026-10-22,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-0.27,237.87,0.491
+2026-10-22,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,5.92,233.08,0.689
+2026-10-22,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.92,231.42,0.341
+2026-10-22,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,6.77,232.74,0.714
+2026-10-22,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.83,224.47,0.439
+2026-10-22,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-0.68,227.67,0.477
+2026-10-22,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.18,227.64,0.697
+2026-10-22,0022600156,2026-11-01,Golden State Warriors,LA Clippers,5.24,226.89,0.669
+2026-10-22,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,0.98,229.59,0.533
+2026-10-22,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.99,230.41,0.434
+2026-10-22,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,0.97,226.94,0.532
+2026-10-22,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-1.22,236.92,0.459
+2026-10-22,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.5,222.67,0.831
+2026-10-22,0022600162,2026-11-02,Orlando Magic,Washington Wizards,6.66,236.93,0.711
+2026-10-22,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,9.42,235.28,0.784
+2026-10-22,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,7.95,232.89,0.746
+2026-10-22,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,1.55,235.69,0.551
+2026-10-22,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,8.36,230.78,0.757
+2026-10-22,0022600167,2026-11-02,Houston Rockets,Boston Celtics,4.91,222.15,0.659
+2026-10-22,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,11.8,237.3,0.837
+2026-10-22,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.69,233.25,0.621
+2026-10-22,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.76,225.31,0.591
+2026-10-22,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.68,225.98,0.38
+2026-10-22,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.08,236.93,0.633
+2026-10-22,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,1.91,228.76,0.563
+2026-10-22,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-2.9,239.64,0.405
+2026-10-22,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,10.33,224.77,0.805
+2026-10-22,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-3.98,223.29,0.37
+2026-10-22,0022600177,2026-11-04,New York Knicks,Chicago Bulls,8.69,232.84,0.765
+2026-10-22,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,0.71,234.76,0.524
+2026-10-22,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.75,239.64,0.654
+2026-10-22,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,6.59,230.41,0.709
+2026-10-22,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.38,228.17,0.673
+2026-10-22,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.53,231.99,0.583
+2026-10-22,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.88,225.62,0.438
+2026-10-22,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,8.04,233.17,0.749
+2026-10-22,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-6.72,231.48,0.288
+2026-10-22,0022600186,2026-11-04,LA Clippers,Miami Heat,1.05,233.28,0.535
+2026-10-23,0022600008,2026-10-23,Boston Celtics,New York Knicks,4.23,222.71,0.638
+2026-10-23,0022600009,2026-10-23,San Antonio Spurs,Houston Rockets,1.84,227.22,0.561
+2026-10-23,0022600094,2026-10-23,Charlotte Hornets,Atlanta Hawks,3.19,232.15,0.605
+2026-10-23,0022600095,2026-10-23,Indiana Pacers,Dallas Mavericks,1.86,234.14,0.561
+2026-10-23,0022600096,2026-10-23,Orlando Magic,Minnesota Timberwolves,1.54,233.15,0.551
+2026-10-23,0022600097,2026-10-23,Washington Wizards,Toronto Raptors,-6.44,233.42,0.296
+2026-10-23,0022600098,2026-10-23,Miami Heat,Detroit Pistons,-1.28,234.58,0.458
+2026-10-23,0022600099,2026-10-23,Milwaukee Bucks,Chicago Bulls,2.29,234.08,0.576
+2026-10-23,0022600100,2026-10-23,Utah Jazz,New Orleans Pelicans,-0.15,239.24,0.495
+2026-10-23,0022600101,2026-10-23,Golden State Warriors,Memphis Grizzlies,6.06,231.71,0.693
+2026-10-23,0022600102,2026-10-23,Los Angeles Lakers,LA Clippers,6.94,227.51,0.719
+2026-10-23,0022600103,2026-10-23,Sacramento Kings,Portland Trail Blazers,-7.0,230.35,0.28
+2026-10-23,0022600104,2026-10-24,Charlotte Hornets,Miami Heat,4.47,233.74,0.645
+2026-10-23,0022600105,2026-10-24,Cleveland Cavaliers,Brooklyn Nets,10.57,227.72,0.811
+2026-10-23,0022600106,2026-10-24,Philadelphia 76ers,Milwaukee Bucks,11.28,228.88,0.826
+2026-10-23,0022600107,2026-10-24,Atlanta Hawks,Houston Rockets,-2.58,230.56,0.415
+2026-10-23,0022600108,2026-10-24,Chicago Bulls,Washington Wizards,3.07,240.12,0.601
+2026-10-23,0022600109,2026-10-24,Dallas Mavericks,San Antonio Spurs,-3.46,232.93,0.387
+2026-10-23,0022600110,2026-10-24,Denver Nuggets,New Orleans Pelicans,10.09,233.29,0.8
+2026-10-23,0022600111,2026-10-24,Phoenix Suns,Golden State Warriors,1.82,224.91,0.56
+2026-10-23,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-4.89,236.69,0.342
+2026-10-23,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-3.38,227.24,0.389
+2026-10-23,0022600114,2026-10-25,New York Knicks,Orlando Magic,3.33,228.74,0.609
+2026-10-23,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,0.46,230.1,0.515
+2026-10-23,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,12.17,222.22,0.845
+2026-10-23,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,1.14,228.72,0.538
+2026-10-23,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,-1.3,232.7,0.457
+2026-10-23,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,8.23,232.68,0.754
+2026-10-23,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,5.1,234.2,0.665
+2026-10-23,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,10.61,230.89,0.812
+2026-10-23,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,2.28,237.84,0.575
+2026-10-23,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,1.47,231.02,0.549
+2026-10-23,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,9.7,220.62,0.791
+2026-10-23,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,7.18,230.56,0.725
+2026-10-23,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,0.63,238.29,0.521
+2026-10-23,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,5.28,229.71,0.67
+2026-10-23,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.72,220.72,0.791
+2026-10-23,0022600129,2026-10-27,New York Knicks,Detroit Pistons,2.1,225.83,0.57
+2026-10-23,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,13.61,231.5,0.872
+2026-10-23,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.11,230.43,0.57
+2026-10-23,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,3.61,240.2,0.618
+2026-10-23,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.25,237.56,0.804
+2026-10-23,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,1.83,226.55,0.561
+2026-10-23,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-2.34,232.16,0.423
+2026-10-23,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,4.89,230.19,0.658
+2026-10-23,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-2.31,232.33,0.424
+2026-10-23,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-6.6,225.02,0.291
+2026-10-23,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,3.57,231.07,0.617
+2026-10-23,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.69,233.29,0.379
+2026-10-23,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.41,237.07,0.326
+2026-10-23,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-6.57,227.08,0.292
+2026-10-23,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.54,227.51,0.482
+2026-10-23,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,-0.52,236.99,0.483
+2026-10-23,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,4.86,233.63,0.657
+2026-10-23,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,8.03,231.99,0.748
+2026-10-23,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-3.63,232.68,0.381
+2026-10-23,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,10.61,230.89,0.812
+2026-10-23,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-5.38,223.8,0.327
+2026-10-23,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,3.13,227.15,0.603
+2026-10-23,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,4.89,230.19,0.658
+2026-10-23,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.73,238.07,0.59
+2026-10-23,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.77,228.22,0.377
+2026-10-23,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,6.54,228.52,0.707
+2026-10-23,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,0.58,230.12,0.519
+2026-10-23,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-2.9,225.52,0.405
+2026-10-23,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.17,235.9,0.333
+2026-10-23,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,0.32,227.88,0.511
+2026-10-23,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-0.26,237.45,0.491
+2026-10-23,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,5.9,232.7,0.689
+2026-10-23,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.73,231.5,0.347
+2026-10-23,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,6.8,232.5,0.715
+2026-10-23,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-2.08,221.5,0.431
+2026-10-23,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-0.68,227.26,0.477
+2026-10-23,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.18,227.24,0.697
+2026-10-23,0022600156,2026-11-01,Golden State Warriors,LA Clippers,5.26,226.51,0.67
+2026-10-23,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,0.96,229.17,0.532
+2026-10-23,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.53,227.8,0.417
+2026-10-23,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,0.97,226.55,0.532
+2026-10-23,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-1.22,236.49,0.459
+2026-10-23,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.51,222.21,0.831
+2026-10-23,0022600162,2026-11-02,Orlando Magic,Washington Wizards,6.67,236.5,0.711
+2026-10-23,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,9.72,235.17,0.791
+2026-10-23,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,7.95,232.49,0.746
+2026-10-23,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,1.54,235.3,0.551
+2026-10-23,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,8.35,230.38,0.757
+2026-10-23,0022600167,2026-11-02,Houston Rockets,Boston Celtics,4.9,221.78,0.658
+2026-10-23,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,11.81,237.07,0.838
+2026-10-23,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.4,230.03,0.611
+2026-10-23,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.78,224.91,0.592
+2026-10-23,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.7,225.57,0.379
+2026-10-23,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.06,236.52,0.632
+2026-10-23,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,1.66,228.72,0.555
+2026-10-23,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-2.9,239.21,0.404
+2026-10-23,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,10.33,224.39,0.805
+2026-10-23,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-3.98,222.92,0.37
+2026-10-23,0022600177,2026-11-04,New York Knicks,Chicago Bulls,8.71,232.33,0.766
+2026-10-23,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,0.7,234.36,0.523
+2026-10-23,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.75,239.24,0.654
+2026-10-23,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.13,227.8,0.724
+2026-10-23,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.39,227.78,0.673
+2026-10-23,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.24,228.77,0.574
+2026-10-23,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.9,225.21,0.437
+2026-10-23,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,8.06,232.93,0.749
+2026-10-23,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-6.7,231.1,0.288
+2026-10-23,0022600186,2026-11-04,LA Clippers,Miami Heat,1.03,232.88,0.534
+2026-10-23,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-2.3,226.99,0.424
+2026-10-23,0022600188,2026-11-05,Golden State Warriors,Miami Heat,5.9,235.42,0.688
+2026-10-24,0022600104,2026-10-24,Charlotte Hornets,Miami Heat,3.3,233.81,0.608
+2026-10-24,0022600105,2026-10-24,Cleveland Cavaliers,Brooklyn Nets,10.67,227.81,0.813
+2026-10-24,0022600106,2026-10-24,Philadelphia 76ers,Milwaukee Bucks,11.71,230.62,0.835
+2026-10-24,0022600107,2026-10-24,Atlanta Hawks,Houston Rockets,-1.18,230.19,0.461
+2026-10-24,0022600108,2026-10-24,Chicago Bulls,Washington Wizards,3.6,241.43,0.618
+2026-10-24,0022600109,2026-10-24,Dallas Mavericks,San Antonio Spurs,-2.46,232.76,0.419
+2026-10-24,0022600110,2026-10-24,Denver Nuggets,New Orleans Pelicans,10.17,233.36,0.802
+2026-10-24,0022600111,2026-10-24,Phoenix Suns,Golden State Warriors,2.19,224.16,0.572
+2026-10-24,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-4.88,238.01,0.342
+2026-10-24,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-2.72,227.12,0.41
+2026-10-24,0022600114,2026-10-25,New York Knicks,Orlando Magic,4.28,226.85,0.639
+2026-10-24,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,1.31,228.49,0.543
+2026-10-24,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,12.3,223.32,0.847
+2026-10-24,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,0.49,229.3,0.516
+2026-10-24,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,-1.73,233.22,0.443
+2026-10-24,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,6.65,231.93,0.71
+2026-10-24,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,4.09,232.95,0.634
+2026-10-24,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,10.34,231.81,0.806
+2026-10-24,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,0.88,238.21,0.529
+2026-10-24,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,1.83,232.54,0.561
+2026-10-24,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,9.74,220.56,0.791
+2026-10-24,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,5.78,230.19,0.685
+2026-10-24,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,0.3,237.75,0.51
+2026-10-24,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,5.65,229.08,0.681
+2026-10-24,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.83,220.08,0.794
+2026-10-24,0022600129,2026-10-27,New York Knicks,Detroit Pistons,1.48,225.69,0.549
+2026-10-24,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,13.46,232.61,0.869
+2026-10-24,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.08,232.85,0.569
+2026-10-24,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,6.01,240.29,0.692
+2026-10-24,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.46,237.28,0.808
+2026-10-24,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,4.21,226.61,0.637
+2026-10-24,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-3.12,232.03,0.397
+2026-10-24,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,6.01,228.63,0.692
+2026-10-24,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-2.01,233.28,0.434
+2026-10-24,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-7.32,226.79,0.271
+2026-10-24,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,4.95,229.1,0.66
+2026-10-24,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.77,233.36,0.377
+2026-10-24,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.12,237.13,0.335
+2026-10-24,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-5.83,226.91,0.313
+2026-10-24,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.65,229.9,0.478
+2026-10-24,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,1.22,236.57,0.541
+2026-10-24,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,4.83,234.76,0.656
+2026-10-24,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.7,232.58,0.74
+2026-10-24,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-2.05,231.93,0.432
+2026-10-24,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,10.34,231.81,0.806
+2026-10-24,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-6.14,224.39,0.304
+2026-10-24,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,3.11,226.54,0.602
+2026-10-24,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,6.01,228.63,0.692
+2026-10-24,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.9,238.42,0.596
+2026-10-24,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.32,228.14,0.391
+2026-10-24,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,7.6,228.37,0.737
+2026-10-24,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,0.18,230.67,0.506
+2026-10-24,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-2.9,225.52,0.404
+2026-10-24,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.17,237.15,0.333
+2026-10-24,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-1.44,227.47,0.452
+2026-10-24,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-2.1,237.01,0.431
+2026-10-24,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,6.33,233.22,0.701
+2026-10-24,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-5.17,233.23,0.333
+2026-10-24,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,5.55,231.22,0.678
+2026-10-24,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.83,221.57,0.44
+2026-10-24,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-1.63,225.34,0.446
+2026-10-24,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,5.52,227.12,0.677
+2026-10-24,0022600156,2026-11-01,Golden State Warriors,LA Clippers,4.95,226.94,0.66
+2026-10-24,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,0.8,230.1,0.527
+2026-10-24,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.54,227.83,0.416
+2026-10-24,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.41,226.61,0.453
+2026-10-24,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-3.76,235.84,0.377
+2026-10-24,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.61,221.61,0.833
+2026-10-24,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.88,234.95,0.688
+2026-10-24,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,9.41,236.85,0.783
+2026-10-24,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,8.79,233.43,0.768
+2026-10-24,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,2.01,234.72,0.566
+2026-10-24,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,9.76,230.79,0.792
+2026-10-24,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.14,221.14,0.666
+2026-10-24,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,11.52,237.13,0.832
+2026-10-24,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.35,231.27,0.61
+2026-10-24,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.41,224.16,0.58
+2026-10-24,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.96,226.38,0.371
+2026-10-24,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.7,238.33,0.652
+2026-10-24,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,2.31,229.3,0.576
+2026-10-24,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-4.86,238.43,0.343
+2026-10-24,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,10.77,225.38,0.815
+2026-10-24,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.37,222.53,0.422
+2026-10-24,0022600177,2026-11-04,New York Knicks,Chicago Bulls,8.41,233.28,0.758
+2026-10-24,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.86,233.58,0.561
+2026-10-24,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.6,239.31,0.649
+2026-10-24,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.14,227.83,0.724
+2026-10-24,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.69,226.59,0.652
+2026-10-24,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.07,228.53,0.569
+2026-10-24,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.96,226.31,0.435
+2026-10-24,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.06,232.76,0.722
+2026-10-24,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-6.83,233.46,0.285
+2026-10-24,0022600186,2026-11-04,LA Clippers,Miami Heat,1.57,234.55,0.552
+2026-10-24,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.37,225.72,0.454
+2026-10-24,0022600188,2026-11-05,Golden State Warriors,Miami Heat,6.11,235.26,0.695
+2026-10-24,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,9.46,238.43,0.785
+2026-10-24,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-2.44,222.24,0.419
+2026-10-24,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.17,232.75,0.572
+2026-10-24,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,6.78,237.96,0.714
+2026-10-24,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-8.17,226.74,0.248
+2026-10-24,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.12,228.8,0.305
+2026-10-24,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.11,233.38,0.398
+2026-10-24,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.08,232.85,0.569
+2026-10-24,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-8.86,232.61,0.23
+2026-10-25,0022600112,2026-10-25,Utah Jazz,Los Angeles Lakers,-4.86,238.55,0.343
+2026-10-25,0022600113,2026-10-25,Brooklyn Nets,Indiana Pacers,-2.44,229.25,0.419
+2026-10-25,0022600114,2026-10-25,New York Knicks,Orlando Magic,4.28,227.57,0.639
+2026-10-25,0022600115,2026-10-25,Minnesota Timberwolves,Toronto Raptors,1.3,229.27,0.543
+2026-10-25,0022600116,2026-10-25,Oklahoma City Thunder,LA Clippers,12.33,223.94,0.848
+2026-10-25,0022600117,2026-10-25,Philadelphia 76ers,Detroit Pistons,0.43,231.01,0.514
+2026-10-25,0022600118,2026-10-25,Sacramento Kings,Memphis Grizzlies,-1.71,233.97,0.443
+2026-10-25,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,6.46,232.46,0.705
+2026-10-25,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,3.82,235.2,0.625
+2026-10-25,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,10.66,232.81,0.813
+2026-10-25,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,1.38,238.48,0.546
+2026-10-25,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,1.88,234.13,0.562
+2026-10-25,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,9.48,222.7,0.785
+2026-10-25,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,6.28,231.44,0.7
+2026-10-25,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,0.33,238.33,0.511
+2026-10-25,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,5.78,234.21,0.685
+2026-10-25,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,9.64,222.43,0.789
+2026-10-25,0022600129,2026-10-27,New York Knicks,Detroit Pistons,1.5,226.43,0.55
+2026-10-25,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,14.06,233.27,0.879
+2026-10-25,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.07,233.48,0.568
+2026-10-25,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,5.81,240.95,0.686
+2026-10-25,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,9.93,239.72,0.796
+2026-10-25,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,4.11,226.95,0.634
+2026-10-25,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-3.1,233.55,0.398
+2026-10-25,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,6.01,229.38,0.692
+2026-10-25,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-2.32,234.2,0.423
+2026-10-25,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-7.57,228.79,0.264
+2026-10-25,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,5.21,231.32,0.668
+2026-10-25,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.53,239.77,0.384
+2026-10-25,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.71,237.61,0.317
+2026-10-25,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-6.41,227.38,0.297
+2026-10-25,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.65,230.62,0.478
+2026-10-25,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,1.25,239.04,0.541
+2026-10-25,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,5.06,238.19,0.663
+2026-10-25,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.74,233.24,0.74
+2026-10-25,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.86,232.46,0.438
+2026-10-25,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,10.66,232.81,0.813
+2026-10-25,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-5.91,226.71,0.311
+2026-10-25,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,3.05,228.18,0.6
+2026-10-25,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,6.01,229.38,0.692
+2026-10-25,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.86,238.66,0.594
+2026-10-25,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-4.11,229.01,0.366
+2026-10-25,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,7.6,229.2,0.737
+2026-10-25,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,-0.08,232.78,0.497
+2026-10-25,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-2.5,230.79,0.418
+2026-10-25,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.17,237.68,0.333
+2026-10-25,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-1.3,228.7,0.457
+2026-10-25,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.68,240.67,0.444
+2026-10-25,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,6.31,233.97,0.7
+2026-10-25,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.91,236.46,0.341
+2026-10-25,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,6.15,231.9,0.696
+2026-10-25,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.61,222.39,0.447
+2026-10-25,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-1.64,226.14,0.446
+2026-10-25,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,5.24,229.25,0.669
+2026-10-25,0022600156,2026-11-01,Golden State Warriors,LA Clippers,4.7,229.13,0.652
+2026-10-25,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,0.79,230.77,0.526
+2026-10-25,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.89,229.84,0.405
+2026-10-25,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.31,226.95,0.456
+2026-10-25,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-3.51,236.69,0.385
+2026-10-25,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.39,223.87,0.829
+2026-10-25,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.6,235.93,0.68
+2026-10-25,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,9.69,238.73,0.79
+2026-10-25,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,8.26,234.09,0.754
+2026-10-25,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,1.79,238.09,0.559
+2026-10-25,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,9.74,232.6,0.791
+2026-10-25,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.37,222.16,0.673
+2026-10-25,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.11,237.61,0.844
+2026-10-25,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.18,234.91,0.605
+2026-10-25,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,1.85,227.89,0.561
+2026-10-25,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-3.97,227.15,0.37
+2026-10-25,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.74,238.67,0.654
+2026-10-25,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,2.37,231.01,0.578
+2026-10-25,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-4.31,239.66,0.36
+2026-10-25,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,10.79,227.19,0.816
+2026-10-25,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.21,224.38,0.427
+2026-10-25,0022600177,2026-11-04,New York Knicks,Chicago Bulls,8.72,234.2,0.766
+2026-10-25,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.84,234.14,0.561
+2026-10-25,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.8,242.58,0.655
+2026-10-25,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.49,229.84,0.734
+2026-10-25,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.95,227.62,0.66
+2026-10-25,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.9,232.2,0.563
+2026-10-25,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.67,228.58,0.445
+2026-10-25,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,8.2,233.26,0.753
+2026-10-25,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-6.82,234.18,0.285
+2026-10-25,0022600186,2026-11-04,LA Clippers,Miami Heat,1.61,234.99,0.553
+2026-10-25,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.08,228.05,0.464
+2026-10-25,0022600188,2026-11-05,Golden State Warriors,Miami Heat,5.9,237.12,0.689
+2026-10-25,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.91,239.66,0.771
+2026-10-25,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-2.37,222.59,0.422
+2026-10-25,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,1.94,235.88,0.564
+2026-10-25,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,6.22,238.43,0.698
+2026-10-25,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-8.22,227.3,0.247
+2026-10-25,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.12,230.53,0.305
+2026-10-25,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-2.96,236.81,0.403
+2026-10-25,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.07,233.48,0.568
+2026-10-25,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-9.46,233.27,0.215
+2026-10-25,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-3.54,235.81,0.384
+2026-10-25,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,7.41,231.53,0.732
+2026-10-25,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,0.9,231.29,0.53
+2026-10-25,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,15.02,230.46,0.895
+2026-10-25,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,2.08,231.42,0.569
+2026-10-25,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-4.43,224.16,0.356
+2026-10-25,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.04,232.53,0.499
+2026-10-26,0022600119,2026-10-26,Charlotte Hornets,Washington Wizards,6.48,232.17,0.705
+2026-10-26,0022600120,2026-10-26,Cleveland Cavaliers,Minnesota Timberwolves,2.84,234.19,0.593
+2026-10-26,0022600121,2026-10-26,Boston Celtics,Chicago Bulls,10.71,232.61,0.814
+2026-10-26,0022600122,2026-10-26,Miami Heat,Dallas Mavericks,1.41,238.27,0.547
+2026-10-26,0022600123,2026-10-26,Milwaukee Bucks,Indiana Pacers,0.86,234.89,0.529
+2026-10-26,0022600124,2026-10-26,Oklahoma City Thunder,Phoenix Suns,9.28,222.14,0.78
+2026-10-26,0022600125,2026-10-26,Houston Rockets,Atlanta Hawks,6.26,231.16,0.699
+2026-10-26,0022600126,2026-10-26,Utah Jazz,Memphis Grizzlies,-0.2,238.81,0.494
+2026-10-26,0022600127,2026-10-26,Denver Nuggets,Golden State Warriors,5.74,233.92,0.684
+2026-10-26,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,10.62,223.17,0.812
+2026-10-26,0022600129,2026-10-27,New York Knicks,Detroit Pistons,0.4,224.52,0.513
+2026-10-26,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,14.42,233.0,0.885
+2026-10-26,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.26,233.91,0.575
+2026-10-26,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,5.75,240.77,0.684
+2026-10-26,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,9.92,239.47,0.796
+2026-10-26,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,4.69,225.15,0.652
+2026-10-26,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-1.51,232.8,0.45
+2026-10-26,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,4.52,228.13,0.647
+2026-10-26,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-1.82,233.75,0.44
+2026-10-26,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-7.59,228.6,0.263
+2026-10-26,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,6.08,230.31,0.694
+2026-10-26,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-3.49,239.38,0.386
+2026-10-26,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-5.86,238.11,0.313
+2026-10-26,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-6.15,226.75,0.304
+2026-10-26,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.63,230.76,0.479
+2026-10-26,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,1.33,238.73,0.544
+2026-10-26,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,5.47,237.8,0.676
+2026-10-26,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.34,232.96,0.73
+2026-10-26,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.88,232.17,0.438
+2026-10-26,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,10.71,232.61,0.814
+2026-10-26,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-7.45,225.89,0.267
+2026-10-26,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,3.04,226.33,0.6
+2026-10-26,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,4.52,228.13,0.647
+2026-10-26,0022600020,2026-10-30,Miami Heat,Indiana Pacers,1.92,239.48,0.564
+2026-10-26,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-4.06,228.7,0.368
+2026-10-26,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,8.3,227.9,0.755
+2026-10-26,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,-0.21,233.21,0.493
+2026-10-26,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-2.49,230.5,0.418
+2026-10-26,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.31,238.16,0.329
+2026-10-26,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-0.76,226.97,0.475
+2026-10-26,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.67,240.25,0.445
+2026-10-26,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,7.05,233.69,0.722
+2026-10-26,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.88,236.25,0.342
+2026-10-26,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,5.23,230.91,0.669
+2026-10-26,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.39,221.88,0.454
+2026-10-26,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-1.08,225.74,0.464
+2026-10-26,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,7.23,230.88,0.727
+2026-10-26,0022600156,2026-11-01,Golden State Warriors,LA Clippers,4.54,228.54,0.647
+2026-10-26,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.86,230.49,0.562
+2026-10-26,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.73,229.28,0.41
+2026-10-26,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.89,225.15,0.437
+2026-10-26,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.52,237.35,0.417
+2026-10-26,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.85,224.38,0.838
+2026-10-26,0022600162,2026-11-02,Orlando Magic,Washington Wizards,6.27,235.45,0.699
+2026-10-26,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,9.13,237.0,0.777
+2026-10-26,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,8.67,233.76,0.765
+2026-10-26,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,2.14,237.7,0.571
+2026-10-26,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,10.66,231.67,0.813
+2026-10-26,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.36,221.99,0.672
+2026-10-26,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.26,238.11,0.846
+2026-10-26,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.19,234.63,0.605
+2026-10-26,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,1.89,227.59,0.563
+2026-10-26,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-2.89,225.83,0.405
+2026-10-26,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.84,239.25,0.657
+2026-10-26,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.51,227.8,0.615
+2026-10-26,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-4.38,239.39,0.358
+2026-10-26,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,10.82,227.05,0.816
+2026-10-26,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-3.15,225.0,0.396
+2026-10-26,0022600177,2026-11-04,New York Knicks,Chicago Bulls,8.22,233.75,0.753
+2026-10-26,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.22,234.84,0.541
+2026-10-26,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.99,242.96,0.661
+2026-10-26,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.33,229.28,0.729
+2026-10-26,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.06,226.66,0.632
+2026-10-26,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.79,231.2,0.592
+2026-10-26,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.66,228.28,0.445
+2026-10-26,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,8.15,232.94,0.751
+2026-10-26,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-7.36,234.62,0.27
+2026-10-26,0022600186,2026-11-04,LA Clippers,Miami Heat,1.75,234.5,0.558
+2026-10-26,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.67,227.54,0.445
+2026-10-26,0022600188,2026-11-05,Golden State Warriors,Miami Heat,5.86,236.95,0.687
+2026-10-26,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.98,239.39,0.773
+2026-10-26,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-2.41,222.35,0.421
+2026-10-26,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.46,234.16,0.581
+2026-10-26,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,6.42,238.87,0.704
+2026-10-26,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-7.63,226.74,0.262
+2026-10-26,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-5.24,229.59,0.331
+2026-10-26,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.84,235.69,0.374
+2026-10-26,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.26,233.91,0.575
+2026-10-26,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-9.82,233.0,0.207
+2026-10-26,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-2.56,236.51,0.416
+2026-10-26,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,8.44,232.17,0.759
+2026-10-26,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,1.39,230.85,0.546
+2026-10-26,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,14.87,229.92,0.892
+2026-10-26,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,1.53,230.91,0.551
+2026-10-26,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-4.43,223.89,0.356
+2026-10-26,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.05,232.25,0.498
+2026-10-26,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-4.53,237.0,0.353
+2026-10-26,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.33,230.73,0.609
+2026-10-26,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.11,236.81,0.823
+2026-10-26,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,9.53,229.72,0.787
+2026-10-26,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-6.22,227.05,0.302
+2026-10-26,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,2.29,233.93,0.576
+2026-10-26,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-3.28,238.37,0.392
+2026-10-27,0022600128,2026-10-27,Boston Celtics,Brooklyn Nets,11.58,223.81,0.833
+2026-10-27,0022600129,2026-10-27,New York Knicks,Detroit Pistons,0.43,224.43,0.514
+2026-10-27,0022600130,2026-10-27,San Antonio Spurs,Sacramento Kings,14.42,232.98,0.885
+2026-10-27,0022600131,2026-10-27,Los Angeles Lakers,Portland Trail Blazers,2.29,233.87,0.576
+2026-10-27,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,5.81,240.33,0.686
+2026-10-27,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,9.97,239.58,0.797
+2026-10-27,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,4.66,223.97,0.651
+2026-10-27,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-1.81,231.78,0.44
+2026-10-27,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,4.48,227.9,0.645
+2026-10-27,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-2.78,234.32,0.408
+2026-10-27,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-7.49,227.87,0.266
+2026-10-27,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,4.98,231.95,0.661
+2026-10-27,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-2.42,239.77,0.42
+2026-10-27,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-6.05,237.02,0.307
+2026-10-27,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-5.96,226.93,0.31
+2026-10-27,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.66,230.72,0.478
+2026-10-27,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,1.19,240.27,0.54
+2026-10-27,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,5.39,237.9,0.673
+2026-10-27,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.11,231.9,0.723
+2026-10-27,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.94,229.85,0.436
+2026-10-27,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,12.61,233.89,0.853
+2026-10-27,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-7.47,225.85,0.267
+2026-10-27,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,3.0,226.23,0.599
+2026-10-27,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,4.48,227.9,0.645
+2026-10-27,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.02,237.8,0.567
+2026-10-27,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-4.0,228.3,0.369
+2026-10-27,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,8.33,229.08,0.756
+2026-10-27,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,0.85,233.6,0.528
+2026-10-27,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.41,231.61,0.453
+2026-10-27,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.47,237.06,0.324
+2026-10-27,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-0.73,225.8,0.476
+2026-10-27,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.6,240.58,0.447
+2026-10-27,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,7.25,232.74,0.727
+2026-10-27,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.63,236.53,0.35
+2026-10-27,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,5.27,232.1,0.67
+2026-10-27,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.29,222.9,0.457
+2026-10-27,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-2.0,226.24,0.434
+2026-10-27,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.95,229.91,0.719
+2026-10-27,0022600156,2026-11-01,Golden State Warriors,LA Clippers,5.62,228.83,0.68
+2026-10-27,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.92,230.42,0.564
+2026-10-27,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.8,231.35,0.408
+2026-10-27,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.86,223.97,0.438
+2026-10-27,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.67,236.63,0.412
+2026-10-27,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.9,224.33,0.839
+2026-10-27,0022600162,2026-11-02,Orlando Magic,Washington Wizards,6.32,234.15,0.701
+2026-10-27,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.09,237.56,0.8
+2026-10-27,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,8.86,233.16,0.77
+2026-10-27,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,2.43,236.77,0.58
+2026-10-27,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,10.43,231.93,0.808
+2026-10-27,0022600167,2026-11-02,Houston Rockets,Boston Celtics,4.61,222.91,0.65
+2026-10-27,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.45,237.02,0.85
+2026-10-27,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,2.08,234.88,0.569
+2026-10-27,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.98,228.75,0.598
+2026-10-27,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-2.86,225.68,0.406
+2026-10-27,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,5.07,238.6,0.664
+2026-10-27,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.51,227.72,0.615
+2026-10-27,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-4.29,238.48,0.36
+2026-10-27,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,11.51,226.74,0.831
+2026-10-27,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-3.16,223.87,0.396
+2026-10-27,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.18,234.32,0.778
+2026-10-27,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.73,232.87,0.557
+2026-10-27,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,5.1,241.99,0.665
+2026-10-27,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.4,231.35,0.731
+2026-10-27,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.21,228.15,0.637
+2026-10-27,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.71,231.43,0.557
+2026-10-27,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.67,229.02,0.445
+2026-10-27,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.96,232.25,0.746
+2026-10-27,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-7.38,234.68,0.269
+2026-10-27,0022600186,2026-11-04,LA Clippers,Miami Heat,1.94,233.76,0.564
+2026-10-27,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.7,228.21,0.444
+2026-10-27,0022600188,2026-11-05,Golden State Warriors,Miami Heat,7.17,236.66,0.725
+2026-10-27,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.89,238.48,0.771
+2026-10-27,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-3.27,221.86,0.393
+2026-10-27,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.42,235.38,0.58
+2026-10-27,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,6.8,237.19,0.715
+2026-10-27,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-7.44,226.58,0.268
+2026-10-27,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-4.94,228.51,0.34
+2026-10-27,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.94,237.02,0.371
+2026-10-27,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.29,233.87,0.576
+2026-10-27,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-9.82,232.98,0.207
+2026-10-27,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-1.71,235.86,0.443
+2026-10-27,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,8.32,232.43,0.756
+2026-10-27,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,1.33,232.08,0.544
+2026-10-27,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,14.92,229.6,0.893
+2026-10-27,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,2.62,231.15,0.586
+2026-10-27,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-4.6,224.93,0.351
+2026-10-27,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.08,232.12,0.497
+2026-10-27,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.49,237.56,0.324
+2026-10-27,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.32,230.72,0.609
+2026-10-27,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.32,237.04,0.827
+2026-10-27,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,9.75,229.08,0.792
+2026-10-27,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-6.91,226.74,0.282
+2026-10-27,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,2.35,233.93,0.578
+2026-10-27,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-3.06,237.72,0.399
+2026-10-27,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,2.97,237.41,0.598
+2026-10-27,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-0.87,231.62,0.471
+2026-10-27,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,9.1,231.83,0.776
+2026-10-27,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,7.46,228.46,0.733
+2026-10-27,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,1.51,233.25,0.55
+2026-10-27,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,5.57,230.7,0.679
+2026-10-27,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-3.99,228.97,0.37
+2026-10-27,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,7.55,236.82,0.736
+2026-10-28,0022600132,2026-10-28,Atlanta Hawks,Miami Heat,5.79,240.49,0.685
+2026-10-28,0022600133,2026-10-28,Cleveland Cavaliers,Washington Wizards,10.0,239.55,0.798
+2026-10-28,0022600134,2026-10-28,Detroit Pistons,Charlotte Hornets,4.03,223.05,0.631
+2026-10-28,0022600135,2026-10-28,Indiana Pacers,Philadelphia 76ers,-1.79,231.88,0.441
+2026-10-28,0022600136,2026-10-28,Toronto Raptors,Orlando Magic,4.44,228.1,0.644
+2026-10-28,0022600137,2026-10-28,Chicago Bulls,New York Knicks,-3.32,233.33,0.391
+2026-10-28,0022600138,2026-10-28,Milwaukee Bucks,Houston Rockets,-7.5,227.96,0.266
+2026-10-28,0022600139,2026-10-28,Minnesota Timberwolves,Golden State Warriors,4.96,231.99,0.66
+2026-10-28,0022600140,2026-10-28,New Orleans Pelicans,Denver Nuggets,-2.43,239.86,0.42
+2026-10-28,0022600141,2026-10-28,Utah Jazz,San Antonio Spurs,-6.57,237.02,0.292
+2026-10-28,0022600142,2026-10-28,Dallas Mavericks,Oklahoma City Thunder,-5.96,227.05,0.31
+2026-10-28,0022600143,2026-10-28,LA Clippers,Los Angeles Lakers,-0.33,232.01,0.489
+2026-10-28,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,1.15,240.2,0.538
+2026-10-28,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,5.88,237.91,0.688
+2026-10-28,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.5,233.38,0.734
+2026-10-28,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.97,229.87,0.435
+2026-10-28,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,12.23,235.74,0.846
+2026-10-28,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-6.48,226.78,0.295
+2026-10-28,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.44,225.54,0.581
+2026-10-28,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,4.44,228.1,0.644
+2026-10-28,0022600020,2026-10-30,Miami Heat,Indiana Pacers,1.99,237.84,0.566
+2026-10-28,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.99,228.39,0.37
+2026-10-28,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,8.35,229.15,0.757
+2026-10-28,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,1.22,234.86,0.541
+2026-10-28,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.4,231.67,0.454
+2026-10-28,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.84,238.48,0.313
+2026-10-28,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-0.69,225.93,0.477
+2026-10-28,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.58,240.66,0.448
+2026-10-28,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,7.7,232.79,0.739
+2026-10-28,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-4.64,236.47,0.35
+2026-10-28,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,5.82,232.15,0.686
+2026-10-28,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,-1.29,223.04,0.457
+2026-10-28,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-1.57,228.31,0.448
+2026-10-28,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.55,231.66,0.707
+2026-10-28,0022600156,2026-11-01,Golden State Warriors,LA Clippers,5.65,228.84,0.681
+2026-10-28,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.55,231.79,0.551
+2026-10-28,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-2.79,231.33,0.408
+2026-10-28,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.23,223.05,0.459
+2026-10-28,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.64,236.59,0.413
+2026-10-28,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,12.05,225.28,0.842
+2026-10-28,0022600162,2026-11-02,Orlando Magic,Washington Wizards,6.36,234.34,0.702
+2026-10-28,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.08,237.63,0.8
+2026-10-28,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,9.37,233.16,0.783
+2026-10-28,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,2.39,236.9,0.579
+2026-10-28,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,10.4,232.02,0.807
+2026-10-28,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.05,224.94,0.663
+2026-10-28,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.97,237.02,0.86
+2026-10-28,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,1.75,236.33,0.558
+2026-10-28,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,2.94,228.74,0.597
+2026-10-28,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-2.9,225.77,0.405
+2026-10-28,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.68,240.03,0.652
+2026-10-28,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,2.91,227.02,0.596
+2026-10-28,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-4.27,238.59,0.361
+2026-10-28,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,11.15,228.75,0.824
+2026-10-28,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.79,225.64,0.408
+2026-10-28,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.72,233.33,0.791
+2026-10-28,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.67,232.88,0.555
+2026-10-28,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,5.11,242.04,0.665
+2026-10-28,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,7.39,231.33,0.731
+2026-10-28,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.25,228.26,0.638
+2026-10-28,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.74,231.56,0.558
+2026-10-28,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.99,230.39,0.434
+2026-10-28,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,8.46,232.28,0.76
+2026-10-28,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-7.47,235.93,0.267
+2026-10-28,0022600186,2026-11-04,LA Clippers,Miami Heat,1.89,233.9,0.563
+2026-10-28,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.7,228.33,0.444
+2026-10-28,0022600188,2026-11-05,Golden State Warriors,Miami Heat,7.16,236.77,0.725
+2026-10-28,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.87,238.59,0.77
+2026-10-28,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-2.85,223.78,0.406
+2026-10-28,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.45,235.46,0.581
+2026-10-28,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,6.83,237.24,0.715
+2026-10-28,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-7.49,226.74,0.266
+2026-10-28,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-4.93,228.62,0.341
+2026-10-28,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.91,237.11,0.372
+2026-10-28,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,1.56,236.56,0.552
+2026-10-28,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-10.81,232.94,0.184
+2026-10-28,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-1.7,235.84,0.444
+2026-10-28,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,7.91,234.29,0.745
+2026-10-28,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,0.79,231.09,0.526
+2026-10-28,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,14.94,229.75,0.893
+2026-10-28,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,2.58,231.26,0.585
+2026-10-28,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-4.58,224.99,0.351
+2026-10-28,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.25,233.52,0.492
+2026-10-28,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.48,237.63,0.324
+2026-10-28,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.11,231.11,0.602
+2026-10-28,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.3,237.1,0.827
+2026-10-28,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,9.35,230.93,0.782
+2026-10-28,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-6.55,228.75,0.293
+2026-10-28,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,2.3,233.98,0.576
+2026-10-28,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-3.55,237.81,0.384
+2026-10-28,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,3.34,238.76,0.61
+2026-10-28,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-0.86,231.46,0.472
+2026-10-28,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.48,231.02,0.76
+2026-10-28,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,7.49,228.62,0.734
+2026-10-28,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,1.51,233.21,0.55
+2026-10-28,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,5.56,230.82,0.678
+2026-10-28,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.47,228.96,0.355
+2026-10-28,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,7.54,236.85,0.735
+2026-10-28,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,8.73,226.44,0.766
+2026-10-28,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,-0.02,227.9,0.499
+2026-10-28,0022600213,2026-11-10,Phoenix Suns,LA Clippers,1.39,225.92,0.546
+2026-10-28,0022600214,2026-11-10,Utah Jazz,Miami Heat,-0.96,241.92,0.468
+2026-10-28,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-6.19,232.3,0.303
+2026-10-28,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-2.36,228.3,0.422
+2026-10-29,0022600144,2026-10-29,Atlanta Hawks,Cleveland Cavaliers,0.5,239.41,0.517
+2026-10-29,0022600145,2026-10-29,New Orleans Pelicans,Sacramento Kings,5.47,235.79,0.676
+2026-10-29,0022600146,2026-10-29,Portland Trail Blazers,Memphis Grizzlies,7.52,233.01,0.735
+2026-10-29,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.8,227.06,0.44
+2026-10-29,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,12.35,236.62,0.848
+2026-10-29,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-6.65,224.72,0.29
+2026-10-29,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.48,226.37,0.582
+2026-10-29,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,6.46,227.95,0.705
+2026-10-29,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.85,237.79,0.594
+2026-10-29,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.67,227.7,0.38
+2026-10-29,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,8.7,227.5,0.766
+2026-10-29,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,1.0,233.34,0.533
+2026-10-29,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.83,229.47,0.439
+2026-10-29,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-5.83,238.2,0.314
+2026-10-29,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-0.96,223.55,0.468
+2026-10-29,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.37,238.81,0.455
+2026-10-29,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,7.71,232.45,0.74
+2026-10-29,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-5.58,235.62,0.321
+2026-10-29,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,6.21,232.16,0.697
+2026-10-29,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,0.78,222.57,0.526
+2026-10-29,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-2.58,227.95,0.415
+2026-10-29,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.42,231.2,0.704
+2026-10-29,0022600156,2026-11-01,Golden State Warriors,LA Clippers,6.74,227.35,0.713
+2026-10-29,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.19,229.78,0.54
+2026-10-29,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.52,229.74,0.45
+2026-10-29,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.57,219.1,0.448
+2026-10-29,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.14,236.35,0.429
+2026-10-29,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,12.15,226.51,0.844
+2026-10-29,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.34,233.39,0.672
+2026-10-29,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.29,238.32,0.804
+2026-10-29,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,10.6,232.21,0.811
+2026-10-29,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,2.81,234.65,0.593
+2026-10-29,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,11.02,232.49,0.821
+2026-10-29,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.94,224.84,0.69
+2026-10-29,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.97,236.59,0.86
+2026-10-29,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,2.14,234.21,0.571
+2026-10-29,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,3.38,228.96,0.611
+2026-10-29,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-4.56,223.8,0.352
+2026-10-29,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.6,238.39,0.649
+2026-10-29,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.01,224.55,0.599
+2026-10-29,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-3.65,237.95,0.38
+2026-10-29,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,12.09,228.66,0.843
+2026-10-29,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.61,223.67,0.414
+2026-10-29,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.92,235.75,0.796
+2026-10-29,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,1.81,232.21,0.56
+2026-10-29,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.64,239.85,0.65
+2026-10-29,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,6.12,229.74,0.695
+2026-10-29,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.54,228.72,0.678
+2026-10-29,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.17,229.57,0.539
+2026-10-29,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-2.05,230.02,0.432
+2026-10-29,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.21,231.15,0.726
+2026-10-29,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-8.08,233.83,0.25
+2026-10-29,0022600186,2026-11-04,LA Clippers,Miami Heat,0.47,232.29,0.516
+2026-10-29,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-0.73,227.98,0.476
+2026-10-29,0022600188,2026-11-05,Golden State Warriors,Miami Heat,6.87,237.6,0.716
+2026-10-29,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.25,237.95,0.754
+2026-10-29,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-3.01,221.59,0.401
+2026-10-29,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.37,234.04,0.578
+2026-10-29,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,8.04,236.23,0.749
+2026-10-29,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-6.27,225.89,0.301
+2026-10-29,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.87,228.75,0.283
+2026-10-29,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.98,235.39,0.37
+2026-10-29,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.16,234.42,0.571
+2026-10-29,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-10.85,232.56,0.183
+2026-10-29,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-2.24,233.42,0.426
+2026-10-29,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,7.3,234.45,0.728
+2026-10-29,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,0.75,231.37,0.525
+2026-10-29,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,13.68,228.32,0.873
+2026-10-29,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,4.0,231.6,0.631
+2026-10-29,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-5.52,224.9,0.323
+2026-10-29,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.24,233.1,0.492
+2026-10-29,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.69,238.32,0.318
+2026-10-29,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,2.69,227.08,0.589
+2026-10-29,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,10.93,237.26,0.819
+2026-10-29,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,10.59,230.06,0.811
+2026-10-29,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-7.49,228.66,0.266
+2026-10-29,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,2.02,230.02,0.567
+2026-10-29,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-4.29,238.09,0.36
+2026-10-29,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,2.08,236.93,0.569
+2026-10-29,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-1.02,228.49,0.466
+2026-10-29,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.65,228.13,0.764
+2026-10-29,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,8.47,228.36,0.76
+2026-10-29,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,2.89,231.94,0.595
+2026-10-29,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,6.06,229.03,0.693
+2026-10-29,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.53,228.45,0.353
+2026-10-29,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,8.37,235.31,0.757
+2026-10-29,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,9.74,227.87,0.792
+2026-10-29,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,0.07,227.21,0.502
+2026-10-29,0022600213,2026-11-10,Phoenix Suns,LA Clippers,2.04,223.75,0.567
+2026-10-29,0022600214,2026-11-10,Utah Jazz,Miami Heat,-1.65,242.14,0.445
+2026-10-29,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-5.19,232.08,0.333
+2026-10-29,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-1.12,227.55,0.463
+2026-10-29,0022600217,2026-11-11,Indiana Pacers,Washington Wizards,5.58,234.67,0.679
+2026-10-29,0022600218,2026-11-11,New York Knicks,Cleveland Cavaliers,0.25,231.37,0.508
+2026-10-29,0022600219,2026-11-11,Toronto Raptors,Boston Celtics,3.29,225.39,0.608
+2026-10-29,0022600220,2026-11-11,Chicago Bulls,San Antonio Spurs,-8.72,239.67,0.234
+2026-10-29,0022600221,2026-11-11,Memphis Grizzlies,Denver Nuggets,-2.69,232.5,0.411
+2026-10-29,0022600222,2026-11-11,Milwaukee Bucks,Los Angeles Lakers,-7.48,233.08,0.266
+2026-10-29,0022600223,2026-11-11,New Orleans Pelicans,Brooklyn Nets,5.44,233.63,0.675
+2026-10-29,0022600224,2026-11-11,Utah Jazz,Orlando Magic,-2.62,236.1,0.414
+2026-10-29,0022600225,2026-11-11,Houston Rockets,Golden State Warriors,7.35,228.53,0.73
+2026-10-29,0022600226,2026-11-11,Portland Trail Blazers,Oklahoma City Thunder,-1.12,227.55,0.463
+2026-10-30,0022600015,2026-10-30,Washington Wizards,Charlotte Hornets,-1.83,227.28,0.439
+2026-10-30,0022600016,2026-10-30,Boston Celtics,Chicago Bulls,12.34,236.63,0.848
+2026-10-30,0022600017,2026-10-30,Brooklyn Nets,Detroit Pistons,-6.65,224.83,0.29
+2026-10-30,0022600018,2026-10-30,Philadelphia 76ers,New York Knicks,2.48,226.51,0.582
+2026-10-30,0022600019,2026-10-30,Toronto Raptors,Orlando Magic,6.43,228.07,0.704
+2026-10-30,0022600020,2026-10-30,Miami Heat,Indiana Pacers,2.86,237.81,0.594
+2026-10-30,0022600021,2026-10-30,Dallas Mavericks,Houston Rockets,-3.68,227.88,0.38
+2026-10-30,0022600022,2026-10-30,Minnesota Timberwolves,LA Clippers,8.69,227.54,0.765
+2026-10-30,0022600023,2026-10-30,Golden State Warriors,Los Angeles Lakers,1.08,233.41,0.536
+2026-10-30,0022600024,2026-10-30,Phoenix Suns,Denver Nuggets,-1.9,229.36,0.437
+2026-10-30,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-4.55,237.96,0.352
+2026-10-30,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-0.94,223.77,0.469
+2026-10-30,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.24,239.29,0.459
+2026-10-30,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,9.02,233.61,0.774
+2026-10-30,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-5.44,234.74,0.325
+2026-10-30,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,6.22,232.19,0.698
+2026-10-30,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,0.77,222.79,0.525
+2026-10-30,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-2.57,228.06,0.415
+2026-10-30,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.43,231.21,0.704
+2026-10-30,0022600156,2026-11-01,Golden State Warriors,LA Clippers,6.79,227.34,0.714
+2026-10-30,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.15,229.85,0.538
+2026-10-30,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.6,228.97,0.447
+2026-10-30,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-1.54,219.26,0.449
+2026-10-30,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.2,235.47,0.427
+2026-10-30,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,12.16,226.62,0.845
+2026-10-30,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.38,233.58,0.673
+2026-10-30,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.27,238.42,0.804
+2026-10-30,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,10.84,233.55,0.817
+2026-10-30,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,3.67,235.8,0.62
+2026-10-30,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,10.99,232.57,0.82
+2026-10-30,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.93,225.0,0.689
+2026-10-30,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.86,236.51,0.858
+2026-10-30,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.32,233.86,0.609
+2026-10-30,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,3.45,229.02,0.613
+2026-10-30,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-4.56,223.79,0.352
+2026-10-30,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,4.53,238.51,0.647
+2026-10-30,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.0,224.7,0.599
+2026-10-30,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-3.72,237.23,0.378
+2026-10-30,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,12.07,228.68,0.843
+2026-10-30,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.63,223.85,0.413
+2026-10-30,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.9,235.78,0.795
+2026-10-30,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,2.88,232.0,0.595
+2026-10-30,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.78,241.15,0.655
+2026-10-30,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,6.2,228.97,0.697
+2026-10-30,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.56,228.96,0.678
+2026-10-30,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.21,229.46,0.54
+2026-10-30,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-0.94,229.85,0.469
+2026-10-30,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.21,231.13,0.726
+2026-10-30,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-8.29,235.21,0.245
+2026-10-30,0022600186,2026-11-04,LA Clippers,Miami Heat,0.45,232.33,0.515
+2026-10-30,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-0.78,228.1,0.474
+2026-10-30,0022600188,2026-11-05,Golden State Warriors,Miami Heat,6.89,237.7,0.717
+2026-10-30,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,8.32,237.23,0.756
+2026-10-30,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-2.99,221.72,0.401
+2026-10-30,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.28,233.29,0.575
+2026-10-30,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,7.93,236.25,0.746
+2026-10-30,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-5.22,225.81,0.332
+2026-10-30,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.85,228.78,0.284
+2026-10-30,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.76,236.78,0.377
+2026-10-30,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,3.26,234.25,0.607
+2026-10-30,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-11.12,233.81,0.177
+2026-10-30,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-2.26,233.23,0.425
+2026-10-30,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,7.36,233.7,0.73
+2026-10-30,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,0.66,230.53,0.522
+2026-10-30,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,13.7,228.49,0.873
+2026-10-30,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,4.02,231.71,0.631
+2026-10-30,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-5.55,225.08,0.322
+2026-10-30,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-1.4,232.83,0.454
+2026-10-30,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.67,238.42,0.318
+2026-10-30,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,2.73,227.17,0.59
+2026-10-30,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,10.8,237.32,0.816
+2026-10-30,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,10.59,230.16,0.811
+2026-10-30,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-7.47,228.68,0.267
+2026-10-30,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,1.78,231.29,0.559
+2026-10-30,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-4.55,239.48,0.352
+2026-10-30,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,2.23,236.14,0.574
+2026-10-30,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-0.9,227.73,0.47
+2026-10-30,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.65,228.28,0.764
+2026-10-30,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,7.4,228.23,0.731
+2026-10-30,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,2.87,231.92,0.594
+2026-10-30,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,6.02,229.03,0.692
+2026-10-30,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.55,228.42,0.352
+2026-10-30,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,8.21,236.65,0.753
+2026-10-30,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,9.73,227.91,0.791
+2026-10-30,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,0.07,227.33,0.502
+2026-10-30,0022600213,2026-11-10,Phoenix Suns,LA Clippers,2.02,223.74,0.567
+2026-10-30,0022600214,2026-11-10,Utah Jazz,Miami Heat,-1.57,242.2,0.448
+2026-10-30,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-5.46,233.48,0.325
+2026-10-30,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-2.29,227.42,0.424
+2026-10-30,0022600217,2026-11-11,Indiana Pacers,Washington Wizards,5.59,234.72,0.679
+2026-10-30,0022600218,2026-11-11,New York Knicks,Cleveland Cavaliers,0.34,230.53,0.511
+2026-10-30,0022600219,2026-11-11,Toronto Raptors,Boston Celtics,3.28,225.44,0.608
+2026-10-30,0022600220,2026-11-11,Chicago Bulls,San Antonio Spurs,-8.7,239.61,0.234
+2026-10-30,0022600221,2026-11-11,Memphis Grizzlies,Denver Nuggets,-1.66,232.21,0.445
+2026-10-30,0022600222,2026-11-11,Milwaukee Bucks,Los Angeles Lakers,-7.42,233.13,0.268
+2026-10-30,0022600223,2026-11-11,New Orleans Pelicans,Brooklyn Nets,5.69,235.0,0.682
+2026-10-30,0022600224,2026-11-11,Utah Jazz,Orlando Magic,-2.54,236.17,0.416
+2026-10-30,0022600225,2026-11-11,Houston Rockets,Golden State Warriors,7.31,228.71,0.729
+2026-10-30,0022600226,2026-11-11,Portland Trail Blazers,Oklahoma City Thunder,-2.29,227.42,0.424
+2026-10-30,0022600227,2026-11-12,Philadelphia 76ers,Toronto Raptors,2.66,227.28,0.588
+2026-10-30,0022600228,2026-11-12,Washington Wizards,Detroit Pistons,-7.65,228.28,0.262
+2026-10-30,0022600229,2026-11-12,Minnesota Timberwolves,Dallas Mavericks,5.12,231.92,0.665
+2026-10-30,0022600230,2026-11-12,Phoenix Suns,Charlotte Hornets,1.64,221.8,0.554
+2026-10-31,0022600147,2026-10-31,Utah Jazz,Portland Trail Blazers,-4.52,237.6,0.353
+2026-10-31,0022600148,2026-10-31,Charlotte Hornets,Philadelphia 76ers,-1.42,219.68,0.453
+2026-10-31,0022600149,2026-10-31,New Orleans Pelicans,Atlanta Hawks,-1.23,238.85,0.459
+2026-10-31,0022600150,2026-10-31,Memphis Grizzlies,Sacramento Kings,9.01,233.25,0.774
+2026-10-31,0022600151,2026-10-31,Milwaukee Bucks,Cleveland Cavaliers,-5.48,234.64,0.324
+2026-10-31,0022600152,2026-10-31,San Antonio Spurs,Minnesota Timberwolves,5.52,231.86,0.677
+2026-10-31,0022600153,2026-10-31,Houston Rockets,Oklahoma City Thunder,0.45,222.34,0.515
+2026-10-31,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-2.01,227.71,0.433
+2026-10-31,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.27,231.32,0.699
+2026-10-31,0022600156,2026-11-01,Golden State Warriors,LA Clippers,8.1,225.86,0.75
+2026-10-31,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.0,228.25,0.533
+2026-10-31,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-1.55,228.73,0.448
+2026-10-31,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-2.27,216.74,0.425
+2026-10-31,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.74,236.33,0.41
+2026-10-31,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,12.41,223.83,0.85
+2026-10-31,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.47,231.23,0.676
+2026-10-31,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.37,236.4,0.806
+2026-10-31,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,11.15,233.08,0.824
+2026-10-31,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,3.67,235.35,0.62
+2026-10-31,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,11.67,232.35,0.835
+2026-10-31,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.55,224.71,0.678
+2026-10-31,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,12.86,236.16,0.858
+2026-10-31,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,3.6,234.21,0.618
+2026-10-31,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,4.22,228.2,0.638
+2026-10-31,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-4.73,223.35,0.347
+2026-10-31,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,3.26,238.11,0.607
+2026-10-31,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.23,222.17,0.606
+2026-10-31,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-3.25,234.98,0.393
+2026-10-31,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,12.12,228.53,0.844
+2026-10-31,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.57,220.97,0.415
+2026-10-31,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.83,233.84,0.794
+2026-10-31,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,3.4,232.82,0.612
+2026-10-31,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,4.8,240.68,0.655
+2026-10-31,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,6.15,228.73,0.696
+2026-10-31,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,4.54,228.59,0.647
+2026-10-31,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,1.96,229.69,0.565
+2026-10-31,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.07,230.16,0.464
+2026-10-31,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,6.89,230.68,0.717
+2026-10-31,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-7.61,233.7,0.263
+2026-10-31,0022600186,2026-11-04,LA Clippers,Miami Heat,-0.87,233.09,0.471
+2026-10-31,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.52,228.34,0.45
+2026-10-31,0022600188,2026-11-05,Golden State Warriors,Miami Heat,6.93,237.25,0.718
+2026-10-31,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,7.85,234.98,0.744
+2026-10-31,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-3.44,219.62,0.387
+2026-10-31,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.22,231.22,0.573
+2026-10-31,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,8.25,235.84,0.754
+2026-10-31,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-5.21,225.46,0.332
+2026-10-31,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.28,228.39,0.3
+2026-10-31,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-4.46,236.33,0.355
+2026-10-31,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.64,232.76,0.587
+2026-10-31,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-11.11,233.39,0.177
+2026-10-31,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-3.02,234.72,0.401
+2026-10-31,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,7.74,232.71,0.741
+2026-10-31,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,0.76,228.53,0.525
+2026-10-31,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,13.22,226.19,0.865
+2026-10-31,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,4.04,230.1,0.632
+2026-10-31,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-5.38,225.35,0.327
+2026-10-31,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-1.43,232.43,0.453
+2026-10-31,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.77,236.4,0.315
+2026-10-31,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.71,225.41,0.621
+2026-10-31,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.51,237.04,0.831
+2026-10-31,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,11.27,229.06,0.826
+2026-10-31,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-7.52,228.53,0.265
+2026-10-31,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,1.04,230.84,0.534
+2026-10-31,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-5.14,240.18,0.334
+2026-10-31,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,2.89,234.72,0.595
+2026-10-31,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-1.35,225.64,0.455
+2026-10-31,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.54,225.69,0.762
+2026-10-31,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,6.86,227.8,0.716
+2026-10-31,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,3.71,232.64,0.621
+2026-10-31,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,5.45,229.33,0.675
+2026-10-31,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.71,228.74,0.347
+2026-10-31,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,8.83,234.97,0.769
+2026-10-31,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,9.62,225.84,0.789
+2026-10-31,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,0.13,225.22,0.504
+2026-10-31,0022600213,2026-11-10,Phoenix Suns,LA Clippers,2.56,224.1,0.584
+2026-10-31,0022600214,2026-11-10,Utah Jazz,Miami Heat,-2.17,242.98,0.428
+2026-10-31,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-5.99,233.0,0.309
+2026-10-31,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-2.32,226.99,0.423
+2026-10-31,0022600217,2026-11-11,Indiana Pacers,Washington Wizards,4.6,233.57,0.649
+2026-10-31,0022600218,2026-11-11,New York Knicks,Cleveland Cavaliers,0.24,228.53,0.508
+2026-10-31,0022600219,2026-11-11,Toronto Raptors,Boston Celtics,2.75,225.06,0.591
+2026-10-31,0022600220,2026-11-11,Chicago Bulls,San Antonio Spurs,-8.73,239.45,0.233
+2026-10-31,0022600221,2026-11-11,Memphis Grizzlies,Denver Nuggets,-1.9,232.62,0.437
+2026-10-31,0022600222,2026-11-11,Milwaukee Bucks,Los Angeles Lakers,-6.75,231.76,0.287
+2026-10-31,0022600223,2026-11-11,New Orleans Pelicans,Brooklyn Nets,6.07,233.82,0.694
+2026-10-31,0022600224,2026-11-11,Utah Jazz,Orlando Magic,-3.11,235.76,0.398
+2026-10-31,0022600225,2026-11-11,Houston Rockets,Golden State Warriors,6.36,227.14,0.702
+2026-10-31,0022600226,2026-11-11,Portland Trail Blazers,Oklahoma City Thunder,-2.32,226.99,0.423
+2026-10-31,0022600227,2026-11-12,Philadelphia 76ers,Toronto Raptors,3.29,225.01,0.608
+2026-10-31,0022600228,2026-11-12,Washington Wizards,Detroit Pistons,-7.54,225.69,0.265
+2026-10-31,0022600229,2026-11-12,Minnesota Timberwolves,Dallas Mavericks,5.5,231.54,0.677
+2026-10-31,0022600230,2026-11-12,Phoenix Suns,Charlotte Hornets,1.89,220.25,0.562
+2026-10-31,0022600034,2026-11-13,Indiana Pacers,New York Knicks,-2.16,227.33,0.429
+2026-10-31,0022600035,2026-11-13,Orlando Magic,Milwaukee Bucks,7.92,231.07,0.745
+2026-10-31,0022600036,2026-11-13,Miami Heat,Cleveland Cavaliers,-0.93,240.98,0.469
+2026-10-31,0022600037,2026-11-13,Chicago Bulls,Atlanta Hawks,-4.08,242.84,0.367
+2026-10-31,0022600038,2026-11-13,New Orleans Pelicans,Memphis Grizzlies,0.93,235.35,0.531
+2026-10-31,0022600039,2026-11-13,Houston Rockets,Utah Jazz,13.48,232.8,0.869
+2026-10-31,0022600040,2026-11-13,San Antonio Spurs,Golden State Warriors,5.6,230.49,0.679
+2026-10-31,0022600041,2026-11-13,Sacramento Kings,Portland Trail Blazers,-7.41,234.83,0.268
+2026-10-31,0022600042,2026-11-13,LA Clippers,Oklahoma City Thunder,-7.64,221.05,0.262
+2026-11-01,0022600154,2026-11-01,Orlando Magic,Boston Celtics,-2.03,227.55,0.433
+2026-11-01,0022600155,2026-11-01,Indiana Pacers,Brooklyn Nets,6.26,231.17,0.699
+2026-11-01,0022600156,2026-11-01,Golden State Warriors,LA Clippers,8.17,225.66,0.752
+2026-11-01,0022600157,2026-11-01,Los Angeles Lakers,Toronto Raptors,1.01,228.24,0.534
+2026-11-01,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-0.06,228.92,0.498
+2026-11-01,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-2.4,216.21,0.421
+2026-11-01,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-1.95,235.61,0.435
+2026-11-01,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,12.4,223.78,0.849
+2026-11-01,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.47,231.15,0.676
+2026-11-01,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.5,235.59,0.809
+2026-11-01,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,11.87,233.6,0.839
+2026-11-01,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,3.58,235.25,0.617
+2026-11-01,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,12.17,232.84,0.845
+2026-11-01,0022600167,2026-11-02,Houston Rockets,Boston Celtics,6.22,224.18,0.698
+2026-11-01,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,13.53,234.64,0.87
+2026-11-01,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,2.97,232.62,0.598
+2026-11-01,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,4.23,228.06,0.638
+2026-11-01,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-4.77,223.21,0.345
+2026-11-01,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,3.29,238.13,0.608
+2026-11-01,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.05,221.55,0.6
+2026-11-01,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-2.51,234.29,0.417
+2026-11-01,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,12.78,229.04,0.857
+2026-11-01,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-2.35,220.29,0.422
+2026-11-01,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.86,233.74,0.794
+2026-11-01,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,4.11,233.42,0.634
+2026-11-01,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,6.2,238.42,0.697
+2026-11-01,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,4.66,228.92,0.651
+2026-11-01,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.4,228.05,0.674
+2026-11-01,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.01,229.63,0.567
+2026-11-01,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.74,228.57,0.442
+2026-11-01,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.0,230.67,0.72
+2026-11-01,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-8.3,234.27,0.245
+2026-11-01,0022600186,2026-11-04,LA Clippers,Miami Heat,-0.89,232.99,0.47
+2026-11-01,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.49,228.27,0.451
+2026-11-01,0022600188,2026-11-05,Golden State Warriors,Miami Heat,6.98,237.08,0.72
+2026-11-01,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,7.11,234.29,0.723
+2026-11-01,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-3.57,218.91,0.383
+2026-11-01,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.74,231.14,0.59
+2026-11-01,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,8.83,234.36,0.769
+2026-11-01,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-3.69,225.68,0.379
+2026-11-01,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.94,228.93,0.282
+2026-11-01,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.45,235.46,0.387
+2026-11-01,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,1.96,231.21,0.565
+2026-11-01,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-11.93,233.88,0.16
+2026-11-01,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-3.04,234.69,0.4
+2026-11-01,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,6.95,231.95,0.719
+2026-11-01,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,1.42,229.19,0.547
+2026-11-01,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,12.4,225.75,0.849
+2026-11-01,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,4.07,229.91,0.633
+2026-11-01,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-6.03,224.91,0.308
+2026-11-01,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.85,230.8,0.472
+2026-11-01,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.9,235.59,0.312
+2026-11-01,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.7,225.51,0.621
+2026-11-01,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.89,235.42,0.839
+2026-11-01,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,11.26,228.97,0.826
+2026-11-01,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-8.18,229.04,0.248
+2026-11-01,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,0.18,230.04,0.506
+2026-11-01,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-5.81,240.66,0.314
+2026-11-01,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,2.14,234.12,0.571
+2026-11-01,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-2.17,225.65,0.428
+2026-11-01,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.55,225.72,0.762
+2026-11-01,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,6.15,228.38,0.696
+2026-11-01,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,3.7,232.6,0.621
+2026-11-01,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,6.08,228.91,0.694
+2026-11-01,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.82,228.7,0.344
+2026-11-01,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,8.02,234.1,0.748
+2026-11-01,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,10.29,226.49,0.804
+2026-11-01,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,0.3,224.43,0.51
+2026-11-01,0022600213,2026-11-10,Phoenix Suns,LA Clippers,2.62,224.02,0.586
+2026-11-01,0022600214,2026-11-10,Utah Jazz,Miami Heat,-2.71,241.43,0.411
+2026-11-01,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-6.67,233.45,0.289
+2026-11-01,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-0.8,224.99,0.473
+2026-11-01,0022600217,2026-11-11,Indiana Pacers,Washington Wizards,4.64,233.5,0.65
+2026-11-01,0022600218,2026-11-11,New York Knicks,Cleveland Cavaliers,-0.42,229.19,0.486
+2026-11-01,0022600219,2026-11-11,Toronto Raptors,Boston Celtics,2.74,224.89,0.59
+2026-11-01,0022600220,2026-11-11,Chicago Bulls,San Antonio Spurs,-8.85,239.28,0.23
+2026-11-01,0022600221,2026-11-11,Memphis Grizzlies,Denver Nuggets,-1.24,233.29,0.459
+2026-11-01,0022600222,2026-11-11,Milwaukee Bucks,Los Angeles Lakers,-7.41,232.42,0.269
+2026-11-01,0022600223,2026-11-11,New Orleans Pelicans,Brooklyn Nets,6.86,232.97,0.716
+2026-11-01,0022600224,2026-11-11,Utah Jazz,Orlando Magic,-3.65,234.21,0.381
+2026-11-01,0022600225,2026-11-11,Houston Rockets,Golden State Warriors,7.02,226.58,0.721
+2026-11-01,0022600226,2026-11-11,Portland Trail Blazers,Oklahoma City Thunder,-0.8,224.99,0.473
+2026-11-01,0022600227,2026-11-12,Philadelphia 76ers,Toronto Raptors,3.46,224.26,0.613
+2026-11-01,0022600228,2026-11-12,Washington Wizards,Detroit Pistons,-7.55,225.72,0.265
+2026-11-01,0022600229,2026-11-12,Minnesota Timberwolves,Dallas Mavericks,5.32,231.43,0.671
+2026-11-01,0022600230,2026-11-12,Phoenix Suns,Charlotte Hornets,2.06,219.63,0.568
+2026-11-01,0022600034,2026-11-13,Indiana Pacers,New York Knicks,-2.15,227.34,0.429
+2026-11-01,0022600035,2026-11-13,Orlando Magic,Milwaukee Bucks,8.56,231.61,0.762
+2026-11-01,0022600036,2026-11-13,Miami Heat,Cleveland Cavaliers,-1.68,241.57,0.444
+2026-11-01,0022600037,2026-11-13,Chicago Bulls,Atlanta Hawks,-3.3,242.0,0.392
+2026-11-01,0022600038,2026-11-13,New Orleans Pelicans,Memphis Grizzlies,1.02,235.25,0.534
+2026-11-01,0022600039,2026-11-13,Houston Rockets,Utah Jazz,14.68,230.91,0.889
+2026-11-01,0022600040,2026-11-13,San Antonio Spurs,Golden State Warriors,5.7,230.33,0.683
+2026-11-01,0022600041,2026-11-13,Sacramento Kings,Portland Trail Blazers,-8.79,233.73,0.232
+2026-11-01,0022600042,2026-11-13,LA Clippers,Oklahoma City Thunder,-6.87,220.56,0.283
+2026-11-01,0022600231,2026-11-14,New Orleans Pelicans,Denver Nuggets,-4.36,236.57,0.358
+2026-11-01,0022600232,2026-11-14,Cleveland Cavaliers,Dallas Mavericks,2.81,234.5,0.593
+2026-11-01,0022600233,2026-11-14,Miami Heat,Detroit Pistons,-3.74,231.75,0.378
+2026-11-01,0022600234,2026-11-14,Memphis Grizzlies,Brooklyn Nets,6.25,229.79,0.699
+2026-11-01,0022600235,2026-11-14,Minnesota Timberwolves,Chicago Bulls,13.57,240.02,0.871
+2026-11-02,0022600158,2026-11-02,Cleveland Cavaliers,Oklahoma City Thunder,-0.05,227.19,0.498
+2026-11-02,0022600159,2026-11-02,Charlotte Hornets,Detroit Pistons,-2.49,214.71,0.418
+2026-11-02,0022600160,2026-11-02,Indiana Pacers,Atlanta Hawks,-2.46,231.72,0.419
+2026-11-02,0022600161,2026-11-02,New York Knicks,Brooklyn Nets,11.82,220.1,0.838
+2026-11-02,0022600162,2026-11-02,Orlando Magic,Washington Wizards,5.05,227.87,0.663
+2026-11-02,0022600163,2026-11-02,Philadelphia 76ers,Chicago Bulls,10.51,233.73,0.809
+2026-11-02,0022600164,2026-11-02,Dallas Mavericks,Sacramento Kings,11.85,231.83,0.838
+2026-11-02,0022600165,2026-11-02,Memphis Grizzlies,New Orleans Pelicans,3.57,233.5,0.617
+2026-11-02,0022600166,2026-11-02,Minnesota Timberwolves,Milwaukee Bucks,12.15,231.08,0.844
+2026-11-02,0022600167,2026-11-02,Houston Rockets,Boston Celtics,5.82,221.4,0.686
+2026-11-02,0022600168,2026-11-02,San Antonio Spurs,Utah Jazz,13.54,232.73,0.87
+2026-11-02,0022600169,2026-11-02,Denver Nuggets,Portland Trail Blazers,2.99,230.63,0.598
+2026-11-02,0022600170,2026-11-02,Golden State Warriors,Phoenix Suns,4.37,226.35,0.642
+2026-11-02,0022600171,2026-11-02,LA Clippers,Toronto Raptors,-4.79,223.14,0.345
+2026-11-02,0022600172,2026-11-02,Los Angeles Lakers,Miami Heat,3.56,237.72,0.616
+2026-11-02,0022600173,2026-11-04,Detroit Pistons,Philadelphia 76ers,3.09,220.01,0.602
+2026-11-02,0022600174,2026-11-04,Washington Wizards,Atlanta Hawks,-2.51,232.31,0.417
+2026-11-02,0022600175,2026-11-04,Boston Celtics,Milwaukee Bucks,13.17,226.29,0.864
+2026-11-02,0022600176,2026-11-04,Brooklyn Nets,Charlotte Hornets,-1.73,216.59,0.443
+2026-11-02,0022600177,2026-11-04,New York Knicks,Chicago Bulls,9.89,231.96,0.795
+2026-11-02,0022600178,2026-11-04,Memphis Grizzlies,Indiana Pacers,4.57,229.59,0.648
+2026-11-02,0022600179,2026-11-04,New Orleans Pelicans,Utah Jazz,6.18,236.56,0.697
+2026-11-02,0022600180,2026-11-04,Oklahoma City Thunder,Cleveland Cavaliers,4.65,227.19,0.651
+2026-11-02,0022600181,2026-11-04,Houston Rockets,Minnesota Timberwolves,5.43,226.25,0.675
+2026-11-02,0022600182,2026-11-04,Denver Nuggets,Toronto Raptors,2.24,229.34,0.574
+2026-11-02,0022600183,2026-11-04,Phoenix Suns,Portland Trail Blazers,-1.82,226.56,0.44
+2026-11-02,0022600184,2026-11-04,San Antonio Spurs,Dallas Mavericks,7.04,228.93,0.721
+2026-11-02,0022600185,2026-11-04,Sacramento Kings,Los Angeles Lakers,-8.54,233.85,0.238
+2026-11-02,0022600186,2026-11-04,LA Clippers,Miami Heat,-0.98,231.37,0.468
+2026-11-02,0022600187,2026-11-05,Phoenix Suns,Orlando Magic,-1.14,225.09,0.462
+2026-11-02,0022600188,2026-11-05,Golden State Warriors,Miami Heat,7.16,235.39,0.725
+2026-11-02,0022600025,2026-11-06,Atlanta Hawks,Washington Wizards,7.11,232.31,0.723
+2026-11-02,0022600026,2026-11-06,Charlotte Hornets,Boston Celtics,-3.99,216.24,0.37
+2026-11-02,0022600027,2026-11-06,Cleveland Cavaliers,Philadelphia 76ers,2.79,229.49,0.592
+2026-11-02,0022600028,2026-11-06,Dallas Mavericks,Utah Jazz,8.8,232.54,0.768
+2026-11-02,0022600029,2026-11-06,Memphis Grizzlies,Oklahoma City Thunder,-3.74,223.91,0.378
+2026-11-02,0022600030,2026-11-06,Milwaukee Bucks,Toronto Raptors,-6.84,228.73,0.284
+2026-11-02,0022600031,2026-11-06,New Orleans Pelicans,Minnesota Timberwolves,-3.43,233.66,0.387
+2026-11-02,0022600032,2026-11-06,Los Angeles Lakers,Portland Trail Blazers,2.08,230.66,0.569
+2026-11-02,0022600033,2026-11-06,Sacramento Kings,San Antonio Spurs,-11.96,232.01,0.16
+2026-11-02,0022600189,2026-11-07,Indiana Pacers,Denver Nuggets,-3.57,230.79,0.383
+2026-11-02,0022600190,2026-11-07,Atlanta Hawks,Brooklyn Nets,6.37,228.04,0.702
+2026-11-02,0022600191,2026-11-07,Cleveland Cavaliers,New York Knicks,1.44,227.63,0.548
+2026-11-02,0022600192,2026-11-07,Oklahoma City Thunder,Washington Wizards,12.41,223.82,0.849
+2026-11-02,0022600193,2026-11-07,Golden State Warriors,Orlando Magic,4.55,226.91,0.648
+2026-11-02,0022600194,2026-11-07,Phoenix Suns,Houston Rockets,-6.07,223.11,0.307
+2026-11-02,0022600195,2026-11-07,Portland Trail Blazers,San Antonio Spurs,-0.81,228.81,0.473
+2026-11-02,0022600196,2026-11-08,Chicago Bulls,Philadelphia 76ers,-5.91,233.73,0.311
+2026-11-02,0022600197,2026-11-08,Detroit Pistons,Los Angeles Lakers,3.56,225.28,0.617
+2026-11-02,0022600198,2026-11-08,Minnesota Timberwolves,Utah Jazz,11.85,233.49,0.838
+2026-11-02,0022600199,2026-11-08,Dallas Mavericks,Brooklyn Nets,10.63,225.18,0.812
+2026-11-02,0022600200,2026-11-08,Milwaukee Bucks,Boston Celtics,-8.57,226.29,0.238
+2026-11-02,0022600201,2026-11-08,LA Clippers,New Orleans Pelicans,0.04,228.49,0.501
+2026-11-02,0022600202,2026-11-08,Sacramento Kings,Miami Heat,-5.75,238.77,0.316
+2026-11-02,0022600203,2026-11-09,Atlanta Hawks,Los Angeles Lakers,1.97,233.7,0.565
+2026-11-02,0022600204,2026-11-09,Charlotte Hornets,Cleveland Cavaliers,-2.26,224.04,0.425
+2026-11-02,0022600205,2026-11-09,Detroit Pistons,Washington Wizards,8.56,223.95,0.762
+2026-11-02,0022600206,2026-11-09,Toronto Raptors,Memphis Grizzlies,6.03,228.12,0.692
+2026-11-02,0022600207,2026-11-09,Dallas Mavericks,Indiana Pacers,4.15,228.83,0.635
+2026-11-02,0022600208,2026-11-09,Houston Rockets,Denver Nuggets,6.01,227.12,0.692
+2026-11-02,0022600209,2026-11-09,Phoenix Suns,San Antonio Spurs,-4.87,226.84,0.343
+2026-11-02,0022600210,2026-11-09,Golden State Warriors,New Orleans Pelicans,8.16,232.49,0.752
+2026-11-02,0022600211,2026-11-10,New York Knicks,Milwaukee Bucks,10.32,224.94,0.805
+2026-11-02,0022600212,2026-11-10,Philadelphia 76ers,Boston Celtics,-0.11,221.71,0.496
+2026-11-02,0022600213,2026-11-10,Phoenix Suns,LA Clippers,2.74,222.38,0.59
+2026-11-02,0022600214,2026-11-10,Utah Jazz,Miami Heat,-2.64,239.49,0.413
+2026-11-02,0022600215,2026-11-10,Sacramento Kings,Orlando Magic,-6.26,230.26,0.301
+2026-11-02,0022600216,2026-11-10,Portland Trail Blazers,Oklahoma City Thunder,-0.78,223.04,0.474
+2026-11-02,0022600217,2026-11-11,Indiana Pacers,Washington Wizards,4.11,229.51,0.634
+2026-11-02,0022600218,2026-11-11,New York Knicks,Cleveland Cavaliers,-0.44,227.63,0.485
+2026-11-02,0022600219,2026-11-11,Toronto Raptors,Boston Celtics,2.17,223.6,0.572
+2026-11-02,0022600220,2026-11-11,Chicago Bulls,San Antonio Spurs,-8.88,237.31,0.23
+2026-11-02,0022600221,2026-11-11,Memphis Grizzlies,Denver Nuggets,-1.34,231.48,0.456
+2026-11-02,0022600222,2026-11-11,Milwaukee Bucks,Los Angeles Lakers,-7.64,232.11,0.262
+2026-11-02,0022600223,2026-11-11,New Orleans Pelicans,Brooklyn Nets,6.25,229.14,0.699
+2026-11-02,0022600224,2026-11-11,Utah Jazz,Orlando Magic,-3.24,230.98,0.394
+2026-11-02,0022600225,2026-11-11,Houston Rockets,Golden State Warriors,6.89,224.94,0.717
+2026-11-02,0022600226,2026-11-11,Portland Trail Blazers,Oklahoma City Thunder,-0.78,223.04,0.474
+2026-11-02,0022600227,2026-11-12,Philadelphia 76ers,Toronto Raptors,3.6,224.06,0.618
+2026-11-02,0022600228,2026-11-12,Washington Wizards,Detroit Pistons,-7.56,223.95,0.264
+2026-11-02,0022600229,2026-11-12,Minnesota Timberwolves,Dallas Mavericks,5.31,229.67,0.671
+2026-11-02,0022600230,2026-11-12,Phoenix Suns,Charlotte Hornets,2.08,217.93,0.569
+2026-11-02,0022600034,2026-11-13,Indiana Pacers,New York Knicks,-2.62,223.68,0.413
+2026-11-02,0022600035,2026-11-13,Orlando Magic,Milwaukee Bucks,8.18,228.55,0.752
+2026-11-02,0022600036,2026-11-13,Miami Heat,Cleveland Cavaliers,-1.78,239.79,0.441
+2026-11-02,0022600037,2026-11-13,Chicago Bulls,Atlanta Hawks,-3.34,240.01,0.39
+2026-11-02,0022600038,2026-11-13,New Orleans Pelicans,Memphis Grizzlies,1.03,233.5,0.534
+2026-11-02,0022600039,2026-11-13,Houston Rockets,Utah Jazz,14.68,229.05,0.889
+2026-11-02,0022600040,2026-11-13,San Antonio Spurs,Golden State Warriors,5.58,228.66,0.679
+2026-11-02,0022600041,2026-11-13,Sacramento Kings,Portland Trail Blazers,-8.85,231.72,0.23
+2026-11-02,0022600042,2026-11-13,LA Clippers,Oklahoma City Thunder,-7.03,218.99,0.279
+2026-11-02,0022600231,2026-11-14,New Orleans Pelicans,Denver Nuggets,-4.45,234.78,0.355
+2026-11-02,0022600232,2026-11-14,Cleveland Cavaliers,Dallas Mavericks,2.88,232.84,0.595
+2026-11-02,0022600233,2026-11-14,Miami Heat,Detroit Pistons,-3.84,230.08,0.374
+2026-11-02,0022600234,2026-11-14,Memphis Grizzlies,Brooklyn Nets,5.64,225.95,0.681
+2026-11-02,0022600235,2026-11-14,Minnesota Timberwolves,Chicago Bulls,13.55,238.04,0.871
+2026-11-02,0022600236,2026-11-15,Philadelphia 76ers,Indiana Pacers,7.78,225.52,0.742
+2026-11-02,0022600237,2026-11-15,Phoenix Suns,Los Angeles Lakers,-1.57,228.61,0.448
+2026-11-02,0022600238,2026-11-15,LA Clippers,Charlotte Hornets,-0.11,215.82,0.496
+2026-11-02,0022600239,2026-11-15,Utah Jazz,San Antonio Spurs,-8.94,232.73,0.228
+2026-11-02,0022600240,2026-11-15,Boston Celtics,Dallas Mavericks,8.36,225.01,0.757
+2026-11-02,0022600241,2026-11-15,Toronto Raptors,New York Knicks,3.25,222.24,0.607
+2026-11-02,0022600242,2026-11-15,Washington Wizards,Houston Rockets,-9.06,225.95,0.225
+2026-11-02,0022600243,2026-11-15,Milwaukee Bucks,Atlanta Hawks,-3.87,233.03,0.373
+2026-11-02,0022600244,2026-11-15,Sacramento Kings,Oklahoma City Thunder,-11.83,226.21,0.162

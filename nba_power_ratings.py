@@ -64,6 +64,7 @@ HALF_LIFE_DAYS = 60         # a game from 60 days ago counts half as much as one
 MARGIN_CAP = 20             # blowouts beyond 20 points count as 20
 B2B_PENALTY = 1.8           # points lost on the second night of a back-to-back
 PACE_PRIOR_GAMES = 10       # pace settles quickly, so the preseason pace counts as ~10 games
+LEAGUE_PRIOR_GAMES = 15     # last season's league scoring level and pace count as 15 games (60 left totals ~4 high)
 PACE_CARRYOVER = 0.6        # share of last season's pace difference expected to carry over
 SPLIT_CARRYOVER = 0.5       # share of last season's offense/defense balance carried into the split
 PPP_CAP = 25                # per-100 game efficiencies more than 25 from average are capped
@@ -429,7 +430,7 @@ def main():
         if has_poss.any():
             # this season's league levels, blended with last season's until enough games are in
             g = games[has_poss]
-            w = len(g) / (len(g) + 60)
+            w = len(g) / (len(g) + LEAGUE_PRIOR_GAMES)
             season_o = 100 * (g.home_pts.sum() + g.away_pts.sum()) / (2 * g.poss.sum())
             lg_o, lg_p = w * season_o + (1 - w) * lg_o, w * g.poss.mean() + (1 - w) * lg_p
         games["poss"] = games.poss.fillna(lg_p)

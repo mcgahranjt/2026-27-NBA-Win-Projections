@@ -68,7 +68,7 @@ LAST_SEASON_WEIGHT, TWO_SEASONS_WEIGHT = 1.0, 0.5
 ROOKIE_RATE = 0.85         # players with no NBA history start at 85% of league-average rates
 RATE_HALF_LIFE = 45        # days
 # Minutes
-MIN_PRIOR_GAMES = 5        # the preseason minutes expectation counts as 5 games
+MIN_PRIOR_GAMES = 1        # the preseason minutes expectation counts as 1 game (5 tested worse on 2026-27, Nov 2)
 MIN_HALF_LIFE = 15         # days; minutes react to role changes faster than rates
 PART_PRIOR_GAMES = 3       # same idea for how often a player gets into games
 UNKNOWN_MPG = 10.0
