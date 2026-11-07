@@ -20,10 +20,11 @@ projection made on or before game day:
     win probabilities (lower is better; 0.25 is a coin flip), total MAE and bias, and the share of
     games that went over the model's projected total (about 50% if the totals don't lean either way).
 
-Preseason anchor test (--tune): replays this season day by day. Each day's games are predicted
-using only earlier games, once for each anchor size, to see how much the preseason ratings should
-count. Results are reported, not applied - change PRIOR_GAMES / PACE_PRIOR_GAMES in
-nba_power_ratings.py yourself if a different value keeps winning over several weeks.
+Tuning test (--tune): replays this season day by day. Each day's games are predicted using only
+earlier games, once for each anchor size and once for each home court value, to see how much the
+preseason ratings should count and how many points home court is worth. Results are reported, not
+applied - change PRIOR_GAMES / PACE_PRIOR_GAMES in nba_power_ratings.py or HOME_COURT in
+nba_season_sim.py yourself if a different value keeps winning over several weeks.
 
 Outputs (output_grades/): player_grades.csv, player_grades_daily.csv, game_grades.csv,
 game_results.csv, anchor_tuning.csv (with --tune). If NBA_Spread_Calculator.xlsx is in this folder,
@@ -31,7 +32,7 @@ the Model Grades sheet is replaced with the summary. Close the workbook first.
 
 Usage:
   python3 nba_grade.py          # grade everything so far
-  python3 nba_grade.py --tune   # also run the preseason anchor test (best after ~4 weeks of games)
+  python3 nba_grade.py --tune   # also run the anchor and home court test (best after ~4 weeks of games)
 """
 
 import os
@@ -52,6 +53,7 @@ LOW_COUNT = {"3PM", "STL", "BLK", "TOV"}
 BASELINE_MIN_GAMES = 3
 ANCHORS = [1, 5, 10, 20, 30, 40]   # 1 = almost no preseason anchor
 PACE_ANCHORS = [1, 5, 10, 20, 30]
+HOME_COURTS = [1.0, 1.5, 2.0, 2.3, 2.5, 3.0]   # points
 TUNE_SKIP_DAYS = 7        # the first week has too few earlier games to predict from
 
 
@@ -166,7 +168,7 @@ def anchor_test(teams, sched):
     played = sched[sched.home_pts.notna()].copy()
     played["date"] = pd.to_datetime(played.date)
     if len(played) < 150:
-        print(f"\nAnchor test: only {len(played)} games played; results will be noisy until ~200+.")
+        print(f"\nTuning test: only {len(played)} games played; results will be noisy until ~200+.")
     teams, lg_o0, lg_p0 = PR.add_priors(teams, PR.fetch_last_season_advanced())
     played["game_id"] = played.game_id.astype(str).str.zfill(10)
     played = played.merge(PR.fetch_box_log(), on="game_id", how="left")
@@ -176,13 +178,15 @@ def anchor_test(teams, sched):
     dates = sorted(played.date.unique())
     dates = [d for d in dates if d >= dates[0] + pd.Timedelta(days=TUNE_SKIP_DAYS)]
 
-    orig = PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES
+    orig = PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT
+    tests = [("efficiency", ANCHORS), ("pace", PACE_ANCHORS), ("home court", HOME_COURTS)]
     rows = []
     try:
-        for kind, grid in [("efficiency", ANCHORS), ("pace", PACE_ANCHORS)]:
+        for kind, grid in tests:
             for v in grid:
                 PR.PRIOR_GAMES = v if kind == "efficiency" else orig[0]
                 PR.PACE_PRIOR_GAMES = v if kind == "pace" else orig[1]
+                PR.HOME_COURT = v if kind == "home court" else orig[2]
                 errs = []
                 for d in dates:
                     before = played[played.date < d]
@@ -201,20 +205,22 @@ def anchor_test(teams, sched):
                         mm = PR.matchup(r.loc[x.home_id], r.loc[x.away_id], lg_o, lg_p, x.rest_adj)
                         errs.append((mm["margin"] - (x.home_pts - x.away_pts), mm["total"] - (x.home_pts + x.away_pts)))
                 e = np.array(errs)
-                current = v == (orig[0] if kind == "efficiency" else orig[1])
-                rows.append({"anchor_for": kind, "anchor_games": v, "games_predicted": len(e),
+                current = v == orig[[t[0] for t in tests].index(kind)]
+                rows.append({"test": kind, "value": v, "games_predicted": len(e),
                              "margin_MAE": np.abs(e[:, 0]).mean(), "total_MAE": np.abs(e[:, 1]).mean(),
-                             "current_setting": "yes" if current else ""})
+                             "margin_bias": e[:, 0].mean(), "current_setting": "yes" if current else ""})
     finally:
-        PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES = orig
+        PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT = orig
     out = pd.DataFrame(rows).round(3)
-    for kind, col, name in [("efficiency", "margin_MAE", "PRIOR_GAMES"), ("pace", "total_MAE", "PACE_PRIOR_GAMES")]:
-        k = out[out.anchor_for == kind]
+    for kind, col, name, unit in [("efficiency", "margin_MAE", "PRIOR_GAMES", "games"),
+                                  ("pace", "total_MAE", "PACE_PRIOR_GAMES", "games"),
+                                  ("home court", "margin_MAE", "HOME_COURT", "points")]:
+        k = out[out.test == kind]
         best, cur = k.loc[k[col].idxmin()], k[k.current_setting == "yes"].iloc[0]
         gain = cur[col] - best[col]
-        msg = "keep the current setting" if gain < 0.05 else f"consider {name} = {int(best.anchor_games)} if it holds up"
-        print(f"  {kind} anchor: best {int(best.anchor_games)} games ({col} {best[col]:.2f}) vs current "
-              f"{int(cur.anchor_games)} ({cur[col]:.2f}) -> {msg}")
+        msg = "keep the current setting" if gain < 0.05 else f"consider {name} = {best.value:g} if it holds up"
+        print(f"  {kind}: best {best.value:g} {unit} ({col} {best[col]:.2f}) vs current "
+              f"{cur.value:g} ({cur[col]:.2f}) -> {msg}")
     return out
 
 
@@ -272,7 +278,7 @@ def main():
               f"had {BASELINE_MIN_GAMES}+ earlier games)\n" + pg.to_string(index=False))
 
     if "--tune" in sys.argv:
-        print("\nPreseason anchor test (each day predicted from earlier games only):")
+        print("\nTuning test: preseason anchors and home court (each day predicted from earlier games only):")
         at = anchor_test(teams, sched)
         at.to_csv(os.path.join(OUT_DIR, "anchor_tuning.csv"), index=False)
         print(at.to_string(index=False))

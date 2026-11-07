@@ -243,7 +243,7 @@ Each run writes the day's projections and ranges to `output_props/`, appends the
 
 - **Games:** margin error compared with a "home team by 2.3" baseline, straight-up winner accuracy, Brier score for the win probabilities, and total error and bias. It uses the latest projection made on or before game day; `nba_power_ratings.py` saves projections for the next two weeks of games on every run.
 - **Player projections:** average error for every stat compared with each player's season average so far, plus bias and a range check. About half of results should land under the median and about 10% each below the 10th and above the 90th percentile. Much more often means the ranges are too narrow; much less, too wide.
-- **Preseason anchor test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each anchor size, to see how much the preseason ratings should count. It reports the best setting but doesn't change anything.
+- **Tuning test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each anchor size and once for each home court value (1.0 to 3.0 points), to see how much the preseason ratings should count and how much home court is worth. It reports the best setting but doesn't change anything.
 
 Results go to `output_grades/` and the workbook's Model Grades sheet.
 
