@@ -75,6 +75,7 @@ MIN_HALF_LIFE = 15         # days; minutes react to role changes faster than rat
 PART_PRIOR_GAMES = 3       # same idea for how often a player gets into games
 UNKNOWN_MPG = 10.0
 TEAM_MINUTES = 240
+ACTIVE_LIMIT = 13          # NBA teams dress 13 players; the 13 with the most expected minutes are active
 MAX_MIN = 42               # hard cap on anyone's projected minutes
 REDIST_CAP = 38            # extra minutes from injuries can't push a player past 38 (or 1 over his norm)
 MIN_TO_SHOW = 6            # players projected under 6 minutes are left out of the output
@@ -192,7 +193,29 @@ def injury_report():
         rep = pd.concat([rep[~rep.key.isin(ov.key)], ov], ignore_index=True)
         print(f"Manual overrides: {len(ov)} players.")
     rep["out"] = is_out(rep.status)
-    return rep.drop_duplicates("key", keep="last").set_index("key")
+    rep = rep.drop_duplicates("key", keep="last")
+    save_injury_history(rep)
+    return rep.set_index("key")
+
+
+def save_injury_history(rep):
+    """Keep each day's Out list, so games a player missed while injured aren't counted as DNPs."""
+    path = os.path.join(S.DATA_DIR, "injury_history.csv")
+    today = dt.date.today().isoformat()
+    new = rep[rep.out][["key", "status"]].assign(date=today)
+    if os.path.exists(path):
+        old = pd.read_csv(path)
+        new = pd.concat([old[old.date != today], new], ignore_index=True)
+    new.to_csv(path, index=False)
+
+
+def injury_history():
+    path = os.path.join(S.DATA_DIR, "injury_history.csv")
+    if not os.path.exists(path):
+        return pd.DataFrame(columns=["key", "status", "date"])
+    h = pd.read_csv(path)
+    h["date"] = pd.to_datetime(h.date)
+    return h
 
 
 def is_out(status):
@@ -369,11 +392,48 @@ def bpm_balance():
 
 
 # ---------------------------------------------------------------- lineups
+def expected_minutes(players, log, vb, day, tid_of):
+    """
+    Each player's expected minutes per team game: his recent minutes in his team's games (weighted
+    toward recent ones, MIN_HALF_LIFE), where a game he didn't play counts as 0 unless he was listed
+    Out that day, blended with MIN_PRIOR_GAMES games of his preseason role (Version B's minutes per
+    team game). A player who joined mid-season counts only games since his first one for the team.
+    """
+    hist = injury_history()
+    out_days = set(zip(hist.key, hist.date))
+    team_games = log.drop_duplicates(["TEAM_ID", "GAME_ID"])[["TEAM_ID", "GAME_ID", "GAME_DATE"]]
+    team_games = team_games.assign(w=recency(team_games.GAME_DATE, day, MIN_HALF_LIFE))
+    on = log.merge(team_games[["TEAM_ID", "GAME_ID", "w"]], on=["TEAM_ID", "GAME_ID"])
+    w_min = (on.w * on.MIN).groupby([on.TEAM_ID, on.PLAYER_ID]).sum()
+    first = on.groupby(["TEAM_ID", "PLAYER_ID"]).GAME_DATE.min()
+    vb_team = vb.TEAM_NAME.map(tid_of) if vb is not None else pd.Series(dtype=float)
+    out = []
+    for p in players.itertuples():
+        on_vb = vb_team.get(p.key) == p.TEAM_ID
+        prior = vb.team_mpg.get(p.key, p.prior_mpg) if vb is not None and p.key in vb.index else p.prior_mpg
+        t = team_games[team_games.TEAM_ID == p.TEAM_ID]
+        f = first.get((p.TEAM_ID, p.PLAYER_ID), pd.NaT)
+        if not on_vb:
+            t = t[t.GAME_DATE >= f] if pd.notna(f) else t.iloc[0:0]
+        t = t.loc[np.array([(p.key, d) not in out_days for d in t.GAME_DATE], dtype=bool)]
+        out.append((w_min.get((p.TEAM_ID, p.PLAYER_ID), 0.0) + MIN_PRIOR_GAMES * prior) / (t.w.sum() + MIN_PRIOR_GAMES))
+    return np.array(out)
+
+
+def fit_to_240(e):
+    """Scale a team's expected minutes to 240 in all, with no one over MAX_MIN."""
+    e = e.astype(float).copy()
+    for _ in range(5):
+        e = np.minimum(e * TEAM_MINUTES / max(e.sum(), 1e-9), MAX_MIN)
+    return e
+
+
 def team_lineups(day, team_ids, log, inj, prev1, vb):
     """
     Shared by the props and the game projections (nba_power_ratings.py).
     Returns (players, lineup, no_show):
-      players - everyone on these rosters with status, Out flag and minutes if he plays (MIN; 0 if out)
+      players - each team's active players (at most ACTIVE_LIMIT) and its Out players, with status,
+                expected minutes (exp_min) and minutes if he plays (MIN; 0 if out)
       lineup  - everyone who plays for these teams or helped build their ratings, with today's expected
                 minutes and the minutes the team rating already assumes, for lineup_adjustment()
       no_show - players left out because they haven't played while their team has
@@ -390,16 +450,27 @@ def team_lineups(day, team_ids, log, inj, prev1, vb):
                & (players.TEAM_ID.map(team_games).fillna(0) >= NO_SHOW_TEAM_GAMES))
     no_show_list = players[no_show & ~players.out]
     players = players[~no_show].copy()
+
+    # today's expected minutes: recent minutes per team game (a game he sat out counts as 0 unless he
+    # was listed Out that day), only the top ACTIVE_LIMIT players dress, and they're fit to 240
+    tid_of = S.load_teams().set_index("TEAM_NAME").TEAM_ID
+    players["e0"] = expected_minutes(players, log, vb, day, tid_of)
+    rank = players[~players.out].groupby("TEAM_ID").e0.rank(ascending=False, method="first")
+    players["active"] = (~players.out) & players.index.isin(rank[rank <= ACTIVE_LIMIT].index)
+    players["exp_min"] = 0.0
+    for _, t in players[players.active].groupby("TEAM_ID"):
+        players.loc[t.index, "exp_min"] = fit_to_240(t.e0.to_numpy())
+    # minutes if he plays (used by the player stat projections), among the same active players
     players["MIN"] = 0.0
-    for _, t in players[~players.out].groupby("TEAM_ID"):
+    for _, t in players[players.active].groupby("TEAM_ID"):
         players.loc[t.index, "MIN"] = allocate(t)
 
     # minutes each player has in his team's rating: the preseason lineup (Version B, counted as
     # PRIOR_GAMES games) blended with real games, weighted toward recent ones like the ratings are
-    today = players.assign(exp_min=players.MIN * players.part)[["TEAM_ID", "key", "PLAYER_NAME", "exp_min", "status"]]
+    today = players[["TEAM_ID", "key", "PLAYER_NAME", "exp_min", "status"]]
     rows = [today]
+    players = players[players.active | players.out].copy()
     if vb is not None:
-        tid_of = S.load_teams().set_index("TEAM_NAME").TEAM_ID
         pre = vb.assign(TEAM_ID=vb.TEAM_NAME.map(tid_of), PLAYER_NAME=vb.player).reset_index()
         rows.append(pre[pre.TEAM_ID.isin(team_ids)][["TEAM_ID", "key", "PLAYER_NAME"]])
     played = log[log.TEAM_ID.isin(team_ids)].assign(key=lambda d: d.PLAYER_NAME.map(name_key))
