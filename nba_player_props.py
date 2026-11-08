@@ -19,7 +19,9 @@ How it works:
        - each team's projected score from the Matchup Projection math; players' points, threes and
          assists are scaled so the team adds up to it. That brings in the opponent's defense, and
          when a good player is out his teammates absorb most of his scoring.
-       - out players lower their team's projected score using Version B's player ratings
+       - lineups: each team's rating is adjusted for who is playing and how many minutes each player
+         is expected to get, versus the lineup its rating was built on (team_lineups and
+         lineup_adjustment, shared with the game projections in nba_power_ratings.py)
        - lopsided games: starters lose some minutes when the projected margin is over 10
   5. Ranges. Each player's game is simulated 4,000 times (minutes vary, then each stat varies
      around its expected value), which gives medians, 10th-90th percentile ranges and
@@ -82,7 +84,11 @@ DEPTH_WEIGHT = 0.5         # when a team has more minutes than 240, half the cut
                            # bench (Version B's depth chart) and half evenly; best on the start of 2025-26
 BLOWOUT_START, BLOWOUT_PER_PT = 10, 0.008   # starters lose 0.8% of minutes per point of margin past 10
 STARTER_MIN = 28
-REPLACEMENT_BPM = -2.0     # the player who replaces an injured one is about a -2 (Version B's prior)
+REPLACEMENT_BPM = -2.0     # players Version B didn't rate count as a -2 (Version B's prior)
+LINEUP_WEIGHT = 1.0        # share of the lineup adjustment applied to team ratings (1 = full)
+LINEUP_SPLIT = 0.5         # share of each player's OBPM-DBPM balance used to split him into offense and
+                           # defense; this is what moves totals (0 = lineups change spreads only).
+                           # Nov 8 replay (86 games): spreads 11.06 -> 11.03 MAE, totals 15.06 -> 15.31
 # Simulation
 N_SIMS = 4000
 SEED = 7
@@ -185,8 +191,13 @@ def injury_report():
                            "note": "manual override"})
         rep = pd.concat([rep[~rep.key.isin(ov.key)], ov], ignore_index=True)
         print(f"Manual overrides: {len(ov)} players.")
-    rep["out"] = rep.status.str.lower().str.startswith(OUT_STATUSES)
+    rep["out"] = is_out(rep.status)
     return rep.drop_duplicates("key", keep="last").set_index("key")
+
+
+def is_out(status):
+    """True for Out, Doubtful, suspended and inactive (Day-To-Day and Questionable still play)."""
+    return status.fillna("").astype(str).str.lower().str.startswith(OUT_STATUSES)
 
 
 def recency(dates, as_of, half_life):
@@ -331,15 +342,113 @@ def load_team_ratings():
     return r, lg_o, lg_p
 
 
-def version_b_minutes():
+def version_b_players():
+    """Version B's preseason player ratings and minutes, by name key (None if it hasn't been run)."""
     path = os.path.join("output_b", f"player_projections_{S.SEASON}.csv")
     if not os.path.exists(path):
         print("Version B player projections not found; using last season's minutes as the starting point.")
-        return None, None
+        return None
     vb = pd.read_csv(path, encoding="utf-8-sig")
     vb["key"] = vb.player.map(name_key)
-    vb = vb.drop_duplicates("key")
-    return vb.set_index("key").proj_mpg, vb.set_index("key").proj_bpm
+    vb["team_mpg"] = vb.proj_min / V.GAMES      # minutes per team game (adds up to 240 per team)
+    return vb.drop_duplicates("key").set_index("key")
+
+
+def bpm_balance():
+    """Each player's offense-minus-defense BPM from last season (Basketball-Reference), by name key."""
+    path = os.path.join(S.DATA_DIR, f"br_advanced_full_{S.SEASON[:4]}.csv")
+    if not os.path.exists(path):
+        return pd.Series(dtype=float)
+    br = pd.read_csv(path)
+    br = br[~br.Team.map(V.is_total_row)]
+    br["MP"] = pd.to_numeric(br.MP, errors="coerce").fillna(0)
+    br = br[br.MP > 0].assign(key=br.Player.map(name_key))
+    br["bal"] = (br.OBPM - br.DBPM) * br.MP
+    g = br.groupby("key")[["bal", "MP"]].sum()
+    return g.bal / g.MP
+
+
+# ---------------------------------------------------------------- lineups
+def team_lineups(day, team_ids, log, inj, prev1, vb):
+    """
+    Shared by the props and the game projections (nba_power_ratings.py).
+    Returns (players, lineup, no_show):
+      players - everyone on these rosters with status, Out flag and minutes if he plays (MIN; 0 if out)
+      lineup  - everyone who plays for these teams or helped build their ratings, with today's expected
+                minutes and the minutes the team rating already assumes, for lineup_adjustment()
+      no_show - players left out because they haven't played while their team has
+    """
+    players = current_players()
+    players = players[players.TEAM_ID.isin(team_ids)].copy()
+    players["key"] = players.PLAYER_NAME.map(name_key)
+    players = minutes_baseline(players, log, prev1, vb.proj_mpg if vb is not None else None, day)
+    players["status"] = players.key.map(inj.status).fillna("")
+    players["out"] = players.key.map(inj.out).fillna(False).astype(bool)
+    # not in the rotation (or hurt without being listed): no games for anyone this season while his team has played
+    team_games = log.groupby("TEAM_ID").GAME_ID.nunique()
+    no_show = (~players.PLAYER_ID.isin(set(log.PLAYER_ID)) & (players.status == "")
+               & (players.TEAM_ID.map(team_games).fillna(0) >= NO_SHOW_TEAM_GAMES))
+    no_show_list = players[no_show & ~players.out]
+    players = players[~no_show].copy()
+    players["MIN"] = 0.0
+    for _, t in players[~players.out].groupby("TEAM_ID"):
+        players.loc[t.index, "MIN"] = allocate(t)
+
+    # minutes each player has in his team's rating: the preseason lineup (Version B, counted as
+    # PRIOR_GAMES games) blended with real games, weighted toward recent ones like the ratings are
+    today = players.assign(exp_min=players.MIN * players.part)[["TEAM_ID", "key", "PLAYER_NAME", "exp_min", "status"]]
+    rows = [today]
+    if vb is not None:
+        tid_of = S.load_teams().set_index("TEAM_NAME").TEAM_ID
+        pre = vb.assign(TEAM_ID=vb.TEAM_NAME.map(tid_of), PLAYER_NAME=vb.player).reset_index()
+        rows.append(pre[pre.TEAM_ID.isin(team_ids)][["TEAM_ID", "key", "PLAYER_NAME"]])
+    played = log[log.TEAM_ID.isin(team_ids)].assign(key=lambda d: d.PLAYER_NAME.map(name_key))
+    rows.append(played[["TEAM_ID", "key", "PLAYER_NAME"]])
+    lineup = pd.concat(rows).drop_duplicates(["TEAM_ID", "key"]).reset_index(drop=True)
+    lineup["exp_min"] = lineup.exp_min.fillna(0.0)
+    games = played.drop_duplicates(["TEAM_ID", "GAME_ID"])[["TEAM_ID", "GAME_ID", "GAME_DATE"]]
+    games = games.assign(w=PR.recency_weights(games.GAME_DATE, day))
+    w_team = games.groupby("TEAM_ID").w.sum()
+    w_min = (played.merge(games[["TEAM_ID", "GAME_ID", "w"]], on=["TEAM_ID", "GAME_ID"])
+             .assign(wm=lambda d: d.w * d.MIN).groupby(["TEAM_ID", "key"]).wm.sum())
+    pre_min = (pre.set_index(["TEAM_ID", "key"]).team_mpg if vb is not None else pd.Series(dtype=float))
+    idx = pd.MultiIndex.from_frame(lineup[["TEAM_ID", "key"]])
+    lineup["assumed_min"] = ((PR.PRIOR_GAMES * pre_min.reindex(idx).fillna(0).to_numpy()
+                              + w_min.reindex(idx).fillna(0).to_numpy())
+                             / (PR.PRIOR_GAMES + lineup.TEAM_ID.map(w_team).fillna(0).to_numpy()))
+    lineup["bpm"] = lineup.key.map(vb.proj_bpm).fillna(REPLACEMENT_BPM) if vb is not None else REPLACEMENT_BPM
+    lineup["bal"] = lineup.key.map(bpm_balance()).fillna(0.0)
+    return players, lineup, no_show_list
+
+
+def lineup_adjustment(lineup, team_id):
+    """
+    Offense and defense change (per 100 possessions) from who is playing and how much, versus the
+    lineup the team rating was built on: each player's BPM x (today's minutes - minutes in the rating) / 48,
+    split into offense and defense with part of last season's OBPM-DBPM balance (LINEUP_SPLIT).
+    """
+    d = lineup[lineup.TEAM_ID == team_id]
+    delta = LINEUP_WEIGHT * (d.exp_min - d.assumed_min) / 48
+    off = d.bpm / 2 + LINEUP_SPLIT * d.bal / 2
+    dfn = d.bpm / 2 - LINEUP_SPLIT * d.bal / 2
+    return float((off * delta).sum()), float((dfn * delta).sum())
+
+
+def lineup_matchup(r_home, r_away, lg_o, lg_p, rest_adj, lineup, home_id, away_id):
+    """PR.matchup with both teams' ratings adjusted for today's lineups."""
+    h, a = r_home.copy(), r_away.copy()
+    for r, tid in [(h, home_id), (a, away_id)]:
+        o, d = lineup_adjustment(lineup, tid)
+        r["off"], r["dfn"] = r["off"] + o, r["dfn"] + d
+    return PR.matchup(h, a, lg_o, lg_p, rest_adj)
+
+
+def lineups_for(day, team_ids):
+    """Loads everything team_lineups() needs (used by nba_power_ratings.py)."""
+    log = season_game_log()
+    log = log[log.GAME_DATE < day]
+    prev1 = prev_season_totals(int(S.SEASON[:4]) - 1)
+    return team_lineups(day, team_ids, log, injury_report(), prev1, version_b_players())
 
 
 def write_workbook(table, ranges, label):
@@ -389,7 +498,7 @@ def main():
     print(f"{len(games)} games on {day_str}.")
 
     ratings, lg_o, lg_p = load_team_ratings()
-    vb_mpg, vb_bpm = version_b_minutes()
+    vb = version_b_players()
     start = int(S.SEASON[:4])
     prev1, prev2 = prev_season_totals(start - 1), prev_season_totals(start - 2)
     log = season_game_log()
@@ -397,42 +506,22 @@ def main():
     inj = injury_report()
 
     playing = set(games.home_id) | set(games.away_id)
-    players = current_players()
-    players = players[players.TEAM_ID.isin(playing)].copy()
-    players["key"] = players.PLAYER_NAME.map(name_key)
-    players = minutes_baseline(players, log, prev1, vb_mpg, day)
+    players, lineup, no_show_list = team_lineups(day, playing, log, inj, prev1, vb)
     rates = per_minute_rates(players, prev1, prev2, log, day)
     players = players.merge(rates, left_on="PLAYER_ID", right_index=True)
-    players["status"] = players.key.map(inj.status).fillna("")
-    players["out"] = players.key.map(inj.out).fillna(False).astype(bool)
-    players["bpm"] = players.key.map(vb_bpm) if vb_bpm is not None else np.nan
-    # not in the rotation (or hurt without being listed): no games for anyone this season while his team has played
-    team_games = log.groupby("TEAM_ID").GAME_ID.nunique()
-    no_show = (~players.PLAYER_ID.isin(set(log.PLAYER_ID)) & (players.status == "")
-               & (players.TEAM_ID.map(team_games).fillna(0) >= NO_SHOW_TEAM_GAMES))
-    no_show_list = players[no_show & ~players.out]
-    players = players[~no_show]
 
     rows = []
     for g in games.itertuples():
         h, a = ratings.loc[names[g.home_id]], ratings.loc[names[g.away_id]]
-        m = PR.matchup(h, a, lg_o, lg_p, g.rest_adj)
-        # out players' value (Version B rating above a replacement player, times his usual role)
-        impact = {}
-        for tid in (g.home_id, g.away_id):
-            o = players[(players.TEAM_ID == tid) & players.out]
-            impact[tid] = ((o.bpm.fillna(REPLACEMENT_BPM) - REPLACEMENT_BPM).clip(lower=0)
-                           * o.prior_mpg * o.part / 48).sum()
-        home_pts = m["home_pts"] - impact[g.home_id] / 2 + impact[g.away_id] / 2
-        away_pts = m["away_pts"] - impact[g.away_id] / 2 + impact[g.home_id] / 2
-        margin = home_pts - away_pts
+        # the same lineup-adjusted projection as the game projections (who plays, and how much)
+        m = lineup_matchup(h, a, lg_o, lg_p, g.rest_adj, lineup, g.home_id, g.away_id)
+        home_pts, away_pts, margin = m["home_pts"], m["away_pts"], m["margin"]
         for tid, opp, side, pts, team_r in [(g.home_id, g.away_id, "Home", home_pts, h),
                                             (g.away_id, g.home_id, "Away", away_pts, a)]:
             t = players[(players.TEAM_ID == tid) & ~players.out].copy()
             if t.empty:
                 continue
-            mins = allocate(t)
-            mins = blowout(mins, t.part.to_numpy(), margin)
+            mins = blowout(t.MIN.to_numpy(), t.part.to_numpy(), margin)
             t["MIN"] = mins
             exp_min = mins * t.part.to_numpy()
             pace_f = m["poss"] / team_r.pace_abs

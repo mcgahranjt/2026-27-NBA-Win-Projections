@@ -198,8 +198,10 @@ During the season, `nba_power_ratings.py` refits every team's offense, defense a
 
 - **Offense and defense:** a ridge regression on both teams' points per 100 possessions in every game, adjusted for opponent, home court and back-to-backs. Net rating is offense minus defense, and the power rating is net rating at league-average pace.
 - **Pace:** a second ridge regression on each game's possessions (estimated as FGA + 0.44 × FTA − OREB + TOV, averaged across both teams).
-- **Preseason anchor:** each team's net rating starts at its preseason power rating, split into offense and defense using half of last season's balance. Pace starts at 60% of last season's difference from average. The anchor counts as about 20 games for efficiency and 10 for pace, since pace settles faster.
+- **Preseason anchor:** each team's net rating starts at its preseason power rating, split into offense and defense using half of last season's balance. Pace starts at 60% of last season's difference from average. The anchor counts as about 10 games for efficiency and 10 for pace. Efficiency was set at 20 games until November 8, 2026, when the tuning test had favored 10 at two checks in a row.
 - **Recency and outliers:** recent games count more (60-day half-life), and single-game efficiencies are capped at 25 points per 100 from average to limit garbage time.
+
+- **Lineups:** the game projections (spreads and totals) are adjusted for who is playing and how many minutes each player is expected to get. Each player's minutes in the team rating (the preseason lineup counted as 10 games, blended with recent games, where a missed game counts as zero) are compared with his expected minutes today (the player projections' minutes model, with Out players removed and their minutes given to teammates). The difference, times his Version B rating, moves the team's offense and defense; part of last season's offense/defense balance decides how much of that change falls on offense, which is what moves totals. The same function is used by the player projections. In a replay of 86 games with each game's actual lineups, spread error fell slightly (11.06 to 11.03 points) and total error rose (15.06 to 15.31), so the offense/defense split for totals will be reviewed as more games are played. Projections for later dates use today's injury report and are refreshed each day.
 
 Each run saves the rankings, a team ratings table, the movement since the last run and a dated history for charting. The season simulation reads the same day's ratings instead of keeping its own, so the rankings, workbook and simulation all agree.
 
@@ -218,7 +220,7 @@ Two more sheets are kept up to date by the script:
 
 ### Still to come
 
-- **Injury adjustments for spreads,** using each missing player's projected contribution from Version B. The player projections already do this; the spread calculator and game projections will share the same function.
+- **Lineups in the spread calculator.** The game projections include lineups; the workbook's Spread Calculator and Matchup Projection still use team ratings alone.
 - **Tune the preseason anchor** with the grading script's anchor test after about four weeks of games, and **home court and the back-to-back penalty** once there are roughly 400 games.
 
 ![Power rankings](output_power/power_rankings.png)
@@ -230,7 +232,7 @@ Two more sheets are kept up to date by the script:
 - **Per-minute rates:** each player's last two seasons (last season counts double), pulled toward league average for small samples. This season's games take over as they come in, weighted toward recent ones.
 - **Minutes:** Version B's projected minutes (or last season's) blended with this season's recent minutes. Each team's active players are fit to 240 minutes, so an injured player's minutes go to teammates. When a healthy roster's usual minutes add up to more than 240, half of the cut is shared evenly and half comes off the end of the bench, following Version B's depth chart. On the first four weeks of 2025-26, an even cut left starters about 3 minutes short in games with a large surplus, and the blend lowered their average miss from 5.1 to 4.2 minutes. `backtest_minutes.py` reruns this test and can be pointed at the current season.
 - **Injuries:** players listed as Out (or suspended) in ESPN's public injury feed aren't projected. Players listed as Day-To-Day are projected as playing, with their status shown in the Status column. `data/injury_overrides.csv` marks anyone Out or Active by hand.
-- **Game context comes from the team ratings rather than being estimated again:** pace scales every stat, and points, threes and assists are scaled so each team adds up to its projected score. That accounts for the opponent's defense and lets teammates absorb an injured player's scoring. Out players also lower their team's projected score, using Version B's player ratings, and starters lose some minutes in projected blowouts.
+- **Game context comes from the team ratings rather than being estimated again:** pace scales every stat, and points, threes and assists are scaled so each team adds up to its projected score. That accounts for the opponent's defense and lets teammates absorb an injured player's scoring. Each team's projected score includes the same lineup adjustment as the game projections, and starters lose some minutes in projected blowouts.
 - **Ranges:** each game is simulated 4,000 times to get medians, 10th–90th percentile ranges and double-double odds. Projections assume the player plays.
 
 Each run writes the day's projections and ranges to `output_props/`, appends them to a history file for grading later, and replaces the Player Projections and Player Ranges sheets in the workbook.
@@ -287,7 +289,7 @@ The sync uses a Google Cloud service account, set up once: enable the Google She
 
 - **Projections are compressed.** They run from about 24 to 59 wins, while actual seasons usually range from about 15 to 65. Pulling toward average lowers typical error but misses the true outliers.
 - **BPM is built from box-score stats,** so it tends to undervalue players whose impact doesn't show up there, such as strong defenders and screeners.
-- **The win projections don't model injuries during the season.** Players are assumed to play about 68 games. The player projections handle each day's injury report, and the spreads will once the shared injury adjustment is in place.
+- **The win projections don't model injuries during the season.** Players are assumed to play about 68 games. The player projections and the game projections handle each day's injury report and expected minutes.
 - **The Version B backtest has a small head start.** Historical rosters are built from players who actually appeared for each team, so a player who missed an entire season is left out, which a real preseason projection wouldn't know. The backtest error is probably a few tenths of a win optimistic.
 - **Traded players** are assigned to the team they finished the season with in Version A and the team they started with in Version B.
 

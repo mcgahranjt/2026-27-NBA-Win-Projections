@@ -8,7 +8,7 @@ How the ratings work:
   - Before the season: the weighted-statistics preseason power points from
     nba_preseason_power.py (falls back to (combined projected wins - 41) / 2.7 if that hasn't been run)
   - Once games are played: every game's scoring is fit with a ridge regression (below), with each
-    team pulled toward its preseason value. The preseason rating counts about as much as 20 games,
+    team pulled toward its preseason value. The preseason rating counts about as much as 10 games,
     so it carries early in the season and results take over later.
   - Recent games count more than old ones (60-day half-life), and per-game efficiencies more than
     25 points per 100 from average are capped so garbage time doesn't distort the ratings.
@@ -59,7 +59,8 @@ import nba_season_sim as S
 OUT_DIR = "output_power"
 HOME_COURT = S.HOME_COURT   # 2.3 points
 GAME_SD = S.GAME_SD         # 12 points
-PRIOR_GAMES = 20            # the preseason rating counts about as much as this many games
+PRIOR_GAMES = 10            # the preseason rating counts about as much as this many games (20 until Nov 8;
+                            # 10 won the --tune replay on Nov 2 and Nov 6)
 HALF_LIFE_DAYS = 60         # a game from 60 days ago counts half as much as one from today
 MARGIN_CAP = 20             # blowouts beyond 20 points count as 20
 B2B_PENALTY = 1.8           # points lost on the second night of a back-to-back
@@ -381,8 +382,27 @@ def chart(rank, path, label):
     fig.savefig(path, dpi=150)
 
 
+def print_lineup_adjustments(P, lineup, r, lg_p, min_pts=0.5):
+    """Each team's lineup adjustment in points per game, with its Out players."""
+    rows = []
+    for tid in sorted(set(lineup.TEAM_ID)):
+        o, d = P.lineup_adjustment(lineup, tid)
+        pts = (o + d) * lg_p / 100
+        if abs(pts) >= min_pts:
+            out = lineup[(lineup.TEAM_ID == tid) & P.is_out(lineup.status)].PLAYER_NAME
+            rows.append((pts, r.TEAM_NAME[tid], ", ".join(out) or "-"))
+    print("\nLineup adjustments (points per game vs. the team rating, from who is playing and how much)")
+    if not rows:
+        print("  none of 0.5 points or more")
+    for pts, name, out in sorted(rows):
+        print(f"  {name:<24} {pts:+.1f}   Out: {out}")
+
+
 def log_game_projections(sched, teams, lg_o, lg_p, today):
-    """Save projections for the next two weeks of unplayed games, so nba_grade.py can grade them later."""
+    """
+    Save projections for the next two weeks of unplayed games, so nba_grade.py can grade them later.
+    Each game uses today's lineups (the current injury report and expected minutes).
+    """
     if sched is None:
         return
     up = sched[sched.home_pts.isna()].copy()
@@ -391,9 +411,21 @@ def log_game_projections(sched, teams, lg_o, lg_p, today):
     if up.empty:
         return
     r = teams.set_index("TEAM_ID")[["TEAM_NAME", "off", "dfn", "pace_adj"]].rename(columns={"pace_adj": "pace"})
+    # who is playing and how much (shared with the player props); falls back to team ratings alone
+    lineup = None
+    try:
+        import nba_player_props as P
+        _, lineup, _ = P.lineups_for(today, set(up.home_id) | set(up.away_id))
+        print_lineup_adjustments(P, lineup, r, lg_p)
+    except (Exception, SystemExit) as e:
+        print(f"\nCouldn't build today's lineups ({e.__class__.__name__}: {e}); "
+              "game projections use the team ratings without lineup adjustments.")
     rows = []
     for g in up.itertuples():
-        m = matchup(r.loc[g.home_id], r.loc[g.away_id], lg_o, lg_p, g.rest_adj)
+        if lineup is not None:
+            m = P.lineup_matchup(r.loc[g.home_id], r.loc[g.away_id], lg_o, lg_p, g.rest_adj, lineup, g.home_id, g.away_id)
+        else:
+            m = matchup(r.loc[g.home_id], r.loc[g.away_id], lg_o, lg_p, g.rest_adj)
         rows.append({"as_of": today.date().isoformat(), "game_id": g.game_id, "date": g.date.date().isoformat(),
                      "home": r.TEAM_NAME[g.home_id], "away": r.TEAM_NAME[g.away_id],
                      "proj_margin": round(m["margin"], 2), "proj_total": round(m["total"], 2),
