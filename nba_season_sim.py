@@ -38,7 +38,8 @@ SEED = 2027
 
 WINS_PER_POINT = 2.7   # wins added by one point of per-game margin over a season
 GAME_SD = 12.0         # standard deviation of an NBA game's final margin, in points
-HOME_COURT = 2.3       # home-court advantage in points
+HOME_COURT = 1.8       # home-court advantage in points (2.3 until Nov 8, 2026; home margin was +1.7 over
+                       # 2025-26 and +1.85 early in 2026-27, and 1.8 beat 2.3 in the in-season replay)
 BACKTEST_MAE = 6.95    # combined model's average preseason error, in wins
 PRIOR_GAMES = 25       # in-season: the preseason rating counts as much as this many games of results
 

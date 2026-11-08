@@ -16,15 +16,15 @@ Player props (from nba_player_props.py's history files vs. box scores):
 
 Games (from nba_power_ratings.py's game_projection_history.csv vs. final scores), using the latest
 projection made on or before game day:
-  - Margin MAE vs. a baseline of "home team by 2.3", straight-up winner accuracy, Brier score for
+  - Margin MAE vs. a baseline of "home team by HOME_COURT", straight-up winner accuracy, Brier score for
     win probabilities (lower is better; 0.25 is a coin flip), total MAE and bias, and the share of
     games that went over the model's projected total (about 50% if the totals don't lean either way).
 
 Tuning test (--tune): replays this season day by day. Each day's games are predicted using only
-earlier games, once for each anchor size and once for each home court value, to see how much the
-preseason ratings should count and how many points home court is worth. Results are reported, not
-applied - change PRIOR_GAMES / PACE_PRIOR_GAMES in nba_power_ratings.py or HOME_COURT in
-nba_season_sim.py yourself if a different value keeps winning over several weeks.
+earlier games, once for each value of a setting: the preseason anchors, home court, the back-to-back
+penalty and the recency half-life. Results are reported, not applied - change PRIOR_GAMES,
+PACE_PRIOR_GAMES, B2B_PENALTY or HALF_LIFE_DAYS in nba_power_ratings.py, or HOME_COURT in
+nba_season_sim.py, yourself if a different value keeps winning over several weeks.
 
 Outputs (output_grades/): player_grades.csv, player_grades_daily.csv, game_grades.csv,
 game_results.csv, anchor_tuning.csv (with --tune). If NBA_Spread_Calculator.xlsx is in this folder,
@@ -32,7 +32,7 @@ the Model Grades sheet is replaced with the summary. Close the workbook first.
 
 Usage:
   python3 nba_grade.py          # grade everything so far
-  python3 nba_grade.py --tune   # also run the anchor and home court test (best after ~4 weeks of games)
+  python3 nba_grade.py --tune   # also run the tuning test (best after ~4 weeks of games)
 """
 
 import os
@@ -53,7 +53,9 @@ LOW_COUNT = {"3PM", "STL", "BLK", "TOV"}
 BASELINE_MIN_GAMES = 3
 ANCHORS = [1, 5, 10, 20, 30, 40]   # 1 = almost no preseason anchor
 PACE_ANCHORS = [1, 5, 10, 20, 30]
-HOME_COURTS = [1.0, 1.5, 2.0, 2.3, 2.5, 3.0]   # points
+HOME_COURTS = [1.0, 1.5, 1.8, 2.3, 3.0]   # points
+B2B_PENALTIES = [0.0, 1.0, 1.8, 2.5, 3.5]   # points
+HALF_LIVES = [20, 30, 60, 120]             # days
 TUNE_SKIP_DAYS = 7        # the first week has too few earlier games to predict from
 
 
@@ -178,8 +180,9 @@ def anchor_test(teams, sched):
     dates = sorted(played.date.unique())
     dates = [d for d in dates if d >= dates[0] + pd.Timedelta(days=TUNE_SKIP_DAYS)]
 
-    orig = PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT
-    tests = [("efficiency", ANCHORS), ("pace", PACE_ANCHORS), ("home court", HOME_COURTS)]
+    orig = PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT, PR.B2B_PENALTY, PR.HALF_LIFE_DAYS
+    tests = [("efficiency", ANCHORS), ("pace", PACE_ANCHORS), ("home court", HOME_COURTS),
+             ("back-to-back", B2B_PENALTIES), ("half-life", HALF_LIVES)]
     rows = []
     try:
         for kind, grid in tests:
@@ -187,9 +190,12 @@ def anchor_test(teams, sched):
                 PR.PRIOR_GAMES = v if kind == "efficiency" else orig[0]
                 PR.PACE_PRIOR_GAMES = v if kind == "pace" else orig[1]
                 PR.HOME_COURT = v if kind == "home court" else orig[2]
+                PR.B2B_PENALTY = v if kind == "back-to-back" else orig[3]
+                PR.HALF_LIFE_DAYS = v if kind == "half-life" else orig[4]
+                pl = played.assign(rest_adj=played.rest_adj * PR.B2B_PENALTY / orig[3])
                 errs = []
                 for d in dates:
-                    before = played[played.date < d]
+                    before = pl[pl.date < d]
                     bp = before[has_poss[before.index]]
                     lg_o, lg_p = lg_o0, lg_p0
                     if len(bp):
@@ -201,7 +207,7 @@ def anchor_test(teams, sched):
                     t["off"], t["dfn"] = PR.fit_off_def(t, g, lg_o, d)
                     t["pace"] = PR.fit_pace(t, g[has_poss[g.index]], lg_p, d)
                     r = t.set_index("TEAM_ID")
-                    for x in played[played.date == d].itertuples():
+                    for x in pl[pl.date == d].itertuples():
                         mm = PR.matchup(r.loc[x.home_id], r.loc[x.away_id], lg_o, lg_p, x.rest_adj)
                         errs.append((mm["margin"] - (x.home_pts - x.away_pts), mm["total"] - (x.home_pts + x.away_pts)))
                 e = np.array(errs)
@@ -210,11 +216,13 @@ def anchor_test(teams, sched):
                              "margin_MAE": np.abs(e[:, 0]).mean(), "total_MAE": np.abs(e[:, 1]).mean(),
                              "margin_bias": e[:, 0].mean(), "current_setting": "yes" if current else ""})
     finally:
-        PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT = orig
+        PR.PRIOR_GAMES, PR.PACE_PRIOR_GAMES, PR.HOME_COURT, PR.B2B_PENALTY, PR.HALF_LIFE_DAYS = orig
     out = pd.DataFrame(rows).round(3)
     for kind, col, name, unit in [("efficiency", "margin_MAE", "PRIOR_GAMES", "games"),
                                   ("pace", "total_MAE", "PACE_PRIOR_GAMES", "games"),
-                                  ("home court", "margin_MAE", "HOME_COURT", "points")]:
+                                  ("home court", "margin_MAE", "HOME_COURT", "points"),
+                                  ("back-to-back", "margin_MAE", "B2B_PENALTY", "points"),
+                                  ("half-life", "margin_MAE", "HALF_LIFE_DAYS", "days")]:
         k = out[out.test == kind]
         best, cur = k.loc[k[col].idxmin()], k[k.current_setting == "yes"].iloc[0]
         gain = cur[col] - best[col]
@@ -278,7 +286,7 @@ def main():
               f"had {BASELINE_MIN_GAMES}+ earlier games)\n" + pg.to_string(index=False))
 
     if "--tune" in sys.argv:
-        print("\nTuning test: preseason anchors and home court (each day predicted from earlier games only):")
+        print("\nTuning test: anchors, home court, back-to-backs and recency (each day predicted from earlier games only):")
         at = anchor_test(teams, sched)
         at.to_csv(os.path.join(OUT_DIR, "anchor_tuning.csv"), index=False)
         print(at.to_string(index=False))

@@ -86,9 +86,9 @@ BLOWOUT_START, BLOWOUT_PER_PT = 10, 0.008   # starters lose 0.8% of minutes per 
 STARTER_MIN = 28
 REPLACEMENT_BPM = -2.0     # players Version B didn't rate count as a -2 (Version B's prior)
 LINEUP_WEIGHT = 1.0        # share of the lineup adjustment applied to team ratings (1 = full)
-LINEUP_SPLIT = 0.5         # share of each player's OBPM-DBPM balance used to split him into offense and
+LINEUP_SPLIT = 0.0         # share of each player's OBPM-DBPM balance used to split him into offense and
                            # defense; this is what moves totals (0 = lineups change spreads only).
-                           # Nov 8 replay (86 games): spreads 11.06 -> 11.03 MAE, totals 15.06 -> 15.31
+                           # Nov 8 replay (86 games): 0.5 raised total error 15.06 -> 15.31, so it's 0 for now
 # Simulation
 N_SIMS = 4000
 SEED = 7

@@ -57,7 +57,7 @@ from scipy.stats import norm
 import nba_season_sim as S
 
 OUT_DIR = "output_power"
-HOME_COURT = S.HOME_COURT   # 2.3 points
+HOME_COURT = S.HOME_COURT   # 1.8 points
 GAME_SD = S.GAME_SD         # 12 points
 PRIOR_GAMES = 10            # the preseason rating counts about as much as this many games (20 until Nov 8;
                             # 10 won the --tune replay on Nov 2 and Nov 6)
@@ -65,7 +65,8 @@ HALF_LIFE_DAYS = 60         # a game from 60 days ago counts half as much as one
 MARGIN_CAP = 20             # blowouts beyond 20 points count as 20
 B2B_PENALTY = 1.8           # points lost on the second night of a back-to-back
 PACE_PRIOR_GAMES = 10       # pace settles quickly, so the preseason pace counts as ~10 games
-LEAGUE_PRIOR_GAMES = 15     # last season's league scoring level and pace count as 15 games (60 left totals ~4 high)
+LEAGUE_PRIOR_GAMES = 5      # last season's league scoring level and pace count as 5 games (60 left totals ~4 high;
+                            # 15 until Nov 8, when 5 lowered total error in the in-season replay)
 PACE_CARRYOVER = 0.6        # share of last season's pace difference expected to carry over
 SPLIT_CARRYOVER = 0.5       # share of last season's offense/defense balance carried into the split
 PPP_CAP = 25                # per-100 game efficiencies more than 25 from average are capped

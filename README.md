@@ -130,7 +130,7 @@ These are the teams to watch, since one of the two models is going to be clearly
 The projections above are single numbers. The simulation turns them into ranges and odds.
 
 1. Each team's projection becomes a rating in points per game: (projected wins − 41) ÷ 2.7.
-2. Every game on the 2026-27 schedule is played out, with the home team winning with probability Φ((home rating − away rating + 2.3) ÷ 12). Here 2.3 is home-court advantage in points and 12 is the typical spread of NBA game margins.
+2. Every game on the 2026-27 schedule is played out, with the home team winning with probability Φ((home rating − away rating + 1.8) ÷ 12). Here 1.8 is home-court advantage in points (2.3 until November 8, 2026) and 12 is the typical spread of NBA game margins.
 3. In each simulated season, every team's rating is also shifted by a random amount sized from the backtest error. The ranges reflect how wrong preseason projections actually tend to be, not just game-to-game luck.
 4. Standings set seeds 1–10 in each conference, followed by the play-in and four best-of-seven rounds.
 
@@ -167,7 +167,7 @@ Selecting a team in the odds table filters the other views.
 
 The same ratings that drive the season simulation also predict point spreads. Each team gets **power points**: how many points per game better or worse it is than an average team on a neutral court.
 
-> **Predicted home margin = home power points − away power points + 2.3 (home court) − 1.8 for a team on a back-to-back**
+> **Predicted home margin = home power points − away power points + 1.8 (home court) − 1.8 for a team on a back-to-back**
 
 Boston (+4.3) hosting Sacramento (−6.4) works out to Boston by 13.0, with Boston winning about 86% of the time.
 
@@ -201,7 +201,7 @@ During the season, `nba_power_ratings.py` refits every team's offense, defense a
 - **Preseason anchor:** each team's net rating starts at its preseason power rating, split into offense and defense using half of last season's balance. Pace starts at 60% of last season's difference from average. The anchor counts as about 10 games for efficiency and 10 for pace. Efficiency was set at 20 games until November 8, 2026, when the tuning test had favored 10 at two checks in a row.
 - **Recency and outliers:** recent games count more (60-day half-life), and single-game efficiencies are capped at 25 points per 100 from average to limit garbage time.
 
-- **Lineups:** the game projections (spreads and totals) are adjusted for who is playing and how many minutes each player is expected to get. Each player's minutes in the team rating (the preseason lineup counted as 10 games, blended with recent games, where a missed game counts as zero) are compared with his expected minutes today (the player projections' minutes model, with Out players removed and their minutes given to teammates). The difference, times his Version B rating, moves the team's offense and defense; part of last season's offense/defense balance decides how much of that change falls on offense, which is what moves totals. The same function is used by the player projections. In a replay of 86 games with each game's actual lineups, spread error fell slightly (11.06 to 11.03 points) and total error rose (15.06 to 15.31), so the offense/defense split for totals will be reviewed as more games are played. Projections for later dates use today's injury report and are refreshed each day.
+- **Lineups:** the game projections (spreads and totals) are adjusted for who is playing and how many minutes each player is expected to get. Each player's minutes in the team rating (the preseason lineup counted as 10 games, blended with recent games, where a missed game counts as zero) are compared with his expected minutes today (the player projections' minutes model, with Out players removed and their minutes given to teammates). The difference, times his Version B rating, moves the team's rating. The same function is used by the player projections. In a replay of 86 games with each game's actual lineups, spread error fell slightly (11.06 to 11.03 points). Splitting each player's value into offense and defense with last season's OBPM and DBPM, so that lineups also move totals, raised total error (15.06 to 15.31), so lineups currently change spreads only (`LINEUP_SPLIT = 0` in `nba_player_props.py`). Projections for later dates use today's injury report and are refreshed each day.
 
 Each run saves the rankings, a team ratings table, the movement since the last run and a dated history for charting. The season simulation reads the same day's ratings instead of keeping its own, so the rankings, workbook and simulation all agree.
 
@@ -221,7 +221,7 @@ Two more sheets are kept up to date by the script:
 ### Still to come
 
 - **Lineups in the spread calculator.** The game projections include lineups; the workbook's Spread Calculator and Matchup Projection still use team ratings alone.
-- **Tune the preseason anchor** with the grading script's anchor test after about four weeks of games, and **home court and the back-to-back penalty** once there are roughly 400 games.
+- **Settings review.** On November 8, 2026, a replay of the season so far (86 games, each predicted from earlier games only, with lineups) led to three changes: home court from 2.3 to 1.8 points (also supported by a +1.7 home margin over 2025-26), last season's league scoring level counted as 5 games instead of 15, and lineups changing spreads only. Together they lowered spread error from 11.03 to 11.00 and total error from 15.31 to 15.00. The back-to-back penalty (1.8) and recency half-life (60 days) were tested and left unchanged; both are now part of the tuning test.
 
 ![Power rankings](output_power/power_rankings.png)
 
@@ -243,9 +243,9 @@ Each run writes the day's projections and ranges to `output_props/`, appends the
 
 `nba_grade.py` checks the projections against what actually happened:
 
-- **Games:** margin error compared with a "home team by 2.3" baseline, straight-up winner accuracy, Brier score for the win probabilities, and total error and bias. It uses the latest projection made on or before game day; `nba_power_ratings.py` saves projections for the next two weeks of games on every run.
+- **Games:** margin error compared with a "home team by the home-court value" baseline, straight-up winner accuracy, Brier score for the win probabilities, and total error and bias. It uses the latest projection made on or before game day; `nba_power_ratings.py` saves projections for the next two weeks of games on every run.
 - **Player projections:** average error for every stat compared with each player's season average so far, plus bias and a range check. About half of results should land under the median and about 10% each below the 10th and above the 90th percentile. Much more often means the ranges are too narrow; much less, too wide.
-- **Tuning test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each anchor size and once for each home court value (1.0 to 3.0 points), to see how much the preseason ratings should count and how much home court is worth. It reports the best setting but doesn't change anything.
+- **Tuning test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each value of the preseason anchors, home court, the back-to-back penalty and the recency half-life, to see which settings predict best. It reports the best setting but doesn't change anything.
 
 Results go to `output_grades/` and the workbook's Model Grades sheet.
 
