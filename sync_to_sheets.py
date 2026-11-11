@@ -11,6 +11,8 @@ What gets written:
   Player Ranges       whole tab replaced (created if missing)
   Game Projections    whole tab replaced from output_power/game_projections.csv (created if missing)
   Model Grades        whole tab replaced, once nba_grade.py has written it (created if missing)
+  Pick Summary        whole tab replaced from output_grades/pick_summary.csv: the model's pick for every
+                      game against the closing line, summarized (created if missing)
 Every other tab is left alone. Power Rankings and Team Ratings are only written if their header row
 in the Google Sheet still matches, so a moved or renamed column stops the sync instead of breaking
 the calculator.
@@ -24,6 +26,7 @@ Usage:
   python3 sync_to_sheets.py --dry-run  # show what would be written, without connecting
 """
 
+import csv
 import datetime as dt
 import os
 import sys
@@ -36,6 +39,7 @@ import nba_power_ratings as PR
 SHEET_ID = "1jdNhA_p575HAXA4alnl0pilNyRLIfhS941fEEWVFJKs"
 KEY_PATH = "google_service_account.json"
 GAME_PROJECTIONS = os.path.join(PR.OUT_DIR, "game_projections.csv")
+PICK_SUMMARY = os.path.join("output_grades", "pick_summary.csv")
 
 # (Google tab, workbook sheet, fixed range or None for the whole tab, header columns to check)
 FIXED = [("Power Rankings", "Power Rankings", "A1:J31", 10),
@@ -86,8 +90,20 @@ def gather():
         gp = gp.drop(columns=["game_id"]).rename(columns=GAME_HEADERS)[list(GAME_HEADERS.values())]
         jobs.append(("Game Projections", None,
                      [list(gp.columns)] + [[clean(v) for v in r] for r in gp.itertuples(index=False)], 0))
+    if os.path.exists(PICK_SUMMARY):
+        with open(PICK_SUMMARY, newline="", encoding="utf-8-sig") as f:
+            rows = [[_number(v) for v in r] for r in csv.reader(f)]
+        jobs.append(("Pick Summary", None, rows, 0))
     wb.close()
     return jobs
+
+
+def _number(v):
+    """CSV text back to numbers where it is one, so the sheet doesn't show them as text."""
+    try:
+        return int(v) if v.lstrip("-").isdigit() else float(v) if v.replace(".", "", 1).lstrip("-").isdigit() else v
+    except ValueError:
+        return v
 
 
 def connect():
@@ -128,7 +144,22 @@ def write(book, tab, rng, values, check):
     ws.freeze(rows=1)
     if tab in FILTERED:
         ws.set_basic_filter(f"A1:{chr(64 + min(cols, 26))}{rows}")
+    if tab == "Pick Summary":
+        style_tables(ws, values)
     print(f"  {tab}: {rows - 1} rows written.")
+
+
+def style_tables(ws, values):
+    """Bold each table's title and header row (a title is a one-cell row after a blank row)."""
+    ws.format("A:Z", {"textFormat": {"bold": False}})
+    bold = []
+    for i, r in enumerate(values, 1):
+        if i == 1 or (len(r) == 1 and r[0] != "" and i > 2 and not any(values[i - 2])):
+            bold += [f"A{i}", f"A{i + 1}:J{i + 1}"]
+    ws.batch_format([{"range": rng, "format": {"textFormat": {"bold": True}}} for rng in bold])
+    ws.spreadsheet.batch_update({"requests": [{"updateDimensionProperties": {
+        "range": {"sheetId": ws.id, "dimension": "COLUMNS", "startIndex": 0, "endIndex": 1},
+        "properties": {"pixelSize": 230}, "fields": "pixelSize"}}]})
 
 
 def main():

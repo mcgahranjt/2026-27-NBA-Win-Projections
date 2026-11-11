@@ -35,6 +35,7 @@ Usage:
   python3 nba_grade.py --tune   # also run the tuning test (best after ~4 weeks of games)
 """
 
+import csv
 import os
 import sys
 
@@ -232,6 +233,189 @@ def anchor_test(teams, sched):
     return out
 
 
+# ------------------------------------------------------------ pick history
+ESPN = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
+LINES_PATH = os.path.join(S.DATA_DIR, "closing_lines.csv")
+SEASON_START = pd.Timestamp("2026-10-20")   # a Tuesday; weeks run Tuesday to Monday like the Bet Summary
+LINE_COLS = ["date", "home", "away", "provider", "home_close", "home_open", "home_odds", "away_odds",
+             "total_close", "total_open", "over_odds", "under_odds"]
+
+
+def _num(text):
+    """'+1.5' -> 1.5, 'o220.5' -> 220.5, 'PK'/'EVEN' -> 0; None if missing."""
+    if text is None:
+        return None
+    t = str(text).strip().lower().lstrip("ou")
+    if t in ("pk", "even", "ev"):
+        return 0.0
+    try:
+        return float(t)
+    except ValueError:
+        return None
+
+
+def _get(d, *keys):
+    """d[k1][k2]... with None for anything missing."""
+    for k in keys:
+        d = d.get(k) if isinstance(d, dict) else None
+    return d
+
+
+def fetch_lines(games, team_names):
+    """
+    Opening and closing spreads and totals (DraftKings, from ESPN's public game summaries) for every
+    game on these dates. Saved in data/closing_lines.csv so each game is only looked up once.
+    """
+    import requests
+    cache = pd.read_csv(LINES_PATH) if os.path.exists(LINES_PATH) else pd.DataFrame(columns=LINE_COLS)
+    have = set(zip(cache.date.astype(str), cache.home))
+    need = {d for d, h in zip(games.date.astype(str), games.home) if (d, h) not in have}
+    by_nick = {n.split()[-1]: n for n in team_names}
+    rows = []
+    for d in sorted(need):
+        try:
+            sb = requests.get(f"{ESPN}/scoreboard", params={"dates": d.replace("-", "")},
+                              headers=S.BROWSER_HEADERS, timeout=30).json()
+            for ev in sb.get("events", []):
+                comp = ev["competitions"][0]
+                if not comp.get("status", {}).get("type", {}).get("completed"):
+                    continue
+                if (d, by_nick.get(next(c for c in comp["competitors"] if c["homeAway"] == "home")["team"]["displayName"].split()[-1])) in have:
+                    continue
+                side = {c["homeAway"]: by_nick.get(c["team"]["displayName"].split()[-1]) for c in comp["competitors"]}
+                pc = requests.get(f"{ESPN}/summary", params={"event": ev["id"]},
+                                  headers=S.BROWSER_HEADERS, timeout=30).json().get("pickcenter", [])
+                if not pc:
+                    continue
+                ps, tot = pc[0].get("pointSpread", {}), pc[0].get("total", {})
+                rows.append({"date": d, "home": side.get("home"), "away": side.get("away"),
+                             "provider": pc[0].get("provider", {}).get("name", ""),
+                             "home_close": _num(_get(ps, "home", "close", "line")),
+                             "home_open": _num(_get(ps, "home", "open", "line")),
+                             "home_odds": _num(_get(ps, "home", "close", "odds")),
+                             "away_odds": _num(_get(ps, "away", "close", "odds")),
+                             "total_close": _num(_get(tot, "over", "close", "line")),
+                             "total_open": _num(_get(tot, "over", "open", "line")),
+                             "over_odds": _num(_get(tot, "over", "close", "odds")),
+                             "under_odds": _num(_get(tot, "under", "close", "odds"))})
+        except Exception as e:
+            print(f"Couldn't get lines for {d} ({e.__class__.__name__}); will try again next run.")
+            continue
+    if rows:
+        cache = pd.concat([cache, pd.DataFrame(rows)], ignore_index=True)
+        cache.to_csv(LINES_PATH, index=False)
+        print(f"Lines: added {len(rows)} games from ESPN ({len(cache)} saved).")
+    return cache
+
+
+def _risk_units(odds, result):
+    odds = -110.0 if pd.isna(odds) else odds
+    risk = -odds / 100 if odds < 0 else 1.0
+    win = 1.0 if odds < 0 else odds / 100
+    return risk, {"W": win, "L": -risk, "P": 0.0}[result]
+
+
+def pick_history(games):
+    """
+    The model's pick for every graded game against the closing line, whether or not it was bet.
+    Spread: the side the model likes better than the line (underdog if it projects the underdog to
+    do better than the line says, favorite if it projects the favorite to win by more). Total: Over if
+    the projected total is above the closing total, Under if below. Each row is written from the pick's
+    side, like the Bet Log: Line, Model and Open are the pick's spread (or the total), Final is the
+    pick's margin (or the total). Line move = points the line moved toward the pick from open to close.
+    """
+    lines = fetch_lines(games, set(games.home) | set(games.away))
+    m = games.assign(date=games.date.astype(str)).merge(lines, on=["date", "home", "away"], how="inner")
+    rows = []
+    for g in m.itertuples():
+        week = (pd.Timestamp(g.date) - SEASON_START).days // 7 + 1
+        base = {"Week": week, "Date": g.date, "Away": g.away, "Home": g.home}
+        if pd.notna(g.home_close) and g.proj_margin + g.home_close != 0:
+            home = g.proj_margin + g.home_close > 0          # model margin beats the market's margin
+            s = 1 if home else -1
+            line, opn = s * g.home_close, s * (g.home_open if pd.notna(g.home_open) else g.home_close)
+            final = s * g.margin
+            res = "P" if final + line == 0 else ("W" if final + line > 0 else "L")
+            risk, units = _risk_units(g.home_odds if home else g.away_odds, res)
+            rows.append({**base, "Type": "Spread", "Pick": g.home if home else g.away,
+                         "Side": "Favorite" if line < 0 else ("Underdog" if line > 0 else "Pick'em"),
+                         "Venue": "Home" if home else "Away", "Line": line,
+                         "Odds": g.home_odds if home else g.away_odds, "Model": -s * g.proj_margin,
+                         "Open": opn, "Final": final, "Edge": abs(g.proj_margin + g.home_close),
+                         "Risk": risk, "Result": res, "Units": units, "Line move": opn - line})
+        if pd.notna(g.total_close) and g.proj_total != g.total_close:
+            over = g.proj_total > g.total_close
+            opn = g.total_open if pd.notna(g.total_open) else g.total_close
+            res = "P" if g.total == g.total_close else ("W" if (g.total > g.total_close) == over else "L")
+            risk, units = _risk_units(g.over_odds if over else g.under_odds, res)
+            rows.append({**base, "Type": "Total", "Pick": "Over" if over else "Under",
+                         "Side": "Over" if over else "Under", "Venue": "", "Line": g.total_close,
+                         "Odds": g.over_odds if over else g.under_odds, "Model": g.proj_total,
+                         "Open": opn, "Final": g.total, "Edge": abs(g.proj_total - g.total_close),
+                         "Risk": risk, "Result": res, "Units": units,
+                         "Line move": (g.total_close - opn) if over else (opn - g.total_close)})
+    out = pd.DataFrame(rows)
+    if len(out):
+        out = out.sort_values(["Date", "Home", "Type"]).round(2)
+        for t in ["Spread", "Total"]:
+            k = out[out.Type == t]
+            w, l, p = (k.Result == "W").sum(), (k.Result == "L").sum(), (k.Result == "P").sum()
+            print(f"Model picks vs closing lines, {t.lower()}s: {w}-{l}-{p}, {k.Units.sum():+.2f} units")
+    missing = len(games) - m.shape[0]
+    if missing:
+        print(f"  ({missing} graded games have no lines yet.)")
+    return out
+
+
+EDGE_BUCKETS = [("Under 3", 0, 3), ("3 to 4.5", 3, 5), ("5 to 6.5", 5, 7), ("7 or more", 7, 1000)]
+SUMMARY_COLS = ["Picks", "W", "L", "P", "Win %", "Units", "Return on risk", "Line moved toward pick", "Avg line move"]
+
+
+def _summary_row(label, k):
+    """One table row: record, units, return on risk, and how often the line moved toward the pick."""
+    w, l, p = (k.Result == "W").sum(), (k.Result == "L").sum(), (k.Result == "P").sum()
+    if len(k) == 0:
+        return [label, 0, 0, 0, 0, "", "", "", "", ""]
+    return [label, len(k), w, l, p, f"{100 * w / max(w + l, 1):.1f}%", f"{k.Units.sum():+.2f}",
+            f"{100 * k.Units.sum() / k.Risk.sum():+.1f}%", f"{100 * (k['Line move'] > 0).mean():.0f}%",
+            f"{k['Line move'].mean():+.2f}"]
+
+
+def pick_summary(picks):
+    """The Pick Summary tab: a list of rows (title, header and table rows, with blank rows between)."""
+    sp, to = picks[picks.Type == "Spread"], picks[picks.Type == "Total"]
+    groups = [("Spreads", sp), ("  Favorites", sp[sp.Side == "Favorite"]), ("  Underdogs", sp[sp.Side == "Underdog"]),
+              ("  Home picks", sp[sp.Venue == "Home"]), ("  Away picks", sp[sp.Venue == "Away"]),
+              ("Totals", to), ("  Overs", to[to.Side == "Over"]), ("  Unders", to[to.Side == "Under"])]
+    rows = [["Model pick history against closing lines (every game, bet or not)"],
+            [f"Picks: spread = the side the model likes better than the closing line; total = Over if the "
+             f"projected total is above the closing total, Under if below. Lines: DraftKings close via ESPN. "
+             f"Graded at closing odds. Line move = points the line moved toward the pick from open to close. "
+             f"Through {picks.Date.max()}."], []]
+
+    def table(title, first, items):
+        rows.extend([[title], [first] + SUMMARY_COLS] + [_summary_row(lab, k) for lab, k in items] + [[]])
+
+    table("Overall", "Type", [("All picks", picks), ("Spreads", sp), ("Totals", to)])
+    table("By side", "Side", groups[1:5] + groups[6:])
+    for name, k in groups:
+        if name.strip() in ("Home picks", "Away picks"):
+            continue
+        table(f"{name.strip()} by model edge (points between the line and the model)", "Edge",
+              [(lab, k[(k.Edge >= lo) & (k.Edge < hi)]) for lab, lo, hi in EDGE_BUCKETS])
+    moved = lambda k: [("Moved toward pick", k[k["Line move"] > 0]), ("No move", k[k["Line move"] == 0]),
+                       ("Moved away from pick", k[k["Line move"] < 0])]
+    table("Spreads by line movement (open to close)", "Line", moved(sp))
+    table("Totals by line movement (open to close)", "Line", moved(to))
+    weeks = []
+    for wk, k in picks.groupby("Week"):
+        start = SEASON_START + pd.Timedelta(days=7 * (wk - 1))
+        weeks.append((f"{start:%m/%d} - {start + pd.Timedelta(days=6):%m/%d}", k))
+    table("Weekly, spreads (Tuesday to Monday)", "Week", [(lab, k[k.Type == "Spread"]) for lab, k in weeks])
+    table("Weekly, totals (Tuesday to Monday)", "Week", [(lab, k[k.Type == "Total"]) for lab, k in weeks])
+    return rows
+
+
 # ------------------------------------------------------------------ main
 def write_workbook(pg, gg):
     if not os.path.exists(PR.CALCULATOR_PATH) or (pg is None and gg is None):
@@ -277,6 +461,11 @@ def main():
         gg.to_csv(os.path.join(OUT_DIR, "game_grades.csv"), index=False)
         games.to_csv(os.path.join(OUT_DIR, "game_results.csv"), index=False, encoding="utf-8-sig")
         print("\nGames\n" + gg.to_string(index=False))
+        picks = pick_history(games)
+        if len(picks):
+            picks.to_csv(os.path.join(OUT_DIR, "pick_history.csv"), index=False, encoding="utf-8-sig")
+            with open(os.path.join(OUT_DIR, "pick_summary.csv"), "w", newline="", encoding="utf-8-sig") as f:
+                csv.writer(f).writerows(pick_summary(picks))
 
     pg, daily = grade_players(P.season_game_log())
     if pg is not None:

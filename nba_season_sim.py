@@ -130,6 +130,7 @@ def results_from_game_log():
     from nba_api.stats.endpoints import leaguegamelog
     log = leaguegamelog.LeagueGameLog(season=SEASON, season_type_all_star="Regular Season",
                                       timeout=60).get_data_frames()[0]
+    log = log[log.WL.notna()]          # games still in progress have no W/L yet
     if log.empty:
         return pd.DataFrame(columns=["game_id", "home_pts", "away_pts"])
     log["GAME_ID"] = log.GAME_ID.astype(str)

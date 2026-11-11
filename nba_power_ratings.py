@@ -119,6 +119,7 @@ def fetch_box_log():
                                           timeout=60).get_data_frames()[0]
         if log.empty:
             return pd.DataFrame(columns=["game_id", "poss"])
+        log = log[log.WL.notna()]      # games still in progress have no W/L yet
         log = log[["GAME_ID", "TEAM_ID", "MATCHUP", "PTS", "FGA", "FTA", "OREB", "TOV"]]
         log.to_csv(path, index=False)
     except Exception as e:

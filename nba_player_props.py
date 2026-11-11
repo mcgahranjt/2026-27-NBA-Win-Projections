@@ -154,7 +154,7 @@ def season_game_log():
         from nba_api.stats.endpoints import leaguegamelog
         log = leaguegamelog.LeagueGameLog(season=S.SEASON, player_or_team_abbreviation="P",
                                           season_type_all_star="Regular Season", timeout=60).get_data_frames()[0]
-        log = log[cols] if not log.empty else pd.DataFrame(columns=cols)
+        log = log[log.WL.notna()][cols] if not log.empty else pd.DataFrame(columns=cols)   # finished games only
         log.to_csv(path, index=False)
     except Exception as e:
         if not os.path.exists(path):

@@ -244,6 +244,7 @@ Each run writes the day's projections and ranges to `output_props/`, appends the
 `nba_grade.py` checks the projections against what actually happened:
 
 - **Games:** margin error compared with a "home team by the home-court value" baseline, straight-up winner accuracy, Brier score for the win probabilities, and total error and bias. It uses the latest projection made on or before game day; `nba_power_ratings.py` saves projections for the next two weeks of games on every run.
+- **Picks against closing lines:** for every graded game, whether or not it was bet, the model's spread pick is the side it likes better than the closing line (the underdog when it projects the underdog to do better than the line, the favorite when it projects the favorite to win by more), and its total pick is the Over when the projected total is above the closing total and the Under when it is below. Opening and closing lines are DraftKings', from ESPN's public game summaries, saved in `data/closing_lines.csv` so each game is looked up once. Picks are graded at the closing odds and summarized overall, by side (favorite, underdog, home, away, over, under), by model edge for each side, by line movement from open to close, and by week (`output_grades/pick_summary.csv`, with every pick in `pick_history.csv`).
 - **Player projections:** average error for every stat compared with each player's season average so far, plus bias and a range check. About half of results should land under the median and about 10% each below the 10th and above the 90th percentile. Much more often means the ranges are too narrow; much less, too wide.
 - **Tuning test** (`--tune`): replays the season day by day, predicting each day's games from earlier games only, once for each value of the preseason anchors, home court, the back-to-back penalty and the recency half-life, to see which settings predict best. It reports the best setting but doesn't change anything.
 
@@ -265,6 +266,7 @@ During the season the whole routine runs on a schedule, and the results go strai
 | Player Ranges | Replaced each run: mean and 10th, 25th, 50th, 75th and 90th percentiles for every stat |
 | Game Projections | The next two weeks of games, with projected home margin, total and home win probability |
 | Model Grades | The grading summary, once there are games to grade |
+| Pick Summary | The model's spread and total picks for every game against the closing line, summarized (from `nba_grade.py`) |
 
 Power Rankings and Team Ratings are written only if their header rows in the Google Sheet still match the workbook, so a moved or renamed column stops the sync instead of breaking the calculator. The other tabs (Spread Calculator, Matchup Predictor, Win Totals and the history tabs) are never touched.
 
