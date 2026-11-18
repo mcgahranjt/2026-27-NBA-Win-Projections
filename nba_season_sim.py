@@ -122,6 +122,8 @@ def schedule_from_stats_api():
         "date": pick("gameDateEst", "gameDate", "GAME_DATE"),
         "home_id": pick("homeTeam_teamId", "homeTeamId", "HOME_TEAM_ID"),
         "away_id": pick("awayTeam_teamId", "awayTeamId", "VISITOR_TEAM_ID"),
+        # tip-off, Eastern time (NBA.com labels it Z, but the clock time is Eastern)
+        "tip": pick("gameDateTimeEst").astype(str).str.rstrip("Z") if "gameDateTimeEst" in df.columns else None,
     })
 
 

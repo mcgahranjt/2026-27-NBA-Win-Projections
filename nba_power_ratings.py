@@ -422,8 +422,22 @@ def log_game_projections(sched, teams, lg_o, lg_p, today):
     except (Exception, SystemExit) as e:
         print(f"\nCouldn't build today's lineups ({e.__class__.__name__}: {e}); "
               "game projections use the team ratings without lineup adjustments.")
+    # a later run on game day (the 5:30 PM props run) keeps the earlier projection for games that have
+    # already tipped off, so nothing projected after tip-off is ever graded
+    earlier = {}
+    proj_path = os.path.join(OUT_DIR, "game_projections.csv")
+    if "tip" in up.columns and os.path.exists(proj_path):
+        old = pd.read_csv(proj_path, encoding="utf-8-sig", dtype={"game_id": str})
+        old = old[old.as_of == today.date().isoformat()].set_index("game_id")
+        tipped = pd.to_datetime(up.tip, errors="coerce") <= pd.Timestamp(dt.datetime.now())
+        earlier = {gid: old.loc[gid].to_dict() for gid in up.game_id[tipped] if gid in old.index}
+        if earlier:
+            print(f"\n{len(earlier)} games already started; keeping their earlier projections.")
     rows = []
     for g in up.itertuples():
+        if g.game_id in earlier:
+            rows.append({"game_id": g.game_id, **earlier[g.game_id]})
+            continue
         if lineup is not None:
             m = P.lineup_matchup(r.loc[g.home_id], r.loc[g.away_id], lg_o, lg_p, g.rest_adj, lineup, g.home_id, g.away_id)
         else:
@@ -432,7 +446,7 @@ def log_game_projections(sched, teams, lg_o, lg_p, today):
                      "home": r.TEAM_NAME[g.home_id], "away": r.TEAM_NAME[g.away_id],
                      "proj_margin": round(m["margin"], 2), "proj_total": round(m["total"], 2),
                      "home_win_prob": round(norm.cdf(m["margin"] / GAME_SD), 3)})
-    new = pd.DataFrame(rows)
+    new = pd.DataFrame(rows)[["as_of", "game_id", "date", "home", "away", "proj_margin", "proj_total", "home_win_prob"]]
     new.to_csv(os.path.join(OUT_DIR, "game_projections.csv"), index=False, encoding="utf-8-sig")
     path = os.path.join(OUT_DIR, "game_projection_history.csv")
     if os.path.exists(path):

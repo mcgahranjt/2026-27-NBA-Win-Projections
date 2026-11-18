@@ -4,7 +4,9 @@ Daily routine
 Runs the in-season scripts in order and saves everything they print to logs/<date>.log.
 
   Full run (late morning):  power ratings -> season sim -> player props -> grading -> Google Sheet sync -> website
-  Props run (afternoon):    player props -> Google Sheet sync -> website, to pick up the latest injury report
+  Props run (afternoon):    power ratings -> player props -> Google Sheet sync -> website, so the
+                            spreads, totals and props pick up the latest injury report (games that
+                            have already tipped off keep their earlier projection)
 
 If the power ratings fail, the run stops, since everything after them depends on that day's ratings.
 Any other failure is logged and the run continues. A day with no games is normal: the props step
@@ -14,7 +16,7 @@ Close NBA_Spread_Calculator.xlsx in Excel before a run.
 
 Usage:
   python3 run_daily.py           # full run
-  python3 run_daily.py --props   # props and sync only
+  python3 run_daily.py --props   # afternoon refresh: ratings, props, sync and website
 """
 
 import datetime as dt
@@ -30,7 +32,8 @@ FULL = [("Power ratings", ["nba_power_ratings.py"], True),
         ("Grading", ["nba_grade.py"], False),
         ("Google Sheet sync", ["sync_to_sheets.py"], False),
         ("Website", ["build_site.py", "--publish"], False)]
-PROPS = [("Player projections", ["nba_player_props.py"], False),
+PROPS = [("Power ratings", ["nba_power_ratings.py"], False),     # refreshes spreads/totals with late injury news
+         ("Player projections", ["nba_player_props.py"], False),
          ("Google Sheet sync", ["sync_to_sheets.py"], False),
          ("Website", ["build_site.py", "--publish"], False)]
 
