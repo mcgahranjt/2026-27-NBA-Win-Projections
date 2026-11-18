@@ -25,6 +25,8 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+STEP_TIMEOUT_MIN = 20      # a step still running after this is stopped so the rest of the run can go on
+                           # (a normal step takes 1-2 minutes; a stuck Google Sheet sync once hung for days)
 LOG_DIR = os.path.join(HERE, "logs")
 FULL = [("Power ratings", ["nba_power_ratings.py"], True),
         ("Season simulation", ["nba_season_sim.py"], False),
@@ -57,7 +59,18 @@ def main():
                 summary.append((name, "skipped"))
                 continue
             out(f"\n--- {name}")
-            p = subprocess.run([sys.executable] + args, cwd=HERE, capture_output=True, text=True)
+            try:
+                p = subprocess.run([sys.executable] + args, cwd=HERE, capture_output=True, text=True,
+                                   timeout=STEP_TIMEOUT_MIN * 60)
+            except subprocess.TimeoutExpired as e:
+                part = (e.stdout or b"") + (e.stderr or b"")
+                out((part.decode(errors="replace") if isinstance(part, bytes) else part).rstrip())
+                out(f"{name} was still running after {STEP_TIMEOUT_MIN} minutes, so it was stopped.")
+                summary.append((name, f"FAILED (stopped after {STEP_TIMEOUT_MIN} min)"))
+                if required:
+                    out(f"\n{name} failed, so the rest of the run was skipped.")
+                    break
+                continue
             text = (p.stdout + p.stderr).rstrip()
             out(text)
             if p.returncode == 0:

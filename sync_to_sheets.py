@@ -38,6 +38,7 @@ import nba_power_ratings as PR
 
 SHEET_ID = "1jdNhA_p575HAXA4alnl0pilNyRLIfhS941fEEWVFJKs"
 KEY_PATH = "google_service_account.json"
+REQUEST_TIMEOUT = 120      # seconds
 GAME_PROJECTIONS = os.path.join(PR.OUT_DIR, "game_projections.csv")
 PICK_SUMMARY = os.path.join("output_grades", "pick_summary.csv")
 
@@ -113,7 +114,9 @@ def connect():
         import gspread
     except ImportError:
         raise SystemExit("gspread isn't installed. Run: pip3 install gspread")
-    return gspread.service_account(filename=KEY_PATH).open_by_key(SHEET_ID)
+    client = gspread.service_account(filename=KEY_PATH)
+    client.set_timeout(REQUEST_TIMEOUT)    # give up on a request Google never answers instead of waiting forever
+    return client.open_by_key(SHEET_ID)
 
 
 def write(book, tab, rng, values, check):
